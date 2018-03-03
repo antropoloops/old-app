@@ -1,5 +1,7 @@
-export default function init(events, set) {
+export default function init(set, events) {
   const triggers = set.triggers;
+
+  const pressedKeys = {};
 
   const keys = Object.keys(triggers).reduce((keys, name) => {
     const trigger = triggers[name];
@@ -11,11 +13,18 @@ export default function init(events, set) {
 
   window.onkeydown = function(e) {
     const name = keys[e.key.toUpperCase()];
-    if (name) events.emit("start", name);
+    if (name && !pressedKeys[name]) {
+      events.emit("start", name);
+      pressedKeys[name] = true;
+    }
   };
 
   window.onkeyup = function(e) {
     const name = keys[e.key.toUpperCase()];
-    if (name) events.emit("stop", name);
+    if (name) {
+      pressedKeys[name] = false;
+      events.emit("stop", name);
+    }
   };
+  return keys;
 }

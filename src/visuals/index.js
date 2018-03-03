@@ -1,4 +1,3 @@
-import * as d3 from "d3";
 import renderMap from "./render-map";
 
 const state = {
