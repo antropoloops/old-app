@@ -2,11 +2,10 @@ import * as d3 from "d3";
 import * as d3geo from "d3-geo-projection";
 import * as topojson from "topojson";
 
-export default function displayData(geoData, set) {
-  console.log("set", set);
+export default function displayData(el, geoData, set) {
   const width = window.innerWidth;
   const height = window.innerHeight;
-  const mapDiv = d3.select("body");
+  const mapDiv = d3.select(el);
   const svg = mapDiv
     .append("svg")
     .attr("class", "svgMap")
