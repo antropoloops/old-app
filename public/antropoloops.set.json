@@ -1,0 +1,10 @@
+{
+  "name": "Continentes",
+  "geolocation": {
+    "data": "110m.json"
+  },
+  "places": {
+    "brastilava": {}
+  },
+  "samples": {}
+}

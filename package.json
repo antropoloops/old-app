@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "d3": "^4.13.0",
-    "react-scripts": "1.1.1"
+    "d3-geo-projection": "^2.3.2",
+    "react-scripts": "1.1.1",
+    "topojson": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
