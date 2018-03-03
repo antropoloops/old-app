@@ -2,17 +2,7 @@ import * as d3 from "d3";
 import * as d3geo from "d3-geo-projection";
 import * as topojson from "topojson";
 
-export default function displayData(el, geoData, set) {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  const mapDiv = d3.select(el);
-  const svg = mapDiv
-    .append("svg")
-    .attr("class", "svgMap")
-    .attr("width", width)
-    .attr("height", height);
-  const g = svg.append("g");
-
+function addFullScreen() {
   d3.select(".svgMap").on("click", (d, i, node) => {
     const el = node[i];
     const rfs =
@@ -23,6 +13,19 @@ export default function displayData(el, geoData, set) {
 
     rfs.call(el);
   });
+}
+
+export default function renderMap(el, geoData, set) {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const mapDiv = d3.select(el);
+  const svg = mapDiv
+    .append("svg")
+    .attr("class", "svgMap")
+    .attr("width", width)
+    .attr("height", height);
+  const g = svg.append("g");
+
   const projection = d3geo
     .geoRobinson()
     .scale(200)
