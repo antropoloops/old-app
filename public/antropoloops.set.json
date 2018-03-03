@@ -1,7 +1,7 @@
 {
   "name": "Continentes",
   "background": {
-    "geoData": "110m.json"
+    "geoDataUrl": "110m.json"
   },
   "samples": {
     "cumbia-india": {
@@ -11,13 +11,11 @@
   },
   "geoLocation": {
     "Buenos Aires": {
-      "lat": -34.603722,
-      "lon": -58.381592,
+      "coord": [-58.381592, -34.603722],
       "country": "Argentina"
     },
     "Madagascar": {
-      "lat": -18.91368,
-      "lon": 47.53613,
+      "coord": [47.53613, -18.91368],
       "country": "Madagascar"
     }
   }

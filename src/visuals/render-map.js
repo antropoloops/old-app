@@ -3,6 +3,7 @@ import * as d3geo from "d3-geo-projection";
 import * as topojson from "topojson";
 
 export default function displayData(geoData, set) {
+  console.log("set", set);
   const width = window.innerWidth;
   const height = window.innerHeight;
   const mapDiv = d3.select("body");
@@ -43,6 +44,17 @@ export default function displayData(geoData, set) {
       .style("stroke", "#2c2c2c")
       .style("stroke-width", 0.5)
       .style("fill", "#888888");
+
+    container
+      .append("circle")
+      .attr("cx", projection(set.geoLocation["Madagascar"].coord)[0])
+      .attr("cy", projection(set.geoLocation["Madagascar"].coord)[1])
+      .attr("r", 10);
+    container
+      .append("circle")
+      .attr("cx", projection(set.geoLocation["Buenos Aires"].coord)[0])
+      .attr("cy", projection(set.geoLocation["Buenos Aires"].coord)[1])
+      .attr("r", 10);
   };
   drawMap(g, countriesGeometries);
   // window.onresize = drawMap(g, countriesGeometries)
