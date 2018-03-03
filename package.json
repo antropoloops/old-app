@@ -1,17 +1,25 @@
 {
   "name": "visuals",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "repository": "git@github.com:danigb/visuals.git",
-  "author": "danigb <danigb@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "parcel index.html"
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "d3": "^4.13.0"
+    "d3": "^4.13.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "devDependencies": {
-    "parcel-bundler": "^1.6.2"
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
   }
 }
