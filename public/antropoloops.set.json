@@ -9,6 +9,9 @@
         "https://antropoloops.github.io/atpls-set-continentes/nubian.mp3",
       "location": "Buenos Aires",
       "imageUrl": "..."
+    },
+    "prueba": {
+      "location": "Madagascar"
     }
   },
   "triggers": {

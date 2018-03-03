@@ -15,6 +15,13 @@ function addFullScreen() {
   });
 }
 
+function createProjection(width, height) {
+  return d3geo
+    .geoRobinson()
+    .scale(200)
+    .translate([width / 2, height / 2]);
+}
+
 export default function renderMap(el, geoData, set) {
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -24,40 +31,29 @@ export default function renderMap(el, geoData, set) {
     .attr("class", "svgMap")
     .attr("width", width)
     .attr("height", height);
-  const g = svg.append("g");
+  const container = svg.append("g");
 
-  const projection = d3geo
-    .geoRobinson()
-    .scale(200)
-    .translate([width / 2, height / 2]);
+  const projection = createProjection(width, height);
   const path = d3.geoPath().projection(projection);
   const countriesGeometries = topojson.feature(
     geoData,
     geoData.objects.countries
   ).features;
-  const drawMap = (container, data) => {
-    container
-      .selectAll(".countries")
-      .data(data)
-      .enter()
-      .append("path")
-      .attr("class", "countries")
-      .attr("d", path)
-      .style("stroke", "#2c2c2c")
-      .style("stroke-width", 0.5)
-      .style("fill", "#888888");
+  drawMap(container, countriesGeometries, path);
 
-    container
-      .append("circle")
-      .attr("cx", projection(set.geoLocation["Madagascar"].coord)[0])
-      .attr("cy", projection(set.geoLocation["Madagascar"].coord)[1])
-      .attr("r", 10);
-    container
-      .append("circle")
-      .attr("cx", projection(set.geoLocation["Buenos Aires"].coord)[0])
-      .attr("cy", projection(set.geoLocation["Buenos Aires"].coord)[1])
-      .attr("r", 10);
-  };
-  drawMap(g, countriesGeometries);
+  return { container, projection };
   // window.onresize = drawMap(g, countriesGeometries)
+}
+
+function drawMap(container, data, path) {
+  container
+    .selectAll(".countries")
+    .data(data)
+    .enter()
+    .append("path")
+    .attr("class", "countries")
+    .attr("d", path)
+    .style("stroke", "#2c2c2c")
+    .style("stroke-width", 0.5)
+    .style("fill", "#888888");
 }

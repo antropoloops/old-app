@@ -9,10 +9,13 @@ export default function init(events, set) {
 
   console.log("keys", keys);
 
-  window.onkeypress = function(e) {
+  window.onkeydown = function(e) {
     const name = keys[e.key.toUpperCase()];
-    if (name) {
-      events.emit("start", name);
-    }
+    if (name) events.emit("start", name);
+  };
+
+  window.onkeyup = function(e) {
+    const name = keys[e.key.toUpperCase()];
+    if (name) events.emit("stop", name);
   };
 }
