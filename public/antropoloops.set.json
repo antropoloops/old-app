@@ -1,10 +1,24 @@
 {
   "name": "Continentes",
-  "geolocation": {
-    "data": "110m.json"
+  "background": {
+    "geoData": "110m.json"
   },
-  "places": {
-    "brastilava": {}
+  "samples": {
+    "cumbia-india": {
+      "audio": "http://...",
+      "location": "Buenos Aires"
+    }
   },
-  "samples": {}
+  "geoLocation": {
+    "Buenos Aires": {
+      "lat": -34.603722,
+      "lon": -58.381592,
+      "country": "Argentina"
+    },
+    "Madagascar": {
+      "lat": -18.91368,
+      "lon": 47.53613,
+      "country": "Madagascar"
+    }
+  }
 }
