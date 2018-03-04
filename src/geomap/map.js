@@ -31,8 +31,22 @@ export default class Map {
   }
 
   render() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const wWidth = window.innerWidth;
+    const wHeight = window.innerHeight;
+    const realAspectRatio = wWidth / wHeight;
+    const ratios = {
+      sixteenNinths: 16 / 9,
+      sixteenTenths: 16 / 10
+    };
+    const fixedAspectRatio = ratios.sixteenTenths;
+
+    const width =
+      realAspectRatio < fixedAspectRatio ? wWidth : wHeight * fixedAspectRatio;
+    const height =
+      realAspectRatio < fixedAspectRatio ? wWidth / fixedAspectRatio : wHeight;
+    const scale =
+      fixedAspectRatio === ratios.sixteenTenths ? width / 5.9 : width / 6.5;
+    const coverSide = width / 8;
 
     // remove all elements
     this.el.selectAll("*").remove();
@@ -42,12 +56,30 @@ export default class Map {
       .attr("class", "svgMap")
       .attr("width", width)
       .attr("height", height);
-    this.container = svg.append("g");
 
-    this.projection = createProjection(width, height);
+    this.coversContainer = svg.append("g");
+    this.mapContainer = svg
+      .append("g")
+      .attr("transform", `translate(0, ${coverSide})`);
+
+    this.projection = createProjection(width, height - coverSide, scale);
     const path = d3.geoPath().projection(this.projection);
 
-    this.container
+    // Draw covers
+    this.coversContainer
+      .selectAll(".cover")
+      .data([1, 1, 1, 1, 1, 1, 1, 1])
+      .enter()
+      .append("rect")
+      .attr("class", "cover")
+      .attr("width", coverSide)
+      .attr("height", coverSide)
+      .attr("x", (d, i) => i * coverSide)
+      .attr("y", 0)
+      .style("stroke", "white");
+
+    // Draw map
+    this.mapContainer
       .selectAll(".countries")
       .data(this.countries)
       .enter()
@@ -56,13 +88,14 @@ export default class Map {
       .attr("d", path)
       .style("stroke", "#2c2c2c")
       .style("stroke-width", 0.5)
-      .style("fill", "#888888");
+      .style("fill", d => (d.id === "010" ? "none" : "#888888"));
   }
 }
 
-function createProjection(width, height) {
+function createProjection(width, height, scale) {
   return d3geo
     .geoRobinson()
-    .scale(200)
-    .translate([width / 2, height / 2]);
+    .scale(scale)
+    .translate([width / 2, height / 2 + height / 15])
+    .rotate([-10, 0, 0]);
 }

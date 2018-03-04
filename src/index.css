@@ -3,6 +3,12 @@
   padding: 0;
 }
 
-body {
+body,
+.svgMap {
   background-color: #2c2c2c;
+}
+
+.svgMap {
+  display: block;
+  margin: auto;
 }
