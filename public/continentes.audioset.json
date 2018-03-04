@@ -3,37 +3,40 @@
   "description": "Sessión Antropoloops 01",
   "url": "https://antropoloops.github.io/audiosets/continentes/",
   "bpm": 110,
-  "defaults": {
+  "config": {
     "load": {
       "audioFileExt": ".wav",
       "imageFileExt": ".jpg"
     },
     "samples": {
       "loop": "true"
+    },
+    "keyboard": {
+      "type": "gate"
     }
   },
   "geomap": {
     "dataUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json"
   },
   "keyboard": {
-    "q": { "sample": "ossie", "type": "gate" },
-    "w": { "sample": "orillas", "type": "gate" },
-    "e": { "sample": "mocita", "type": "gate" },
-    "r": { "sample": "nubian", "type": "gate" },
-    "t": { "sample": "tabla", "type": "gate" },
-    "y": { "sample": "pae", "type": "gate" },
-    "a": { "sample": "mississipi", "type": "gate" },
-    "s": { "sample": "camino", "type": "gate" },
-    "d": { "sample": "mariola", "type": "gate" },
-    "f": { "sample": "madinda", "type": "gate" },
-    "g": { "sample": "ballade", "type": "gate" },
-    "h": { "sample": "funeraire", "type": "gate" },
-    "z": { "sample": "ed-lewis", "type": "gate" },
-    "x": { "sample": "rueda", "type": "gate" },
-    "c": { "sample": "agnus-dei", "type": "gate" },
-    "v": { "sample": "indvumo", "type": "gate" },
-    "b": { "sample": "ogbeler", "type": "gate" },
-    "n": { "sample": "are-are", "type": "gate" }
+    "q": { "sample": "ossie", "type": "toggle" },
+    "w": { "sample": "orillas" },
+    "e": { "sample": "mocita" },
+    "r": { "sample": "nubian" },
+    "t": { "sample": "tabla" },
+    "y": { "sample": "pae" },
+    "a": { "sample": "mississipi", "type": "toggle" },
+    "s": { "sample": "camino" },
+    "d": { "sample": "mariola" },
+    "f": { "sample": "madinda" },
+    "g": { "sample": "ballade" },
+    "h": { "sample": "funeraire" },
+    "z": { "sample": "ed-lewis" },
+    "x": { "sample": "rueda", "type": "toggle" },
+    "c": { "sample": "agnus-dei" },
+    "v": { "sample": "indvumo" },
+    "b": { "sample": "ogbeler" },
+    "n": { "sample": "are-are" }
   },
   "pads": {
     "titles": {

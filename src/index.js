@@ -4,11 +4,14 @@ import keyboard from "./keyboard";
 import audio from "./audio";
 import geomap from "./geomap";
 
+const DEBUG = true;
 const events = new Events();
 
-events.on("*", (...args) => {
-  console.log("event", args);
-});
+if (DEBUG) {
+  events.on("*", (...args) => {
+    console.log("event", args);
+  });
+}
 
 function loadSet(url) {
   return fetch(url).then(response => response.json());

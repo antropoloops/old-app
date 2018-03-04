@@ -4913,9 +4913,9 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash.defaults@^4.2.0:
+lodash.config@^4.2.0:
   version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+  resolved "https://registry.yarnpkg.com/lodash.config/-/lodash.config-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -7350,7 +7350,7 @@ sw-precache@^5.1.1:
     dom-urls "^1.1.0"
     es6-promise "^4.0.5"
     glob "^7.1.1"
-    lodash.defaults "^4.2.0"
+    lodash.config "^4.2.0"
     lodash.template "^4.4.0"
     meow "^3.7.0"
     mkdirp "^0.5.1"

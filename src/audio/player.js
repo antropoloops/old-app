@@ -5,7 +5,7 @@ export default class Player {
     this.buffers = buffers;
   }
 
-  play(name, sample, defaults) {
+  play(name, sample, config) {
     const buffer = this.buffers[name];
     if (!buffer) return;
 
@@ -13,7 +13,7 @@ export default class Player {
     source.buffer = buffer;
     source.connect(this.ctx.destination);
 
-    if (sample.loop === true || (sample.loop === undefined && defaults.loop)) {
+    if (sample.loop === true || (sample.loop === undefined && config.loop)) {
       source.loop = true;
     }
 

@@ -9,13 +9,13 @@ export default class Loader {
     return this.buffers[name];
   }
 
-  load(baseUrl, samples, defaults) {
+  load(baseUrl, samples, config) {
     const names = Object.keys(samples);
     this.events.emit("audio.load-all", names);
 
     const promises = names.map(name => {
       const sample = samples[name];
-      const url = baseUrl + sample.filename + defaults.audioFileExt;
+      const url = baseUrl + sample.filename + config.audioFileExt;
       // this.events.emit("audio.load-file", name, url);
       return fetch(url)
         .then(response => response.arrayBuffer())
