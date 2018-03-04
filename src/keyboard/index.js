@@ -1,30 +1,24 @@
 export default function init(set, events) {
-  const triggers = set.triggers;
+  const keyboard = set.keyboard;
+
+  console.log("Available keys", Object.keys(keyboard).join(" "));
 
   const pressedKeys = {};
 
-  const keys = Object.keys(triggers).reduce((keys, name) => {
-    const trigger = triggers[name];
-    if (trigger.keyboard) keys[trigger.keyboard] = name;
-    return keys;
-  }, {});
-
-  console.log("keys", keys);
-
   window.onkeydown = function(e) {
-    const name = keys[e.key.toUpperCase()];
-    if (name && !pressedKeys[name]) {
-      events.emit("start", name);
-      pressedKeys[name] = true;
+    const key = e.key;
+    const trigger = keyboard[key];
+    if (trigger && !pressedKeys[key]) {
+      events.emit("start", trigger.sample);
+      pressedKeys[key] = true;
     }
   };
 
   window.onkeyup = function(e) {
-    const name = keys[e.key.toUpperCase()];
-    if (name) {
-      pressedKeys[name] = false;
-      events.emit("stop", name);
+    const key = e.key;
+    if (key && pressedKeys[key]) {
+      pressedKeys[key] = false;
+      events.emit("stop", keyboard[key].sample);
     }
   };
-  return keys;
 }

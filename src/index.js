@@ -1,8 +1,8 @@
 import "./index.css";
-import visuals from "./visuals";
 import Events from "nanobus";
 import keyboard from "./keyboard";
 import audio from "./audio";
+import geomap from "./geomap";
 
 const events = new Events();
 
@@ -10,13 +10,14 @@ events.on("*", (...args) => {
   console.log("event", args);
 });
 
-const loadJson = path => fetch(path).then(response => response.json());
+function loadSet(url) {
+  return fetch(url).then(response => response.json());
+}
 
-loadJson("antropoloops.set.json").then(set => {
-  keyboard(set, events);
+function init(set) {
   audio(set, events);
-  const el = document.body;
-  loadJson(set.background.geoDataUrl).then(geoData =>
-    visuals(el, geoData, set, events)
-  );
-});
+  keyboard(set, events);
+  geomap(set, events, document.body);
+}
+
+loadSet("continentes.audioset.json").then(init);
