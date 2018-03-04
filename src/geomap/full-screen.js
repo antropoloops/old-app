@@ -1,8 +1,6 @@
-import * as d3 from "d3";
-
 export default function addFullScreen() {
-  d3.select(".svgMap").on("click", (d, i, node) => {
-    const el = node[i];
+  document.querySelector("body").addEventListener("click", () => {
+    const el = document.querySelector("body");
     const rfs =
       el.requestFullscreen ||
       el.webkitRequestFullScreen ||
