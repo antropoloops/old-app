@@ -11,9 +11,9 @@ export default class Map {
   }
 
   show(name, data) {
-    if (!this.container) return;
+    if (!this.mapContainer) return;
     const [cx, cy] = this.projection(data.lnglat);
-    const circle = this.container
+    const circle = this.mapContainer
       .append("circle")
       .attr("cx", cx)
       .attr("cy", cy)
@@ -88,7 +88,7 @@ export default class Map {
       .attr("d", path)
       .style("stroke", "#2c2c2c")
       .style("stroke-width", 0.5)
-      .style("fill", d => (d.id === "010" ? "none" : "#888888"));
+      .style("fill", d => (d.id === "010" ? "none" : "#888888")); // 010 Antartica
   }
 }
 
