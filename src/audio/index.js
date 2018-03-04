@@ -6,13 +6,15 @@ const ctx = Context();
 
 export default function init(set, events) {
   const samples = set.samples;
+  const config = set.config.samples;
+
   const loader = new Loader(ctx, events);
   const player = new Player(ctx, loader.buffers);
 
   loader.load(set.url, samples, set.config.load);
 
   events.on("start", name => {
-    player.play(name, samples[name], set.config.samples);
+    player.play(name, samples[name], config);
   });
 
   events.on("stop", name => {

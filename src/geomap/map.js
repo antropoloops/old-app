@@ -2,13 +2,6 @@ import * as d3 from "d3";
 import * as d3geo from "d3-geo-projection";
 import * as topojson from "topojson";
 
-function createProjection(width, height) {
-  return d3geo
-    .geoRobinson()
-    .scale(200)
-    .translate([width / 2, height / 2]);
-}
-
 export default class Map {
   constructor(data, el) {
     this.data = data;
@@ -65,4 +58,11 @@ export default class Map {
       .style("stroke-width", 0.5)
       .style("fill", "#888888");
   }
+}
+
+function createProjection(width, height) {
+  return d3geo
+    .geoRobinson()
+    .scale(200)
+    .translate([width / 2, height / 2]);
 }

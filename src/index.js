@@ -4,7 +4,7 @@ import keyboard from "./keyboard";
 import audio from "./audio";
 import geomap from "./geomap";
 
-const DEBUG = true;
+const DEBUG = false;
 const events = new Events();
 
 if (DEBUG) {
