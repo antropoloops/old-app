@@ -8,10 +8,45 @@ export default class Map {
     this.el = d3.select(el);
     this.countries = topojson.feature(data, data.objects.countries).features;
     this.circles = {};
+    this.covers = {};
+    this.ratios = {
+      sixteenNinths: 16 / 9,
+      sixteenTenths: 16 / 10
+    };
+    this.fixedAspectRatio = this.ratios.sixteenTenths;
   }
 
-  show(name, data) {
+  _getWidthHeight() {
+    const wWidth = window.innerWidth;
+    const wHeight = window.innerHeight;
+    const realAspectRatio = wWidth / wHeight;
+
+    const width =
+      realAspectRatio < this.fixedAspectRatio
+        ? wWidth
+        : wHeight * this.fixedAspectRatio;
+    const height =
+      realAspectRatio < this.fixedAspectRatio
+        ? wWidth / this.fixedAspectRatio
+        : wHeight;
+
+    return { width, height };
+  }
+
+  _getScale() {
+    const { width } = this._getWidthHeight();
+    return this.fixedAspectRatio === this.ratios.sixteenTenths
+      ? width / 5.9
+      : width / 6.5;
+  }
+
+  // Use 2 different functions, one for showing circles and the other for the covers?
+  show(name, data, track) {
+    console.log("name", name);
+    console.log("data", data);
     if (!this.mapContainer) return;
+
+    // Draw circles
     const [cx, cy] = this.projection(data.lnglat);
     const circle = this.mapContainer
       .append("circle")
@@ -20,6 +55,19 @@ export default class Map {
       .attr("r", 10)
       .style("fill", "red");
     this.circles[name] = circle;
+
+    const { width } = this._getWidthHeight();
+    const coverSide = width / 8;
+
+    // Draw covers
+    const cover = this.coversContainer
+      .append("rect")
+      .attr("width", coverSide)
+      .attr("height", coverSide)
+      .attr("x", track * coverSide)
+      .attr("y", 0)
+      .style("stroke", "white");
+    this.covers[name] = cover;
   }
 
   hide(name) {
@@ -28,24 +76,17 @@ export default class Map {
       circle.remove();
       this.circles[name] = null;
     }
+
+    const cover = this.covers[name];
+    if (cover) {
+      cover.remove();
+      this.covers[name] = null;
+    }
   }
 
   render() {
-    const wWidth = window.innerWidth;
-    const wHeight = window.innerHeight;
-    const realAspectRatio = wWidth / wHeight;
-    const ratios = {
-      sixteenNinths: 16 / 9,
-      sixteenTenths: 16 / 10
-    };
-    const fixedAspectRatio = ratios.sixteenTenths;
-
-    const width =
-      realAspectRatio < fixedAspectRatio ? wWidth : wHeight * fixedAspectRatio;
-    const height =
-      realAspectRatio < fixedAspectRatio ? wWidth / fixedAspectRatio : wHeight;
-    const scale =
-      fixedAspectRatio === ratios.sixteenTenths ? width / 5.9 : width / 6.5;
+    const { width, height } = this._getWidthHeight();
+    const scale = this._getScale();
     const coverSide = width / 8;
 
     // remove all elements
@@ -64,19 +105,6 @@ export default class Map {
 
     this.projection = createProjection(width, height - coverSide, scale);
     const path = d3.geoPath().projection(this.projection);
-
-    // Draw covers
-    this.coversContainer
-      .selectAll(".cover")
-      .data([1, 1, 1, 1, 1, 1, 1, 1])
-      .enter()
-      .append("rect")
-      .attr("class", "cover")
-      .attr("width", coverSide)
-      .attr("height", coverSide)
-      .attr("x", (d, i) => i * coverSide)
-      .attr("y", 0)
-      .style("stroke", "white");
 
     // Draw map
     this.mapContainer
