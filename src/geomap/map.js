@@ -1,6 +1,11 @@
 import * as d3 from "d3";
-import * as d3geo from "d3-geo-projection";
 import * as topojson from "topojson";
+import {
+  RATIOS,
+  getScale,
+  getWidthHeight,
+  createProjection
+} from "./dimensions";
 
 export default class Map {
   constructor(data, el) {
@@ -9,43 +14,7 @@ export default class Map {
     this.countries = topojson.feature(data, data.objects.countries).features;
     this.circles = {};
     this.covers = {};
-    this.ratios = {
-      sixteenNinths: 16 / 9,
-      sixteenTenths: 16 / 10
-    };
-    this.fixedAspectRatio = this.ratios.sixteenTenths;
-  }
-
-  _getWidthHeight() {
-    const wWidth = window.innerWidth;
-    const wHeight = window.innerHeight;
-    const realAspectRatio = wWidth / wHeight;
-
-    const width =
-      realAspectRatio < this.fixedAspectRatio
-        ? wWidth
-        : wHeight * this.fixedAspectRatio;
-    const height =
-      realAspectRatio < this.fixedAspectRatio
-        ? wWidth / this.fixedAspectRatio
-        : wHeight;
-
-    return { width, height };
-  }
-
-  _getScale() {
-    const { width } = this._getWidthHeight();
-    return this.fixedAspectRatio === this.ratios.sixteenTenths
-      ? width / 5.9
-      : width / 6.5;
-  }
-
-  _getTrack(layout, name) {
-    let track;
-    layout.forEach(row => {
-      if (row.indexOf(name) !== -1) track = row.indexOf(name);
-    });
-    return track;
+    this.fixedAspectRatio = RATIOS.sixteenTenths;
   }
 
   // Use 2 different functions? one for showing circles and the other for the covers?
@@ -53,7 +22,7 @@ export default class Map {
     const filename = set.samples[name].filename;
     const data = set.samples[name].meta;
     const layout = set.pads.layout;
-    const track = this._getTrack(layout, name);
+    const track = getTrack(layout, name);
     const baseUrl = set.url;
     const ext = set.config.load.imageFileExt;
 
@@ -69,7 +38,7 @@ export default class Map {
       .style("fill", "red");
     this.circles[name] = circle;
 
-    const { width } = this._getWidthHeight();
+    const { width } = getWidthHeight(this.fixedAspectRatio);
     const coverSide = width / 8;
 
     // Draw covers
@@ -99,8 +68,8 @@ export default class Map {
   }
 
   render() {
-    const { width, height } = this._getWidthHeight();
-    const scale = this._getScale();
+    const { width, height } = getWidthHeight(this.fixedAspectRatio);
+    const scale = getScale(this.fixedAspectRatio);
     const coverSide = width / 8;
 
     // remove all elements
@@ -134,10 +103,10 @@ export default class Map {
   }
 }
 
-function createProjection(width, height, scale) {
-  return d3geo
-    .geoRobinson()
-    .scale(scale)
-    .translate([width / 2, height / 2 + height / 15])
-    .rotate([-10, 0, 0]);
+function getTrack(layout, name) {
+  let track;
+  layout.forEach(row => {
+    if (row.indexOf(name) !== -1) track = row.indexOf(name);
+  });
+  return track;
 }
