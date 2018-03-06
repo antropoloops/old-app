@@ -1,5 +1,4 @@
 import Map from "./map";
-// import addFullScreen from "./full-screen.js";
 
 export default function init(set, events, el) {
   fetch(set.geomap.dataUrl)
@@ -10,8 +9,6 @@ export default function init(set, events, el) {
 function createMap(set, events, data, el) {
   const map = new Map(data, el);
   map.render();
-
-  // addFullScreen();
 
   window.addEventListener("resize", () => {
     console.log("resize!");

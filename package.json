@@ -5,11 +5,15 @@
   "homepage": "https://antropoloops.github.io/visuals",
   "dependencies": {
     "audio-context": "^1.0.3",
+    "classcat": "^3.0.2",
     "d3": "^4.13.0",
     "d3-geo-projection": "^2.3.2",
     "nanobus": "^4.3.3",
     "promise-decode-audio-data": "^0.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
+    "screenfull": "^3.3.2",
     "tiny-emitter": "^2.0.2",
     "topojson": "^3.0.2"
   },

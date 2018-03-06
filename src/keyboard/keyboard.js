@@ -55,6 +55,8 @@ export default class Keyboard {
         this.events.emit("start", trigger.sample);
         this.setState(trigger, "running");
         break;
+      default:
+        break;
     }
   }
 
@@ -77,6 +79,8 @@ export default class Keyboard {
       case "gate":
         this.setState(trigger, "stopped");
         this.events.emit("stop", trigger.sample);
+        break;
+      default:
         break;
     }
   }
