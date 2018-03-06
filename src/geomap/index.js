@@ -18,21 +18,10 @@ function createMap(set, events, data, el) {
     map.render();
   });
 
-  const getTrack = (layout, name) => {
-    let track;
-    layout.forEach(row => {
-      if (row.indexOf(name) !== -1) track = row.indexOf(name);
-    });
-    return track;
-  };
-
   events.on("start", name => {
     const sample = set.samples[name];
-    const layout = set.pads.layout;
-    const track = getTrack(layout, name);
-
     if (sample) {
-      map.show(name, sample.meta, track);
+      map.show(name, set);
     }
   });
 

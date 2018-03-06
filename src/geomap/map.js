@@ -40,10 +40,23 @@ export default class Map {
       : width / 6.5;
   }
 
-  // Use 2 different functions, one for showing circles and the other for the covers?
-  show(name, data, track) {
-    console.log("name", name);
-    console.log("data", data);
+  _getTrack(layout, name) {
+    let track;
+    layout.forEach(row => {
+      if (row.indexOf(name) !== -1) track = row.indexOf(name);
+    });
+    return track;
+  }
+
+  // Use 2 different functions? one for showing circles and the other for the covers?
+  show(name, set) {
+    const filename = set.samples[name].filename;
+    const data = set.samples[name].meta;
+    const layout = set.pads.layout;
+    const track = this._getTrack(layout, name);
+    const baseUrl = set.url;
+    const ext = set.config.load.imageFileExt;
+
     if (!this.mapContainer) return;
 
     // Draw circles
@@ -61,12 +74,13 @@ export default class Map {
 
     // Draw covers
     const cover = this.coversContainer
-      .append("rect")
+      .append("svg:image")
       .attr("width", coverSide)
       .attr("height", coverSide)
       .attr("x", track * coverSide)
       .attr("y", 0)
-      .style("stroke", "white");
+      .style("stroke", "white")
+      .attr("xlink:href", baseUrl + filename + ext);
     this.covers[name] = cover;
   }
 
