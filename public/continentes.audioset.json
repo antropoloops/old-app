@@ -15,8 +15,32 @@
       "type": "gate"
     }
   },
-  "geomap": {
-    "dataUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json"
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "layout": [
+      [
+        "ossie",
+        "nubian",
+        "mississipi",
+        "madinda",
+        "ed-lewis",
+        "indvumo",
+        "orillas",
+        "tabla",
+        "camino"
+      ],
+      [
+        "ballade",
+        "rueda",
+        "ogbeler",
+        "mocita",
+        "pae",
+        "mariola",
+        "funeraire",
+        "agnus-dei",
+        "are-are"
+      ]
+    ]
   },
   "keyboard": {
     "q": { "sample": "ossie", "type": "toggle" },
@@ -50,11 +74,7 @@
       ],
       "rows": ["cabeza", "cuerpo", "pies"]
     },
-    "layout": [
-      ["ossie", "nubian", "mississipi", "madinda", "ed-lewis", "indvumo"],
-      ["orillas", "tabla", "camino", "ballade", "rueda", "ogbeler"],
-      ["mocita", "pae", "mariola", "funeraire", "agnus-dei", "are-are"]
-    ]
+    "layout": []
   },
   "samples": {
     "ossie": {

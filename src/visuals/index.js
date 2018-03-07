@@ -1,7 +1,7 @@
 import Map from "./map";
 
 export default function init(set, events, el) {
-  fetch(set.geomap.dataUrl)
+  fetch(set.visuals.geoMapUrl)
     .then(response => response.json())
     .then(data => createMap(set, events, data, el));
 }

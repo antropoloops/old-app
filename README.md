@@ -1,6 +1,6 @@
 # Antropoloops
 
-See it here: https://antropoloops.github.io/visuals
+See it here: https://antropoloops.github.io/app
 
 ## Setup
 

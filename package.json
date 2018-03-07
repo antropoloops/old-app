@@ -1,8 +1,8 @@
 {
-  "name": "visuals",
+  "name": "antropoloops-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://antropoloops.github.io/visuals",
+  "homepage": "https://antropoloops.github.io/app",
   "dependencies": {
     "audio-context": "^1.0.3",
     "classcat": "^3.0.2",

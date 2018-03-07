@@ -1,7 +1,7 @@
 import Events from "nanobus";
 import keyboard from "./keyboard";
 import audio from "./audio";
-import geomap from "./geomap";
+import visuals from "./visuals";
 import app from "./app";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
@@ -19,12 +19,10 @@ function loadSet(url) {
   return fetch(url).then(response => response.json());
 }
 
-const visuals = document.getElementById("visuals");
-
 function init(set) {
   audio(set, events);
   keyboard(set, events);
-  geomap(set, events, visuals);
+  visuals(set, events, document.getElementById("visuals"));
   app(set, events);
 }
 
