@@ -2,7 +2,7 @@ import Events from "nanobus";
 import keyboard from "./keyboard";
 import audio from "./audio";
 import geomap from "./geomap";
-import selector from "./selector";
+import app from "./app";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
@@ -25,7 +25,7 @@ function init(set) {
   audio(set, events);
   keyboard(set, events);
   geomap(set, events, visuals);
-  selector(set, events);
+  app(set, events);
 }
 
 loadSet("continentes.audioset.json").then(init);

@@ -1,26 +1,17 @@
 import React, { Component } from "react";
-import "./App.css";
-import cc from "classcat";
-
-const Sample = ({ name, sample, keyboard, images, isRunning }) => (
-  <div className={cc(["Sample", isRunning ? "running" : "stopped"])}>
-    <img src={images[name]} alt="album cover" />
-    <div className="key">{keyboard[name]}</div>
-    <div className="title">{sample.meta.title}</div>
-    <div className="country">{sample.meta.country}</div>
-  </div>
-);
+import Sample from "./Sample";
 
 class Samples extends Component {
   constructor(props) {
     super(props);
+    const { events } = props;
     this.state = {};
-    props.events.on("start", name =>
+    events.on("start", name =>
       this.setState({
         [name]: true
       })
     );
-    props.events.on("stop", name =>
+    events.on("stop", name =>
       this.setState({
         [name]: false
       })
@@ -32,7 +23,7 @@ class Samples extends Component {
     const images = buildImageUrls(set);
     const keyboard = keyBindings(set.keyboard);
     return (
-      <div className="samples">
+      <div className="Samples">
         {Object.keys(set.samples).map(name => (
           <Sample
             key={name}

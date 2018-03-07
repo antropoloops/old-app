@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
+import Set from "./Set";
 import { openFullScreen } from "./full-screen";
-import Samples from "./Samples";
+import "./App.css";
 
-const Set = ({ set, events }) => (
-  <div className="Set">
-    <h1>{set.title}</h1>
-    <p>{set.description}</p>
+const Header = () => (
+  <header>
     <button className="fullscreen" onClick={openFullScreen}>
       Full Screen
     </button>
-    <Samples set={set} events={events} />
-  </div>
+  </header>
 );
 
 class App extends Component {
@@ -19,6 +16,7 @@ class App extends Component {
     const { set, events } = this.props;
     return (
       <div className="App">
+        <Header />
         <Set set={set} events={events} />
       </div>
     );
