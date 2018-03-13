@@ -4,20 +4,24 @@ import Player from "./player";
 
 const ctx = Context();
 
-export default function init(set, events) {
-  const samples = set.samples;
-  const config = set.config.samples;
+export default function init(set) {
+  const { url, samples, config } = set.data;
 
-  const loader = new Loader(ctx, events);
+  const loader = new Loader(ctx, set.events);
   const player = new Player(ctx, loader.buffers);
 
-  loader.load(set.url, samples, set.config.load);
+  loader.load(url, samples, config.load);
 
-  events.on("start", name => {
-    player.play(name, samples[name], config);
+  set.on("unmount", () => {
+    console.log("unmount");
+    player.stopAll();
   });
 
-  events.on("stop", name => {
+  set.events.on("start", name => {
+    player.play(name, samples[name], config.samples);
+  });
+
+  set.events.on("stop", name => {
     player.stop(name);
   });
 }

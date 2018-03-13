@@ -3,10 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as FullScreen from "./full-screen";
 
-export default function init(set, events) {
+export default function init(manager) {
   FullScreen.init();
-  ReactDOM.render(
-    <App set={set} events={events} />,
-    document.getElementById("app")
-  );
+  ReactDOM.render(<App manager={manager} />, document.getElementById("app"));
 }

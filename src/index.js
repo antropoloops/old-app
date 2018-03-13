@@ -1,4 +1,4 @@
-import Events from "nanobus";
+import { AudioSetManager } from "./audio-set";
 import keyboard from "./keyboard";
 import audio from "./audio";
 import visuals from "./visuals";
@@ -6,26 +6,19 @@ import app from "./app";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
 
-const DEBUG = false;
-const events = new Events();
+const el = document.getElementById("visuals");
 
-if (DEBUG) {
-  events.on("*", (...args) => {
-    console.log("event", args);
+function init() {
+  const manager = new AudioSetManager();
+
+  manager.onSetLoaded(set => {
+    keyboard(set);
+    audio(set);
+    visuals(set, el);
   });
+
+  app(manager);
 }
 
-function loadSet(url) {
-  return fetch(url).then(response => response.json());
-}
-
-function init(set) {
-  audio(set, events);
-  keyboard(set, events);
-  visuals(set, events, document.getElementById("visuals"));
-  app(set, events);
-}
-
-loadSet("continentes.audioset.json").then(init);
-
+init();
 registerServiceWorker();

@@ -2,13 +2,17 @@
   padding: 5px;
 }
 
-.App button.fullscreen {
+.App button {
   font-size: 1.2em;
-  background-color: lawngreen;
   width: 100%;
   padding: 0.7em;
   border: 0;
   cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.App button.fullscreen {
+  background-color: lawngreen;
 }
 
 .Set {

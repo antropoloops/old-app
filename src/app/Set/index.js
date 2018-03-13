@@ -1,11 +1,22 @@
 import React from "react";
 import Samples from "./Samples";
+import { openFullScreen } from "../full-screen";
 
-const Set = ({ set, events }) => (
+const SetMeta = ({ set }) => (
+  <div className="meta">
+    <h1>{set.data.title}</h1>
+    <p>{set.data.description}</p>
+  </div>
+);
+
+const Set = ({ set, onChangeSet }) => (
   <div className="Set">
-    <h1>{set.title}</h1>
-    <p>{set.description}</p>
-    <Samples set={set} events={events} />
+    <button className="fullscreen" onClick={openFullScreen}>
+      Poner a pantalla completa
+    </button>
+    <button onClick={onChangeSet}>Cambiar de set</button>
+    <SetMeta set={set} />
+    <Samples set={set} />
   </div>
 );
 

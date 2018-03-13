@@ -1,7 +1,9 @@
 import Keyboard from "./keyboard";
 
-export default function init(set, events) {
-  const keyboard = new Keyboard(set.keyboard, set.config.keyboard, events);
+export default function init(set) {
+  const { data, events } = set;
+  const keyboard = new Keyboard(data.keyboard, data.config.keyboard, events);
+
   console.log("Available keys", keyboard.validKeys().join(" "));
 
   window.onkeydown = function(e) {

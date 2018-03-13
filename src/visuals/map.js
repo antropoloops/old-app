@@ -129,13 +129,16 @@ export default class Map {
     }
   }
 
+  clear() {
+    this.el.selectAll("*").remove();
+  }
+
   render() {
     const { width, height } = getWidthHeight(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
     const coverSide = width / 8;
 
-    // remove all elements
-    this.el.selectAll("*").remove();
+    this.clear();
 
     const svg = this.el
       .append("svg")

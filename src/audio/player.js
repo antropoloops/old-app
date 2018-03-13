@@ -29,4 +29,10 @@ export default class Player {
       source[name] = null;
     }
   }
+
+  stopAll() {
+    Object.keys(this.sources).forEach(name => {
+      this.sources[name].stop();
+    });
+  }
 }
