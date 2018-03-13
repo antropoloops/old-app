@@ -4,31 +4,30 @@ import Sample from "./Sample";
 class Samples extends Component {
   constructor(props) {
     super(props);
-    const { events } = props;
+    const { set } = props;
     this.state = {};
-    events.on("start", name =>
+    set.on("start", name =>
       this.setState({
         [name]: true
       })
     );
-    events.on("stop", name =>
+    set.on("stop", name =>
       this.setState({
         [name]: false
       })
     );
   }
   render() {
-    const { set } = this.props;
-    console.log(this.state);
-    const images = buildImageUrls(set);
-    const keyboard = keyBindings(set.keyboard);
+    const { data } = this.props.set;
+    const images = buildImageUrls(data);
+    const keyboard = keyBindings(data.keyboard);
     return (
       <div className="Samples">
-        {Object.keys(set.samples).map(name => (
+        {Object.keys(data.samples).map(name => (
           <Sample
             key={name}
             name={name}
-            sample={set.samples[name]}
+            sample={data.samples[name]}
             keyboard={keyboard}
             images={images}
             isRunning={this.state[name]}
