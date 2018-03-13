@@ -3,7 +3,7 @@ import * as topojson from "topojson";
 import {
   RATIOS,
   getScale,
-  getWidthHeight,
+  getScreenSize,
   createProjection
 } from "./dimensions";
 
@@ -19,29 +19,94 @@ export default class Map {
 
   // Use 2 different functions? one for showing circles and the other for the covers?
   show(name, set) {
+    if (!this.mapContainer) return;
+
     const filename = set.samples[name].filename;
     const data = set.samples[name].meta;
-    const layout = set.pads.layout;
+    const layout = set.visuals.layout;
     const track = getTrack(layout, name);
     const baseUrl = set.url;
     const ext = set.config.load.imageFileExt;
 
-    if (!this.mapContainer) return;
+    const bpm = set.bpm;
+    const loopend = data.loopend; // El loopend es independiente de bpm
+    const dur = 60 / bpm * loopend; // En segundos
 
-    // Draw circles
+    const numSlices = 36;
+    const angle = d3
+      .scaleLinear()
+      .range([0, 360]) // working in degrees
+      .domain([0, numSlices]);
+
+    // create arc generator
+    const arc = d3.arc();
+    const arcs = d3.range(numSlices).map((d, i) => {
+      return {
+        startAngle: deg2rad(angle(d)), // working in degrees
+        endAngle:
+          i === numSlices - 1 ? deg2rad(angle(d + 1)) : deg2rad(angle(d + 2)),
+        innerRadius: 0,
+        outerRadius: 20
+      };
+    });
+
+    const outerArcs = d3.range(numSlices).map((d, i) => {
+      return {
+        startAngle: deg2rad(angle(d)), // working in degrees
+        endAngle:
+          i === numSlices - 1 ? deg2rad(angle(d + 1)) : deg2rad(angle(d + 2)),
+        innerRadius: 0,
+        outerRadius: 30
+      };
+    });
+
     const [cx, cy] = this.projection(data.lnglat);
-    const circle = this.mapContainer
-      .append("circle")
-      .attr("cx", cx)
-      .attr("cy", cy)
-      .attr("r", 10)
-      .style("fill", "red");
-    this.circles[name] = circle;
+    const circlesGroup = this.circlesContainer
+      .append("g")
+      .attr("transform", `translate(${cx}, ${cy})`);
 
-    const { width } = getWidthHeight(this.fixedAspectRatio);
-    const coverSide = width / 8;
+    // Sin empaquetar todo en este segundo grupo no gira en su sitio
+    const circle = circlesGroup.append("g");
+
+    circle
+      .append("animateTransform")
+      .attr("attributeType", "xml")
+      .attr("attributeName", "transform")
+      .attr("type", "rotate")
+      .attr("from", "0 0 0 ")
+      .attr("to", "360 0 0 ")
+      .attr("dur", dur + "s")
+      .attr("repeatCount", "indefinite");
+
+    circle
+      .selectAll(".outerArcs")
+      .data(outerArcs)
+      .enter()
+      .append("path")
+      .attr("class", "outerArcs")
+      .attr("d", arc)
+      .style("fill", "orange")
+      .style("opacity", (d, i) => {
+        return 0.3 / numSlices * i;
+      });
+
+    circle
+      .selectAll(".arcs")
+      .data(arcs)
+      .enter()
+      .append("path")
+      .attr("class", "arcs")
+      .attr("d", arc)
+      .style("fill", "orange")
+      .style("opacity", (d, i) => {
+        return 1 / numSlices * i;
+      });
+
+    this.circles[name] = circlesGroup;
 
     // Draw covers
+    const { width } = getScreenSize(this.fixedAspectRatio);
+    const coverSide = width / 8;
     const cover = this.coversContainer
       .append("svg:image")
       .attr("width", coverSide)
@@ -72,7 +137,7 @@ export default class Map {
   }
 
   render() {
-    const { width, height } = getWidthHeight(this.fixedAspectRatio);
+    const { width, height } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
     const coverSide = width / 8;
 
@@ -84,9 +149,14 @@ export default class Map {
       .attr("width", width)
       .attr("height", height);
 
-    this.coversContainer = svg.append("g");
+    this.coversContainer = svg.append("g").attr("id", "covers");
     this.mapContainer = svg
       .append("g")
+      .attr("id", "map")
+      .attr("transform", `translate(0, ${coverSide})`);
+    this.circlesContainer = svg
+      .append("g")
+      .attr("id", "circles")
       .attr("transform", `translate(0, ${coverSide})`);
 
     this.projection = createProjection(width, height - coverSide, scale);
@@ -112,4 +182,8 @@ function getTrack(layout, name) {
     if (row.indexOf(name) !== -1) track = row.indexOf(name);
   });
   return track;
+}
+
+function deg2rad(degrees) {
+  return degrees * (Math.PI / 180);
 }
