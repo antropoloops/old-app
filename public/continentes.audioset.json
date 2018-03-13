@@ -18,27 +18,9 @@
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "layout": [
-      [
-        "ossie",
-        "nubian",
-        "mississipi",
-        "madinda",
-        "ed-lewis",
-        "indvumo",
-        "orillas",
-        "tabla"
-      ],
-      [
-        "ballade",
-        "rueda",
-        "ogbeler",
-        "mocita",
-        "pae",
-        "mariola",
-        "funeraire",
-        "agnus-dei"
-      ],
-      ["camino", "are-are"]
+      ["ossie", "orillas", "mocita", "nubian", "tabla", "pae"],
+      ["mississipi", "camino", "mariola", "madinda", "ballade", "funeraire"],
+      ["ed-lewis", "rueda", "agnus-dei", "indvumo", "ogbeler", "are-are"]
     ]
   },
   "keyboard": {
