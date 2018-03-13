@@ -1,6 +1,6 @@
 import * as d3geo from "d3-geo-projection";
 
-export function getWidthHeight(fixedAspectRatio) {
+export function getScreenSize(fixedAspectRatio) {
   const wWidth = window.innerWidth;
   const wHeight = window.innerHeight;
   const realAspectRatio = wWidth / wHeight;
@@ -19,7 +19,7 @@ export const RATIOS = {
 };
 
 export function getScale(fixedAspectRatio) {
-  const { width } = getWidthHeight(fixedAspectRatio);
+  const { width } = getScreenSize(fixedAspectRatio);
   return fixedAspectRatio === RATIOS.sixteenTenths ? width / 5.9 : width / 6.5;
 }
 

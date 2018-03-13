@@ -3,7 +3,7 @@ import * as topojson from "topojson";
 import {
   RATIOS,
   getScale,
-  getWidthHeight,
+  getScreenSize,
   createProjection
 } from "./dimensions";
 
@@ -27,6 +27,10 @@ export default class Map {
     const track = getTrack(layout, name);
     const baseUrl = set.url;
     const ext = set.config.load.imageFileExt;
+
+    const bpm = set.bpm;
+    const loopend = data.loopend; // El loopend es independiente de bpm
+    const dur = 60 / bpm * loopend; // En segundos
 
     const numSlices = 36;
     const angle = d3
@@ -57,7 +61,7 @@ export default class Map {
     });
 
     const [cx, cy] = this.projection(data.lnglat);
-    const circlesGroup = this.mapContainer
+    const circlesGroup = this.circlesContainer
       .append("g")
       .attr("transform", `translate(${cx}, ${cy})`);
 
@@ -71,7 +75,7 @@ export default class Map {
       .attr("type", "rotate")
       .attr("from", "0 0 0 ")
       .attr("to", "360 0 0 ")
-      .attr("dur", "4s")
+      .attr("dur", dur + "s")
       .attr("repeatCount", "indefinite");
 
     circle
@@ -98,12 +102,11 @@ export default class Map {
         return 1 / numSlices * i;
       });
 
-    this.circles[name] = circle;
-
-    const { width } = getWidthHeight(this.fixedAspectRatio);
-    const coverSide = width / 8;
+    this.circles[name] = circlesGroup;
 
     // Draw covers
+    const { width } = getScreenSize(this.fixedAspectRatio);
+    const coverSide = width / 8;
     const cover = this.coversContainer
       .append("svg:image")
       .attr("width", coverSide)
@@ -134,7 +137,7 @@ export default class Map {
   }
 
   render() {
-    const { width, height } = getWidthHeight(this.fixedAspectRatio);
+    const { width, height } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
     const coverSide = width / 8;
 
@@ -146,9 +149,14 @@ export default class Map {
       .attr("width", width)
       .attr("height", height);
 
-    this.coversContainer = svg.append("g");
+    this.coversContainer = svg.append("g").attr("id", "covers");
     this.mapContainer = svg
       .append("g")
+      .attr("id", "map")
+      .attr("transform", `translate(0, ${coverSide})`);
+    this.circlesContainer = svg
+      .append("g")
+      .attr("id", "circles")
       .attr("transform", `translate(0, ${coverSide})`);
 
     this.projection = createProjection(width, height - coverSide, scale);
