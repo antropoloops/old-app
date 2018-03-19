@@ -1,0 +1,4 @@
+{
+  "host": "@antpls/server-app.feathersjs.com",
+  "port": "PORT"
+}
