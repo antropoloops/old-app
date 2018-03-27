@@ -14,7 +14,13 @@ export default class Map {
     this.countries = topojson.feature(data, data.objects.countries).features;
     this.circles = {};
     this.covers = {};
+    this.refLines = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
+    this.circleNumSlices = 36;
+    this.coverVerP = 3;
+    this.coverHorP = 3;
+    this.coverCountryH = 20;
+    this.coverDotR = 2;
   }
 
   // Use 2 different functions? one for showing circles and the other for the covers?
@@ -23,8 +29,7 @@ export default class Map {
 
     const filename = set.samples[name].filename;
     const data = set.samples[name].meta;
-    const layout = set.visuals.layout;
-    const track = getTrack(layout, name);
+    const track = getTrack(set.visuals.layout, name);
     const baseUrl = set.url;
     const ext = set.config.load.imageFileExt;
 
@@ -32,34 +37,38 @@ export default class Map {
     const loopend = data.loopend; // El loopend es independiente del bpm
     const dur = 60 / bpm * loopend; // Calcula la duración del loop en segundos
 
-    const numSlices = 36;
     const angle = d3
       .scaleLinear()
       .range([0, 360]) // working in degrees
-      .domain([0, numSlices]);
+      .domain([0, this.circleNumSlices]);
 
     // create arc generator
     const arc = d3.arc();
-    const arcs = d3.range(numSlices).map((d, i) => {
+
+    const arcs = d3.range(this.circleNumSlices).map((d, i) => {
       return {
         startAngle: deg2rad(angle(d)), // working in degrees
         endAngle:
-          i === numSlices - 1 ? deg2rad(angle(d + 1)) : deg2rad(angle(d + 2)),
+          i === this.circleNumSlices - 1
+            ? deg2rad(angle(d + 1))
+            : deg2rad(angle(d + 2)),
         innerRadius: 0,
         outerRadius: 20
       };
     });
-
-    const outerArcs = d3.range(numSlices).map((d, i) => {
+    const outerArcs = d3.range(this.circleNumSlices).map((d, i) => {
       return {
         startAngle: deg2rad(angle(d)), // working in degrees
         endAngle:
-          i === numSlices - 1 ? deg2rad(angle(d + 1)) : deg2rad(angle(d + 2)),
+          i === this.circleNumSlices - 1
+            ? deg2rad(angle(d + 1))
+            : deg2rad(angle(d + 2)),
         innerRadius: 0,
         outerRadius: 30
       };
     });
 
+    // Draw circles
     const [cx, cy] = this.projection(data.lnglat);
     const circlesGroup = this.circlesContainer
       .append("g")
@@ -87,7 +96,7 @@ export default class Map {
       .attr("d", arc)
       .style("fill", "orange")
       .style("opacity", (d, i) => {
-        return 0.3 / numSlices * i;
+        return 0.3 / this.circleNumSlices * i;
       });
 
     circle
@@ -99,15 +108,17 @@ export default class Map {
       .attr("d", arc)
       .style("fill", "orange")
       .style("opacity", (d, i) => {
-        return 1 / numSlices * i;
+        return 1 / this.circleNumSlices * i;
       });
 
     this.circles[name] = circlesGroup;
 
     // Draw covers
+    const cover = this.coversContainer.append("g");
     const { width } = getScreenSize(this.fixedAspectRatio);
     const coverSide = width / 8;
-    const cover = this.coversContainer
+
+    cover
       .append("svg:image")
       .attr("width", coverSide)
       .attr("height", coverSide)
@@ -115,7 +126,81 @@ export default class Map {
       .attr("y", 0)
       .style("stroke", "white")
       .attr("xlink:href", baseUrl + filename + ext);
+
+    // Draw country rectangle
+    cover
+      .append("rect")
+      .attr("width", coverSide)
+      .attr("height", this.coverCountryH)
+      .attr("x", track * coverSide)
+      .attr("y", coverSide + this.coverVerP)
+      .style("fill", "orange");
+
+    // Draw country text
+    cover
+      .append("text")
+      .attr("x", track * coverSide + this.coverHorP)
+      .attr("y", coverSide + this.coverVerP + this.coverCountryH / 2)
+      .attr("dy", "0.35em")
+      .style("font-size", 11 + "px")
+      .text(data.country);
+
+    // Draw date point
+    cover
+      .append("circle")
+      .attr("cx", track * coverSide + this.coverHorP + this.coverDotR)
+      .attr("cy", coverSide + this.coverVerP + this.coverCountryH * 2)
+      .attr("r", this.coverDotR)
+      .style("fill", "orange");
+
+    // Draw date text
+    cover
+      .append("text")
+      .attr("x", track * coverSide + this.coverHorP)
+      .attr("y", coverSide + this.coverVerP + this.coverCountryH * 1.5)
+      .attr("dy", "0.35em")
+      .style("font-size", 11 + "px")
+      .style("font-weight", "bold")
+      .style("fill", "orange")
+      .text(data.year);
+
     this.covers[name] = cover;
+
+    // Draw refLines
+    const x1 = track * coverSide + this.coverHorP + this.coverDotR;
+    const y1 = 0;
+    const x2 = cx;
+    const y2 = cy;
+    const h = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    const a = h / 10;
+    const alfa = Math.acos((y2 - y1) / h);
+    const curveCoords = [
+      {
+        x: x1,
+        y: y1
+      },
+      {
+        x: x1 + (x2 - x1) / 2 + a * Math.cos(Math.PI - alfa),
+        y: y1 + (y2 - y1) / 2 + a * Math.sin(Math.PI - alfa)
+      },
+      { x: x2, y: y2 }
+    ];
+
+    const line = d3
+      .line()
+      .x(d => d.x)
+      .y(d => d.y)
+      .curve(d3.curveBasis);
+
+    const refLine = this.refLinesContainer
+      .append("path")
+      .datum(curveCoords)
+      .attr("d", line)
+      .style("stroke", "orange")
+      .style("fill", "none")
+      .style("stroke-width", 1);
+
+    this.refLines[name] = refLine;
   }
 
   hide(name) {
@@ -130,6 +215,12 @@ export default class Map {
       cover.remove();
       this.covers[name] = null;
     }
+
+    const refLine = this.refLines[name];
+    if (refLine) {
+      refLine.remove();
+      this.refLines[name] = null;
+    }
   }
 
   clear() {
@@ -139,7 +230,7 @@ export default class Map {
   render() {
     const { width, height } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
-    const coverSide = width / 8;
+    const coversHeight = width / 8 + this.coverVerP + this.coverCountryH * 2;
 
     this.clear();
 
@@ -149,18 +240,22 @@ export default class Map {
       .attr("width", width)
       .attr("height", height);
 
-    this.coversContainer = svg.append("g").attr("id", "covers");
+    this.projection = createProjection(width, height - coversHeight, scale);
+    const path = d3.geoPath().projection(this.projection);
+
     this.mapContainer = svg
       .append("g")
       .attr("id", "map")
-      .attr("transform", `translate(0, ${coverSide})`);
+      .attr("transform", `translate(0, ${coversHeight})`);
+    this.coversContainer = svg.append("g").attr("id", "covers");
+    this.refLinesContainer = svg
+      .append("g")
+      .attr("id", "refLines")
+      .attr("transform", `translate(0, ${coversHeight})`);
     this.circlesContainer = svg
       .append("g")
       .attr("id", "circles")
-      .attr("transform", `translate(0, ${coverSide})`);
-
-    this.projection = createProjection(width, height - coverSide, scale);
-    const path = d3.geoPath().projection(this.projection);
+      .attr("transform", `translate(0, ${coversHeight})`);
 
     // Draw map
     this.mapContainer
