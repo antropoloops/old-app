@@ -19,8 +19,8 @@
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "layout": [
       ["ossie", "orillas", "mocita", "nubian", "tabla", "pae"],
-      ["mississipi", "camino", "mariola", "madinda", "ballade", "funeraire"],
-      ["ed-lewis", "rueda", "agnus-dei", "indvumo", "ogbeler", "are-are"]
+      ["mississipi", "camino", "mariola", "funeraire", "ballade", "madinda"],
+      ["ed-lewis", "ogbeler", "agnus-dei", "indvumo", "rueda", "are-are"]
     ]
   },
   "keyboard": {
@@ -33,14 +33,14 @@
     "a": { "sample": "mississipi", "type": "toggle" },
     "s": { "sample": "camino" },
     "d": { "sample": "mariola" },
-    "f": { "sample": "madinda" },
+    "f": { "sample": "funeraire" },
     "g": { "sample": "ballade" },
-    "h": { "sample": "funeraire" },
+    "h": { "sample": "madinda" },
     "z": { "sample": "ed-lewis" },
-    "x": { "sample": "rueda", "type": "toggle" },
+    "x": { "sample": "ogbeler", "type": "toggle" },
     "c": { "sample": "agnus-dei" },
     "v": { "sample": "indvumo" },
-    "b": { "sample": "ogbeler" },
+    "b": { "sample": "rueda" },
     "n": { "sample": "are-are" }
   },
   "pads": {
