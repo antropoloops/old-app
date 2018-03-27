@@ -6,7 +6,6 @@
   "dependencies": {
     "audio-context": "^1.0.3",
     "classcat": "^3.0.2",
-    "@antpls/visuals": "^1.0.0",
     "nanobus": "^4.3.3",
     "promise-decode-audio-data": "^0.4.1",
     "react": "^16.2.0",

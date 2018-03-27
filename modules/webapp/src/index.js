@@ -1,7 +1,7 @@
 import { AudioSetManager } from "./audio-set";
 import keyboard from "./keyboard";
 import audio from "./audio";
-import visuals from "@antpls/visuals";
+import visuals from "./visuals";
 import app from "./app";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
