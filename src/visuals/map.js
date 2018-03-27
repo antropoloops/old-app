@@ -29,8 +29,8 @@ export default class Map {
     const ext = set.config.load.imageFileExt;
 
     const bpm = set.bpm;
-    const loopend = data.loopend; // El loopend es independiente de bpm
-    const dur = 60 / bpm * loopend; // En segundos
+    const loopend = data.loopend; // El loopend es independiente del bpm
+    const dur = 60 / bpm * loopend; // Calcula la duración del loop en segundos
 
     const numSlices = 36;
     const angle = d3
