@@ -8,7 +8,7 @@ export default function init(set, el) {
 
 function createMap(set, geodata, el) {
   const { data } = set;
-  const map = new Map(geodata, el);
+  const map = new Map(data, geodata, el);
 
   window.addEventListener("resize", () => {
     console.log("resize!");
@@ -27,7 +27,7 @@ function createMap(set, geodata, el) {
   set.on("start", name => {
     const sample = data.samples[name];
     if (sample) {
-      map.show(name, data);
+      map.show(name);
     }
   });
 

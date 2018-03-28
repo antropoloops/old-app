@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import * as chroma from "chroma-js";
 import * as topojson from "topojson";
 import {
   RATIOS,
@@ -7,8 +8,30 @@ import {
   createProjection
 } from "./dimensions";
 
+import { createCircle } from "./circle";
+import { createAlbum, getAlbumHeight } from "./album";
+import { createRefLine } from "./ref-line";
+
+function getAlbumInfo(set, name) {
+  const sample = set.samples[name].meta;
+  const trackNumber = getTrack(set.visuals.layout, name);
+  const filename = set.samples[name].filename;
+  const ext = set.config.load.imageFileExt;
+
+  return {
+    trackNumber,
+    lnglat: sample.lnglat,
+    duration: 60 / set.bpm * sample.loopend,
+    loopend: sample.loopend,
+    imageUrl: set.url + filename + ext,
+    year: sample.year,
+    country: sample.country
+  };
+}
+
 export default class Map {
-  constructor(data, el) {
+  constructor(set, data, el) {
+    this.set = set;
     this.data = data;
     this.el = d3.select(el);
     this.countries = topojson.feature(data, data.objects.countries).features;
@@ -16,190 +39,29 @@ export default class Map {
     this.covers = {};
     this.refLines = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
-    this.circleNumSlices = 36;
-    this.coverVerP = 3;
-    this.coverHorP = 3;
-    this.coverCountryH = 20;
-    this.coverDotR = 2;
   }
 
   // Use 2 different functions? one for showing circles and the other for the covers?
-  show(name, set) {
+  show(name) {
     if (!this.mapContainer) return;
 
-    const filename = set.samples[name].filename;
-    const data = set.samples[name].meta;
-    const track = getTrack(set.visuals.layout, name);
-    const baseUrl = set.url;
-    const ext = set.config.load.imageFileExt;
-
-    const bpm = set.bpm;
-    const loopend = data.loopend; // El loopend es independiente del bpm
-    const dur = 60 / bpm * loopend; // Calcula la duración del loop en segundos
-
-    const angle = d3
-      .scaleLinear()
-      .range([0, 360]) // working in degrees
-      .domain([0, this.circleNumSlices]);
-
-    // create arc generator
-    const arc = d3.arc();
-
-    const arcs = d3.range(this.circleNumSlices).map((d, i) => {
-      return {
-        startAngle: deg2rad(angle(d)), // working in degrees
-        endAngle:
-          i === this.circleNumSlices - 1
-            ? deg2rad(angle(d + 1))
-            : deg2rad(angle(d + 2)),
-        innerRadius: 0,
-        outerRadius: 20
-      };
-    });
-    const outerArcs = d3.range(this.circleNumSlices).map((d, i) => {
-      return {
-        startAngle: deg2rad(angle(d)), // working in degrees
-        endAngle:
-          i === this.circleNumSlices - 1
-            ? deg2rad(angle(d + 1))
-            : deg2rad(angle(d + 2)),
-        innerRadius: 0,
-        outerRadius: 30
-      };
-    });
-
-    // Draw circles
-    const [cx, cy] = this.projection(data.lnglat);
-    const circlesGroup = this.circlesContainer
-      .append("g")
-      .attr("transform", `translate(${cx}, ${cy})`);
-
-    // Sin empaquetar todo en este segundo grupo no gira en su sitio
-    const circle = circlesGroup.append("g");
-
-    circle
-      .append("animateTransform")
-      .attr("attributeType", "xml")
-      .attr("attributeName", "transform")
-      .attr("type", "rotate")
-      .attr("from", "0 0 0 ")
-      .attr("to", "360 0 0 ")
-      .attr("dur", dur + "s")
-      .attr("repeatCount", "indefinite");
-
-    circle
-      .selectAll(".outerArcs")
-      .data(outerArcs)
-      .enter()
-      .append("path")
-      .attr("class", "outerArcs")
-      .attr("d", arc)
-      .style("fill", "orange")
-      .style("opacity", (d, i) => {
-        return 0.3 / this.circleNumSlices * i;
-      });
-
-    circle
-      .selectAll(".arcs")
-      .data(arcs)
-      .enter()
-      .append("path")
-      .attr("class", "arcs")
-      .attr("d", arc)
-      .style("fill", "orange")
-      .style("opacity", (d, i) => {
-        return 1 / this.circleNumSlices * i;
-      });
-
-    this.circles[name] = circlesGroup;
-
-    // Draw covers
-    const cover = this.coversContainer.append("g");
+    const info = getAlbumInfo(this.set, name);
     const { width } = getScreenSize(this.fixedAspectRatio);
-    const coverSide = width / 8;
+    const [cx, cy] = this.projection(info.lnglat);
 
-    cover
-      .append("svg:image")
-      .attr("width", coverSide)
-      .attr("height", coverSide)
-      .attr("x", track * coverSide)
-      .attr("y", 0)
-      .style("stroke", "white")
-      .attr("xlink:href", baseUrl + filename + ext);
+    const circle = createCircle(this.circlesContainer, cx, cy, info.duration);
+    this.circles[name] = circle;
 
-    // Draw country rectangle
-    cover
-      .append("rect")
-      .attr("width", coverSide)
-      .attr("height", this.coverCountryH)
-      .attr("x", track * coverSide)
-      .attr("y", coverSide + this.coverVerP)
-      .style("fill", "orange");
+    const album = createAlbum(this.coversContainer, width, info);
+    this.covers[name] = album;
 
-    // Draw country text
-    cover
-      .append("text")
-      .attr("x", track * coverSide + this.coverHorP)
-      .attr("y", coverSide + this.coverVerP + this.coverCountryH / 2)
-      .attr("dy", "0.35em")
-      .style("font-size", 11 + "px")
-      .text(data.country);
-
-    // Draw date point
-    cover
-      .append("circle")
-      .attr("cx", track * coverSide + this.coverHorP + this.coverDotR)
-      .attr("cy", coverSide + this.coverVerP + this.coverCountryH * 2)
-      .attr("r", this.coverDotR)
-      .style("fill", "orange");
-
-    // Draw date text
-    cover
-      .append("text")
-      .attr("x", track * coverSide + this.coverHorP)
-      .attr("y", coverSide + this.coverVerP + this.coverCountryH * 1.5)
-      .attr("dy", "0.35em")
-      .style("font-size", 11 + "px")
-      .style("font-weight", "bold")
-      .style("fill", "orange")
-      .text(data.year);
-
-    this.covers[name] = cover;
-
-    // Draw refLines
-    const x1 = track * coverSide + this.coverHorP + this.coverDotR;
-    const y1 = 0;
-    const x2 = cx;
-    const y2 = cy;
-    const h = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-    const a = h / 10;
-    const alfa = Math.acos((y2 - y1) / h);
-    const curveCoords = [
-      {
-        x: x1,
-        y: y1
-      },
-      {
-        x: x1 + (x2 - x1) / 2 + a * Math.cos(Math.PI - alfa),
-        y: y1 + (y2 - y1) / 2 + a * Math.sin(Math.PI - alfa)
-      },
-      { x: x2, y: y2 }
-    ];
-
-    const line = d3
-      .line()
-      .x(d => d.x)
-      .y(d => d.y)
-      .curve(d3.curveBasis);
-
-    const refLine = this.refLinesContainer
-      .append("path")
-      .datum(curveCoords)
-      .attr("d", line)
-      .style("stroke", "orange")
-      .style("fill", "none")
-      .style("stroke-width", 1);
-
+    const refLine = createRefLine(
+      this.refLinesContainer,
+      width,
+      cx,
+      cy,
+      info.trackNumber
+    );
     this.refLines[name] = refLine;
   }
 
@@ -230,7 +92,7 @@ export default class Map {
   render() {
     const { width, height } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
-    const coversHeight = width / 8 + this.coverVerP + this.coverCountryH * 2;
+    const coversHeight = getAlbumHeight(width);
 
     this.clear();
 
@@ -272,13 +134,14 @@ export default class Map {
 }
 
 function getTrack(layout, name) {
-  let track;
+  let trackNumber;
   layout.forEach(row => {
-    if (row.indexOf(name) !== -1) track = row.indexOf(name);
+    if (row.indexOf(name) !== -1) trackNumber = row.indexOf(name);
   });
-  return track;
+  return trackNumber;
 }
 
-function deg2rad(degrees) {
-  return degrees * (Math.PI / 180);
+function getColor(trackNumber) {
+  console.log("chroma", chroma("pink"));
 }
+getColor(1);
