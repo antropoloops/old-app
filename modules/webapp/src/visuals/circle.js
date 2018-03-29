@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { getColor } from "./color";
 
 // Number of slices in a cirlce
 const circleNumSlices = 36;
@@ -8,7 +9,7 @@ const degreesToSlice = d3
   .range([0, 360]) // working in degrees
   .domain([0, circleNumSlices]);
 
-export function createCircle(parent, cx, cy, duration) {
+export function createCircle(parent, cx, cy, duration, trackNumber) {
   const circlesGroup = parent
     .append("g")
     .attr("transform", `translate(${cx}, ${cy})`);
@@ -36,7 +37,7 @@ export function createCircle(parent, cx, cy, duration) {
     .append("path")
     .attr("class", "outerArcs")
     .attr("d", arc)
-    .style("fill", "orange")
+    .style("fill", getColor(trackNumber))
     .style("opacity", (d, i) => {
       return 0.3 / circleNumSlices * i;
     });
@@ -49,7 +50,7 @@ export function createCircle(parent, cx, cy, duration) {
     .append("path")
     .attr("class", "arcs")
     .attr("d", arc)
-    .style("fill", "orange")
+    .style("fill", getColor(trackNumber))
     .style("opacity", (d, i) => {
       return 1 / circleNumSlices * i;
     });

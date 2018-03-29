@@ -1,5 +1,4 @@
 import * as d3 from "d3";
-import * as chroma from "chroma-js";
 import * as topojson from "topojson";
 import {
   RATIOS,
@@ -14,12 +13,11 @@ import { createRefLine } from "./ref-line";
 
 function getAlbumInfo(set, name) {
   const sample = set.samples[name].meta;
-  const trackNumber = getTrack(set.visuals.layout, name);
   const filename = set.samples[name].filename;
   const ext = set.config.load.imageFileExt;
 
   return {
-    trackNumber,
+    trackNumber: set.visuals.layout[name],
     lnglat: sample.lnglat,
     duration: 60 / set.bpm * sample.loopend,
     loopend: sample.loopend,
@@ -30,11 +28,14 @@ function getAlbumInfo(set, name) {
 }
 
 export default class Map {
-  constructor(set, data, el) {
+  constructor(set, geodata, el) {
     this.set = set;
-    this.data = data;
+    this.geodata = geodata;
     this.el = d3.select(el);
-    this.countries = topojson.feature(data, data.objects.countries).features;
+    this.countries = topojson.feature(
+      geodata,
+      geodata.objects.countries
+    ).features;
     this.circles = {};
     this.covers = {};
     this.refLines = {};
@@ -49,7 +50,13 @@ export default class Map {
     const { width } = getScreenSize(this.fixedAspectRatio);
     const [cx, cy] = this.projection(info.lnglat);
 
-    const circle = createCircle(this.circlesContainer, cx, cy, info.duration);
+    const circle = createCircle(
+      this.circlesContainer,
+      cx,
+      cy,
+      info.duration,
+      info.trackNumber
+    );
     this.circles[name] = circle;
 
     const album = createAlbum(this.coversContainer, width, info);
@@ -132,16 +139,3 @@ export default class Map {
       .style("fill", d => (d.id === "010" ? "none" : "#888888")); // 010 Antartica
   }
 }
-
-function getTrack(layout, name) {
-  let trackNumber;
-  layout.forEach(row => {
-    if (row.indexOf(name) !== -1) trackNumber = row.indexOf(name);
-  });
-  return trackNumber;
-}
-
-function getColor(trackNumber) {
-  console.log("chroma", chroma("pink"));
-}
-getColor(1);

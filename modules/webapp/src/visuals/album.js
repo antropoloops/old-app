@@ -1,3 +1,5 @@
+import { getColor } from "./color";
+
 export const albumsCount = 8;
 export const verticalPadding = 3;
 export const horizontalPadding = 3;
@@ -42,7 +44,7 @@ export function createAlbum(
     .attr("height", infoHeight)
     .attr("x", trackNumber * coverSize)
     .attr("y", coverSize + verticalPadding)
-    .style("fill", "orange");
+    .style("fill", getColor(trackNumber));
 
   // Draw country text
   cover
@@ -59,7 +61,7 @@ export function createAlbum(
     .attr("cx", trackNumber * coverSize + horizontalPadding + dotRadius)
     .attr("cy", coverSize + verticalPadding + infoHeight * 2)
     .attr("r", dotRadius)
-    .style("fill", "orange");
+    .style("fill", getColor(trackNumber));
 
   // Draw date text
   cover
@@ -69,7 +71,7 @@ export function createAlbum(
     .attr("dy", "0.35em")
     .style("font-size", 11 + "px")
     .style("font-weight", "bold")
-    .style("fill", "orange")
+    .style("fill", getColor(trackNumber))
     .text(year);
 
   return cover;
