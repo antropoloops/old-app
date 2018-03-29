@@ -1,0 +1,17 @@
+<button id="send">Send Message</button>
+<script type="text/javascript" src="osc.browser.min.js"></script>
+<script type="text/javascript">
+  var osc = new OSC();
+  osc.open(); // connect by default to ws://localhost:8080
+
+  document.getElementById('send').addEventListener('click', function () {
+    var message = new OSC.Message('/test/random', Math.random());
+    osc.send(message);
+  });
+
+  osc.on('*', message => {
+    const msg = new OSC.Message()
+    msg.unpack(data)
+    console.log(msg.args)
+  })
+</script>
