@@ -1,9 +1,24 @@
 const OSC = require("osc-js");
+const ip = require("ip");
 
 const config = {
-  udpClient: { port: 9000 },
-  udpServer: { port: 9001 }
+  udpServer: {
+    host: ip.address(),
+    port: 9000,
+    exclusive: false
+  },
+  udpClient: {
+    host: ip.address(),
+    port: 9001
+  },
+  wsServer: {
+    host: ip.address(),
+    port: 8888
+  },
+  receiver: "ws"
 };
+
+console.log("Starting osc servers", config);
 const osc = new OSC({ plugin: new OSC.BridgePlugin(config) });
 
 module.exports = osc;

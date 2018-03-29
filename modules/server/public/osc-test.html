@@ -1,5 +1,5 @@
 <button id="send">Send Message</button>
-<script type="text/javascript" src="osc.browser.min.js"></script>
+<script type="text/javascript" src="osc.browser.js"></script>
 <script type="text/javascript">
   var osc = new OSC();
   osc.open(); // connect by default to ws://localhost:8080
@@ -9,7 +9,7 @@
     osc.send(message);
   });
 
-  osc.on('*', message => {
+  osc.on('/live/name/clip', message => {
     const msg = new OSC.Message()
     msg.unpack(data)
     console.log(msg.args)
