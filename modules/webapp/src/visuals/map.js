@@ -13,18 +13,19 @@ import { createRefLine } from "./ref-line";
 import { createWave } from "./wave";
 
 function getAlbumInfo(set, name) {
-  const sample = set.samples[name].meta;
   const filename = set.samples[name].filename;
+  const meta = set.samples[name].meta;
+  const parameters = set.samples[name].parameters;
   const ext = set.config.load.imageFileExt;
 
   return {
-    trackNumber: set.visuals.layout[name],
-    lnglat: sample.lnglat,
-    duration: 60 / set.bpm * sample.loopend,
-    loopend: sample.loopend,
-    imageUrl: set.url + filename + ext,
-    year: sample.year,
-    country: sample.country
+    lnglat: meta.lnglat,
+    year: meta.year,
+    country: meta.country,
+    trackNumber: parameters.track,
+    loopend: parameters.loopend,
+    duration: 60 / set.bpm * parameters.loopend,
+    imageUrl: set.url + filename + ext
   };
 }
 

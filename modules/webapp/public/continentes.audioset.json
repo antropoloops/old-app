@@ -2,7 +2,7 @@
   "title": "Continentes",
   "description": "Sessión Antropoloops 01",
   "url": "https://antropoloops.github.io/audiosets/continentes/",
-  "bpm": 110,
+  "bpm": 120,
   "config": {
     "load": {
       "audioFileExt": ".wav",
@@ -16,27 +16,7 @@
     }
   },
   "visuals": {
-    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
-    "layout": {
-      "ossie": 1,
-      "orillas": 2,
-      "mocita": 3,
-      "nubian": 4,
-      "tabla": 5,
-      "pae": 6,
-      "mississipi": 1,
-      "camino": 2,
-      "mariola": 3,
-      "funeraire": 4,
-      "ballade": 5,
-      "madinda": 6,
-      "ed-lewis": 1,
-      "ogbeler": 2,
-      "agnus-dei": 3,
-      "indvumo": 4,
-      "rueda": 5,
-      "are-are": 6
-    }
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json"
   },
   "keyboard": {
     "q": { "sample": "ossie", "type": "toggle" },
@@ -81,8 +61,14 @@
         "country": "Jamaica",
         "title": "Ethiopian Serenade",
         "year": "2009",
-        "loopend": 8,
         "lnglat": [-77.297508, 18.109581]
+      },
+      "parameters": {
+        "track": 1,
+        "loopend": 6,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "orillas": {
@@ -93,8 +79,14 @@
         "country": "Colombia",
         "title": "Cumbia en la India",
         "year": "2009",
-        "loopend": 16,
         "lnglat": [-74.29733299999998, 4.570868]
+      },
+      "parameters": {
+        "track": 1,
+        "loopend": 4,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "mocita": {
@@ -105,8 +97,14 @@
         "country": "España",
         "title": "De una mocita. Bulerias",
         "year": "1975",
-        "loopend": 12,
         "lnglat": [-3.7492200000000366, 40.46366700000001]
+      },
+      "parameters": {
+        "track": 1,
+        "loopend": 6,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "nubian": {
@@ -117,8 +115,14 @@
         "country": "Egipto",
         "title": "Nubian Rhythms",
         "year": "1998",
-        "loopend": 8,
         "lnglat": [30.802498000000014, 26.820553]
+      },
+      "parameters": {
+        "track": 2,
+        "loopend": 4,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "tabla": {
@@ -129,8 +133,14 @@
         "country": "Pakistan",
         "title": "Percussion sur Tabla et Ghara",
         "year": "1979",
-        "loopend": 8,
         "lnglat": [69.34511599999996, 30.375321]
+      },
+      "parameters": {
+        "track": 2,
+        "loopend": 4,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "pae": {
@@ -141,8 +151,14 @@
         "country": "Polinesia",
         "title": "Pae",
         "year": "1965",
-        "loopend": 8,
         "lnglat": [-149.456815, -17.649632]
+      },
+      "parameters": {
+        "track": 2,
+        "loopend": 8,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "mississipi": {
@@ -153,8 +169,14 @@
         "country": "78 rpm",
         "title": "Stack O Lee Blues",
         "year": "1928",
-        "loopend": 32,
         "lnglat": [-89.39852830000001, 32.3546679]
+      },
+      "parameters": {
+        "track": 3,
+        "loopend": 20,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "camino": {
@@ -165,8 +187,14 @@
         "country": "Argentina",
         "title": "Camino en los valles",
         "year": "1942",
-        "loopend": 8,
         "lnglat": [-63.616671999999994, -38.416097]
+      },
+      "parameters": {
+        "track": 3,
+        "loopend": 16,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "mariola": {
@@ -177,8 +205,14 @@
         "country": "Grecia",
         "title": "SikoMariola-StaOpMariola",
         "year": "1993",
-        "loopend": 8,
         "lnglat": [21.824311999999964, 39.074208]
+      },
+      "parameters": {
+        "track": 3,
+        "loopend": 32,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "madinda": {
@@ -189,8 +223,14 @@
         "country": "Uganda",
         "title": "Solo De Madinda",
         "year": "1992",
-        "loopend": 8,
         "lnglat": [32.290275000000065, 1.373333]
+      },
+      "parameters": {
+        "track": 4,
+        "loopend": 8,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "ballade": {
@@ -201,8 +241,14 @@
         "country": "Rajastan",
         "title": "Ballade D'Amar Singh Avec Vièles Sarangi",
         "year": "1994",
-        "loopend": 16,
         "lnglat": [74.21793260000004, 27.0238036]
+      },
+      "parameters": {
+        "track": 4,
+        "loopend": 8,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "funeraire": {
@@ -214,8 +260,14 @@
         "country": "Indonesia",
         "title": "Ronde funéraire",
         "year": "1991",
-        "loopend": 8,
         "lnglat": [113.92132700000002, -0.789275]
+      },
+      "parameters": {
+        "track": 4,
+        "loopend": 36,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "ed-lewis": {
@@ -226,8 +278,14 @@
         "country": "Estados Unidos",
         "title": "John Henry",
         "year": "1947",
-        "loopend": 8,
         "lnglat": [-95.71289100000001, 37.09024]
+      },
+      "parameters": {
+        "track": 5,
+        "loopend": 60,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "rueda": {
@@ -238,8 +296,14 @@
         "country": "Mexico",
         "title": "La rueda de San Miguel",
         "year": "1977",
-        "loopend": 12,
         "lnglat": [-102.55278399999997, 23.634501]
+      },
+      "parameters": {
+        "track": 5,
+        "loopend": 44,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "agnus-dei": {
@@ -250,8 +314,14 @@
         "country": "Italia",
         "title": "Agnus Dei - 2",
         "year": "2000",
-        "loopend": 8,
         "lnglat": [12.567379999999957, 41.87194]
+      },
+      "parameters": {
+        "track": 5,
+        "loopend": 40,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "indvumo": {
@@ -262,8 +332,14 @@
         "country": "Sudafrica",
         "title": "Indvumo",
         "year": "2004",
-        "loopend": 8,
         "lnglat": [22.937505999999985, -30.559482]
+      },
+      "parameters": {
+        "track": 6,
+        "loopend": 60,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "ogbeler": {
@@ -275,8 +351,14 @@
         "country": "Tuva",
         "title": "Ögbeler",
         "year": "1993",
-        "loopend": 24,
         "lnglat": [95.62601719999998, 51.8872669]
+      },
+      "parameters": {
+        "track": 6,
+        "loopend": 56,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     },
     "are-are": {
@@ -287,8 +369,14 @@
         "country": "Islas Salomon",
         "title": "Chants de femmes : chant énumératif",
         "year": "1969",
-        "loopend": 8,
         "lnglat": [160.15619400000003, -9.64571]
+      },
+      "parameters": {
+        "track": 6,
+        "loopend": 80,
+        "trackVolume": 0.7,
+        "solo": 0,
+        "mute": 0
       }
     }
   }

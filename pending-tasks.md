@@ -1,6 +1,10 @@
-# Pending tasks
+# Tareas pendientes
 
-## Visuals
+## Samples
+
+* Eliminar la posibilidad de que dos samples del mismo grupo suenen a la vez. Ahora mismo los visuales siguen la estrucura de parrilla de Ablenton y la limitación autoimpuesta de que sólo puedan sonar hasta 8 cosas a la vez. Eso implica que si tenemos más de 8 samples, hay samples que están en el mismo grupo y que no deberían poder sonar a la vez (lo que ocurre de forma automática cuando pones dos clips en el mismo track en Ableton).
+
+## Visuales
 
 * Actualizar loopends con valores reales.
 * <s>Crear ondas último loops lanzados</s>
