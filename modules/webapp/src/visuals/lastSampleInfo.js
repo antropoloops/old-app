@@ -15,7 +15,7 @@ export function createLastSampleInfo(
   const verticalPadding = rectSize / 3;
   const x = screenWidth - rectSize;
   const y = screenHeight - albumsHeight - rectSize;
-  const dy = "-0.25em";
+  const dy = "-0.35em";
   const fontSize = "1.1vw";
 
   lastSampleInfo

@@ -6,7 +6,7 @@ export function getColor(trackNumber) {
   // const seedRandom = seedrandom("abcde");
   // const S = d3.randomUniform.source(seedRandom)(0.5, 1)();
   const S = d3.randomUniform(0.5, 1)();
-  const V = d3.randomUniform(0.8, 1)();
+  const V = d3.randomUniform(0.9, 1)();
   const H =
     trackNumber === 0
       ? d3.randomUniform(105, 120)()
