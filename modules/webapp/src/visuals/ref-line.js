@@ -35,7 +35,7 @@ export function createRefLine(parent, windowWidth, cx, cy, trackNumber) {
     .style("stroke", getColor(trackNumber))
     .style("stroke-dasharray", "2, 3")
     .style("fill", "none")
-    .style("stroke-width", 1);
+    .style("stroke-width", 1.5);
 
   return refLine;
 }

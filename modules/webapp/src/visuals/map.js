@@ -10,6 +10,7 @@ import {
 import { createCircle } from "./circle";
 import { createAlbum, getAlbumHeight } from "./album";
 import { createRefLine } from "./ref-line";
+import { createWave } from "./wave";
 
 function getAlbumInfo(set, name) {
   const sample = set.samples[name].meta;
@@ -39,6 +40,7 @@ export default class Map {
     this.circles = {};
     this.covers = {};
     this.refLines = {};
+    this.waves = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
   }
 
@@ -47,7 +49,7 @@ export default class Map {
     if (!this.mapContainer) return;
 
     const info = getAlbumInfo(this.set, name);
-    const { width } = getScreenSize(this.fixedAspectRatio);
+    const { screenWidth } = getScreenSize(this.fixedAspectRatio);
     const [cx, cy] = this.projection(info.lnglat);
 
     const circle = createCircle(
@@ -59,17 +61,20 @@ export default class Map {
     );
     this.circles[name] = circle;
 
-    const album = createAlbum(this.coversContainer, width, info);
+    const album = createAlbum(this.coversContainer, screenWidth, info);
     this.covers[name] = album;
 
     const refLine = createRefLine(
       this.refLinesContainer,
-      width,
+      screenWidth,
       cx,
       cy,
       info.trackNumber
     );
     this.refLines[name] = refLine;
+
+    const wave = createWave(this.wavesContainer, cx, cy, info.trackNumber);
+    this.waves[name] = wave;
   }
 
   hide(name) {
@@ -90,6 +95,12 @@ export default class Map {
       refLine.remove();
       this.refLines[name] = null;
     }
+
+    const wave = this.waves[name];
+    if (wave) {
+      wave.remove();
+      this.waves[name] = null;
+    }
   }
 
   clear() {
@@ -97,19 +108,22 @@ export default class Map {
   }
 
   render() {
-    const { width, height } = getScreenSize(this.fixedAspectRatio);
+    const { screenWidth, screenHeight } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
-    const coversHeight = getAlbumHeight(width);
-
+    const coversHeight = getAlbumHeight(screenWidth);
     this.clear();
 
     const svg = this.el
       .append("svg")
       .attr("class", "svgMap")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("width", screenWidth)
+      .attr("height", screenHeight);
 
-    this.projection = createProjection(width, height - coversHeight, scale);
+    this.projection = createProjection(
+      screenWidth,
+      screenHeight - coversHeight,
+      scale
+    );
     const path = d3.geoPath().projection(this.projection);
 
     this.mapContainer = svg
@@ -124,6 +138,10 @@ export default class Map {
     this.circlesContainer = svg
       .append("g")
       .attr("id", "circles")
+      .attr("transform", `translate(0, ${coversHeight})`);
+    this.wavesContainer = svg
+      .append("g")
+      .attr("id", "waves")
       .attr("transform", `translate(0, ${coversHeight})`);
 
     // Draw map
