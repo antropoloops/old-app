@@ -24,7 +24,7 @@ function getAlbumInfo(set, name) {
     country: meta.country,
     trackNumber: parameters.track,
     loopend: parameters.loopend,
-    duration: 60 / set.bpm * parameters.loopend,
+    duration: 60 * parameters.loopend / set.bpm, // in seconds
     imageUrl: set.url + filename + ext
   };
 }
