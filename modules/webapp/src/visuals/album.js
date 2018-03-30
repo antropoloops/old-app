@@ -20,13 +20,13 @@ export function getAlbumHeight(windowWidth) {
 
 export function createAlbum(
   parent,
-  windowWidth,
+  screenWidth,
   { trackNumber, imageUrl, year, country, trackColor }
 ) {
-  const cover = parent.append("g");
-  const coverSize = getCoverSize(windowWidth);
+  const album = parent.append("g");
+  const coverSize = getCoverSize(screenWidth);
 
-  cover
+  album
     .append("svg:image")
     .attr("width", coverSize)
     .attr("height", coverSize)
@@ -36,7 +36,7 @@ export function createAlbum(
     .attr("xlink:href", imageUrl);
 
   // Draw country rectangle
-  cover
+  album
     .append("rect")
     .attr("width", coverSize)
     .attr("height", infoHeight)
@@ -45,7 +45,7 @@ export function createAlbum(
     .style("fill", trackColor);
 
   // Draw country text
-  cover
+  album
     .append("text")
     .attr("x", trackNumber * coverSize + horizontalPadding)
     .attr("y", coverSize + verticalPadding + infoHeight / 2)
@@ -54,7 +54,7 @@ export function createAlbum(
     .text(country);
 
   // Draw date point
-  cover
+  album
     .append("circle")
     .attr("cx", trackNumber * coverSize + horizontalPadding + dotRadius)
     .attr("cy", coverSize + verticalPadding + infoHeight * 2)
@@ -62,7 +62,7 @@ export function createAlbum(
     .style("fill", trackColor);
 
   // Draw date text
-  cover
+  album
     .append("text")
     .attr("x", trackNumber * coverSize + horizontalPadding)
     .attr("y", coverSize + verticalPadding + infoHeight * 1.5)
@@ -71,5 +71,5 @@ export function createAlbum(
     .style("fill", trackColor)
     .text(year);
 
-  return cover;
+  return album;
 }

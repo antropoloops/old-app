@@ -12,6 +12,7 @@ import { createCircle } from "./circle";
 import { createAlbum, getAlbumHeight } from "./album";
 import { createRefLine } from "./ref-line";
 import { createWave } from "./wave";
+import { createLastSampleInfo } from "./lastSampleInfo";
 
 function getAlbumInfo(set, name) {
   const filename = set.samples[name].filename;
@@ -23,6 +24,9 @@ function getAlbumInfo(set, name) {
     lnglat: meta.lnglat,
     year: meta.year,
     country: meta.country,
+    title: meta.title,
+    artist: meta.artist,
+    album: meta.album,
     trackNumber: parameters.track,
     loopend: parameters.loopend,
     trackVolume: parameters.trackVolume,
@@ -44,6 +48,7 @@ export default class Map {
     this.circles = {};
     this.albums = {};
     this.refLines = {};
+    this.infos = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
   }
 
@@ -51,7 +56,7 @@ export default class Map {
     if (!this.mapContainer) return;
 
     const info = getAlbumInfo(this.set, name);
-    const { screenWidth } = getScreenSize(this.fixedAspectRatio);
+    const { screenWidth, screenHeight } = getScreenSize(this.fixedAspectRatio);
     const [cx, cy] = this.projection(info.lnglat);
 
     const circle = createCircle(
@@ -84,6 +89,14 @@ export default class Map {
       info.trackColor,
       info.trackVolume
     );
+
+    const lastSampleInfo = createLastSampleInfo(
+      this.lastSampleInfoContainer,
+      screenWidth,
+      screenHeight,
+      info
+    );
+    this.infos[name] = lastSampleInfo;
   }
 
   hide(name) {
@@ -103,6 +116,12 @@ export default class Map {
     if (refLine) {
       refLine.remove();
       this.refLines[name] = null;
+    }
+
+    const lastSampleInfo = this.infos[name];
+    if (lastSampleInfo) {
+      lastSampleInfo.remove();
+      this.infos[name] = null;
     }
   }
 
@@ -137,6 +156,10 @@ export default class Map {
     this.wavesContainer = svg
       .append("g")
       .attr("id", "waves")
+      .attr("transform", `translate(0, ${albumsHeight})`);
+    this.lastSampleInfoContainer = svg
+      .append("g")
+      .attr("id", "lastSampleInfo")
       .attr("transform", `translate(0, ${albumsHeight})`);
 
     // Draw map
