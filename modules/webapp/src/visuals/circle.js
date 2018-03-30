@@ -1,5 +1,4 @@
 import * as d3 from "d3";
-import { getColor } from "./color";
 
 // Number of slices in a cirlce
 const circleNumSlices = 36;
@@ -9,7 +8,12 @@ const degreesToSlice = d3
   .range([0, 360]) // working in degrees
   .domain([0, circleNumSlices]);
 
-export function createCircle(parent, cx, cy, duration, trackNumber) {
+export function createCircle(
+  parent,
+  cx,
+  cy,
+  { duration, trackVolume, trackColor }
+) {
   const circlesGroup = parent
     .append("g")
     .attr("transform", `translate(${cx}, ${cy})`);
@@ -29,7 +33,7 @@ export function createCircle(parent, cx, cy, duration, trackNumber) {
 
   // create arc generator
   const arc = d3.arc();
-  const outerArcs = createOuterArcs(circleNumSlices);
+  const outerArcs = createOuterArcs(circleNumSlices, trackVolume);
   circle
     .selectAll(".outerArcs")
     .data(outerArcs)
@@ -37,12 +41,12 @@ export function createCircle(parent, cx, cy, duration, trackNumber) {
     .append("path")
     .attr("class", "outerArcs")
     .attr("d", arc)
-    .style("fill", getColor(trackNumber))
+    .style("fill", trackColor)
     .style("opacity", (d, i) => {
       return 0.3 / circleNumSlices * i;
     });
 
-  const innerArcs = createInnerArcs(circleNumSlices);
+  const innerArcs = createInnerArcs(circleNumSlices, trackVolume);
   circle
     .selectAll(".arcs")
     .data(innerArcs)
@@ -50,7 +54,7 @@ export function createCircle(parent, cx, cy, duration, trackNumber) {
     .append("path")
     .attr("class", "arcs")
     .attr("d", arc)
-    .style("fill", getColor(trackNumber))
+    .style("fill", trackColor)
     .style("opacity", (d, i) => {
       return 1 / circleNumSlices * i;
     });
@@ -58,7 +62,7 @@ export function createCircle(parent, cx, cy, duration, trackNumber) {
   return circlesGroup;
 }
 
-function createInnerArcs(circleNumSlices) {
+function createInnerArcs(circleNumSlices, trackVolume) {
   return d3.range(circleNumSlices).map((d, i) => {
     return {
       startAngle: deg2rad(degreesToSlice(d)), // working in degrees
@@ -67,12 +71,12 @@ function createInnerArcs(circleNumSlices) {
           ? deg2rad(degreesToSlice(d + 1))
           : deg2rad(degreesToSlice(d + 2)),
       innerRadius: 0,
-      outerRadius: 20
+      outerRadius: 40 * trackVolume
     };
   });
 }
 
-function createOuterArcs(circleNumSlices) {
+function createOuterArcs(circleNumSlices, trackVolume) {
   return d3.range(circleNumSlices).map((d, i) => {
     return {
       startAngle: deg2rad(degreesToSlice(d)), // working in degrees
@@ -81,7 +85,7 @@ function createOuterArcs(circleNumSlices) {
           ? deg2rad(degreesToSlice(d + 1))
           : deg2rad(degreesToSlice(d + 2)),
       innerRadius: 0,
-      outerRadius: 30
+      outerRadius: 40 * trackVolume * 2
     };
   });
 }

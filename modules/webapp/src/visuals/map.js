@@ -6,6 +6,7 @@ import {
   getScreenSize,
   createProjection
 } from "./dimensions";
+import { getColor } from "./color";
 
 import { createCircle } from "./circle";
 import { createAlbum, getAlbumHeight } from "./album";
@@ -24,8 +25,10 @@ function getAlbumInfo(set, name) {
     country: meta.country,
     trackNumber: parameters.track,
     loopend: parameters.loopend,
+    trackVolume: parameters.trackVolume,
     duration: 60 * parameters.loopend / set.bpm, // in seconds
-    imageUrl: set.url + filename + ext
+    imageUrl: set.url + filename + ext,
+    trackColor: getColor(parameters.track)
   };
 }
 
@@ -39,13 +42,12 @@ export default class Map {
       geodata.objects.countries
     ).features;
     this.circles = {};
-    this.covers = {};
+    this.albums = {};
     this.refLines = {};
     this.waves = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
   }
 
-  // Use 2 different functions? one for showing circles and the other for the covers?
   show(name) {
     if (!this.mapContainer) return;
 
@@ -53,28 +55,29 @@ export default class Map {
     const { screenWidth } = getScreenSize(this.fixedAspectRatio);
     const [cx, cy] = this.projection(info.lnglat);
 
-    const circle = createCircle(
-      this.circlesContainer,
-      cx,
-      cy,
-      info.duration,
-      info.trackNumber
-    );
+    const circle = createCircle(this.circlesContainer, cx, cy, info);
     this.circles[name] = circle;
 
-    const album = createAlbum(this.coversContainer, screenWidth, info);
-    this.covers[name] = album;
+    const album = createAlbum(this.albumsContainer, screenWidth, info);
+    this.albums[name] = album;
 
     const refLine = createRefLine(
       this.refLinesContainer,
       screenWidth,
       cx,
       cy,
-      info.trackNumber
+      info.trackNumber,
+      info.trackColor
     );
     this.refLines[name] = refLine;
 
-    const wave = createWave(this.wavesContainer, cx, cy, info.trackNumber);
+    const wave = createWave(
+      this.wavesContainer,
+      cx,
+      cy,
+      info.trackNumber,
+      info.trackColor
+    );
     this.waves[name] = wave;
   }
 
@@ -85,10 +88,10 @@ export default class Map {
       this.circles[name] = null;
     }
 
-    const cover = this.covers[name];
-    if (cover) {
-      cover.remove();
-      this.covers[name] = null;
+    const album = this.albums[name];
+    if (album) {
+      album.remove();
+      this.albums[name] = null;
     }
 
     const refLine = this.refLines[name];
@@ -111,7 +114,7 @@ export default class Map {
   render() {
     const { screenWidth, screenHeight } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
-    const coversHeight = getAlbumHeight(screenWidth);
+    const albumsHeight = getAlbumHeight(screenWidth);
     this.clear();
 
     const svg = this.el
@@ -122,7 +125,7 @@ export default class Map {
 
     this.projection = createProjection(
       screenWidth,
-      screenHeight - coversHeight,
+      screenHeight - albumsHeight,
       scale
     );
     const path = d3.geoPath().projection(this.projection);
@@ -130,20 +133,20 @@ export default class Map {
     this.mapContainer = svg
       .append("g")
       .attr("id", "map")
-      .attr("transform", `translate(0, ${coversHeight})`);
-    this.coversContainer = svg.append("g").attr("id", "covers");
+      .attr("transform", `translate(0, ${albumsHeight})`);
+    this.albumsContainer = svg.append("g").attr("id", "albums");
     this.refLinesContainer = svg
       .append("g")
       .attr("id", "refLines")
-      .attr("transform", `translate(0, ${coversHeight})`);
+      .attr("transform", `translate(0, ${albumsHeight})`);
     this.circlesContainer = svg
       .append("g")
       .attr("id", "circles")
-      .attr("transform", `translate(0, ${coversHeight})`);
+      .attr("transform", `translate(0, ${albumsHeight})`);
     this.wavesContainer = svg
       .append("g")
       .attr("id", "waves")
-      .attr("transform", `translate(0, ${coversHeight})`);
+      .attr("transform", `translate(0, ${albumsHeight})`);
 
     // Draw map
     this.mapContainer

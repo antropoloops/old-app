@@ -1,7 +1,6 @@
 import * as d3 from "d3";
-import { getColor } from "./color";
 
-export function createWave(parent, cx, cy, trackNumber) {
+export function createWave(parent, cx, cy, trackNumber, trackColor) {
   const first = 1;
   const last = 100;
   const radius = d3.range(first, last);
@@ -13,7 +12,7 @@ export function createWave(parent, cx, cy, trackNumber) {
     .attr("cy", cy)
     .attr("r", 0)
     .style("fill", "none")
-    .style("stroke", getColor(trackNumber));
+    .style("stroke", trackColor);
 
   radius.forEach((d, i) => {
     const initialWidth = 30;
