@@ -44,7 +44,6 @@ export default class Map {
     this.circles = {};
     this.albums = {};
     this.refLines = {};
-    this.waves = {};
     this.fixedAspectRatio = RATIOS.sixteenTenths;
   }
 
@@ -55,7 +54,13 @@ export default class Map {
     const { screenWidth } = getScreenSize(this.fixedAspectRatio);
     const [cx, cy] = this.projection(info.lnglat);
 
-    const circle = createCircle(this.circlesContainer, cx, cy, info);
+    const circle = createCircle(
+      this.circlesContainer,
+      screenWidth,
+      cx,
+      cy,
+      info
+    );
     this.circles[name] = circle;
 
     const album = createAlbum(this.albumsContainer, screenWidth, info);
@@ -71,14 +76,14 @@ export default class Map {
     );
     this.refLines[name] = refLine;
 
-    const wave = createWave(
+    createWave(
       this.wavesContainer,
+      screenWidth,
       cx,
       cy,
-      info.trackNumber,
-      info.trackColor
+      info.trackColor,
+      info.trackVolume
     );
-    this.waves[name] = wave;
   }
 
   hide(name) {
@@ -99,12 +104,6 @@ export default class Map {
       refLine.remove();
       this.refLines[name] = null;
     }
-
-    const wave = this.waves[name];
-    if (wave) {
-      wave.remove();
-      this.waves[name] = null;
-    }
   }
 
   clear() {
@@ -122,14 +121,6 @@ export default class Map {
       .attr("class", "svgMap")
       .attr("width", screenWidth)
       .attr("height", screenHeight);
-
-    this.projection = createProjection(
-      screenWidth,
-      screenHeight - albumsHeight,
-      scale
-    );
-    const path = d3.geoPath().projection(this.projection);
-
     this.mapContainer = svg
       .append("g")
       .attr("id", "map")
@@ -149,6 +140,12 @@ export default class Map {
       .attr("transform", `translate(0, ${albumsHeight})`);
 
     // Draw map
+    this.projection = createProjection(
+      screenWidth,
+      screenHeight - albumsHeight,
+      scale
+    );
+    const path = d3.geoPath().projection(this.projection);
     this.mapContainer
       .selectAll(".countries")
       .data(this.countries)

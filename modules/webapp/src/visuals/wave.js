@@ -1,8 +1,15 @@
 import * as d3 from "d3";
 
-export function createWave(parent, cx, cy, trackNumber, trackColor) {
-  const first = 1;
-  const last = 100;
+export function createWave(
+  parent,
+  screenWidth,
+  cx,
+  cy,
+  trackColor,
+  trackVolume
+) {
+  const first = Math.floor(screenWidth / 30 * trackVolume);
+  const last = 150;
   const radius = d3.range(first, last);
   const duration = 20;
 
@@ -14,16 +21,18 @@ export function createWave(parent, cx, cy, trackNumber, trackColor) {
     .style("fill", "none")
     .style("stroke", trackColor);
 
-  radius.forEach((d, i) => {
-    const initialWidth = 30;
-    const minWidth = initialWidth / radius[last - first - 1];
-    const strokeWidth = initialWidth / d > minWidth ? initialWidth / d : 0;
+  radius.forEach((r, i) => {
+    const initialWidth = 2;
+    const strokeWidth = initialWidth - initialWidth * r / last;
     wave
       .transition()
       .duration(duration)
       .delay(i * duration)
-      .attr("r", d)
-      .style("stroke-width", strokeWidth);
+      .attr("r", r)
+      .style("stroke-width", strokeWidth)
+      .on("end", (d, i, nodes) => {
+        if (r === last - first) nodes[i].remove();
+      });
   });
 
   return wave;
