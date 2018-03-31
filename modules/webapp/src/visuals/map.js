@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
+
 import {
   RATIOS,
   getScale,
@@ -13,6 +14,7 @@ import { createAlbum, getAlbumHeight } from "./album";
 import { createRefLine } from "./ref-line";
 import { createWave } from "./wave";
 import { createLastSampleInfo } from "./lastSampleInfo";
+import { createImprint } from "./imprint";
 
 function getAlbumInfo(set, name) {
   const filename = set.samples[name].filename;
@@ -97,6 +99,8 @@ export default class Map {
       info
     );
     this.infos[name] = lastSampleInfo;
+
+    createImprint(info.lnglat, info.trackColor);
   }
 
   hide(name) {
@@ -174,6 +178,7 @@ export default class Map {
       .data(this.countries)
       .enter()
       .append("path")
+      .attr("id", d => `country${d.id}`)
       .attr("class", "countries")
       .attr("d", path)
       .style("stroke", "#2c2c2c")
