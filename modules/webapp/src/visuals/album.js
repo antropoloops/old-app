@@ -18,10 +18,7 @@ function getCoverSize(screenWidth) {
 }
 
 export function getDotOffsetX(screenWidth, trackNumber) {
-  const horizontalPadding = getHorizontalPadding(screenWidth);
-  return (
-    trackNumber * getCoverSize(screenWidth) + horizontalPadding + dotRadius
-  );
+  return trackNumber * getCoverSize(screenWidth) + dotRadius;
 }
 
 export function getAlbumHeight(screenWidth) {
@@ -39,6 +36,7 @@ export function createAlbum(
   const coverSize = getCoverSize(screenWidth);
   const horizontalPadding = getHorizontalPadding(screenWidth);
   const verticalPadding = getVerticalPadding(screenWidth);
+  const dotOffsetX = getDotOffsetX(screenWidth, trackNumber);
   const infoHeight = getInfoHeight(screenWidth);
   const fontSize = "1.1vw";
 
@@ -70,6 +68,7 @@ export function createAlbum(
     .style("font-size", fontSize)
     .text(country);
 
+  // Trucate text larger than coverSize
   const countryTextId = "countryText" + trackNumber;
   function wrap(textElement, textId) {
     let textLength = document.getElementById(textId).getBBox().width;
@@ -86,7 +85,7 @@ export function createAlbum(
   // Draw date point
   album
     .append("circle")
-    .attr("cx", trackNumber * coverSize + horizontalPadding + dotRadius)
+    .attr("cx", dotOffsetX)
     .attr("cy", coverSize + verticalPadding + infoHeight * 2)
     .attr("r", dotRadius)
     .style("fill", trackColor);

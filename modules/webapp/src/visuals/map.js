@@ -30,7 +30,7 @@ function getAlbumInfo(set, name) {
     trackNumber: parameters.track,
     loopend: parameters.loopend,
     trackVolume: parameters.trackVolume,
-    duration: 60 * parameters.loopend / set.bpm, // in seconds
+    duration: 60 * parameters.loopend / set.bpm, // sample duration in seconds
     imageUrl: set.url + filename + ext,
     trackColor: getColor(parameters.track)
   };

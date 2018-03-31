@@ -21,18 +21,7 @@ export function createCircle(
     .attr("transform", `translate(${cx}, ${cy})`);
 
   // We need to group again, so that the circle turns in its location
-  const circle = circlesGroup.append("g");
-
-  // Add CSS animation to make the circle turn
-  circle
-    .append("animateTransform")
-    .attr("attributeType", "xml")
-    .attr("attributeName", "transform")
-    .attr("type", "rotate")
-    .attr("from", "0 0 0 ")
-    .attr("to", "360 0 0 ")
-    .attr("dur", duration + "s")
-    .attr("repeatCount", "indefinite");
+  const circle = circlesGroup.append("g").attr("class", "circleGroup");
 
   // Arc generator
   const arc = d3.arc();
@@ -58,16 +47,39 @@ export function createCircle(
 
   // Draw innerArcs
   circle
-    .selectAll(".arcs")
+    .selectAll(".innerArcs")
     .data(innerArcs)
     .enter()
     .append("path")
-    .attr("class", "arcs")
+    .attr("class", "innerArcs")
     .attr("d", arc)
     .style("fill", trackColor)
     .style("opacity", (d, i) => {
       return 1 / circleNumSlices * i;
     });
+
+  circle
+    .append("line")
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", 0)
+    .attr("y2", -(screenWidth / 30 * trackVolume + screenWidth / 350))
+    .style("stroke", trackColor)
+    .style("stroke-width", 1.5);
+
+  // Add animation to make the circle turn
+  const turnTimer = d3.timer(turn);
+  function turn(elapsed) {
+    const elapsedSeconds = (elapsed / 1000) % duration;
+    const turnScale = d3
+      .scaleLinear()
+      .range([1, 0])
+      .domain([0, duration]);
+    circle.style("transform", `rotate(${-turnScale(elapsedSeconds)}turn)`);
+    if (d3.select(".circleGroup").empty()) {
+      turnTimer.stop();
+    }
+  }
 
   return circlesGroup;
 }
