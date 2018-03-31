@@ -31,7 +31,7 @@ export function createWave(
       .attr("r", r)
       .style("stroke-width", strokeWidth)
       .on("end", (d, i, nodes) => {
-        if (r === last - first) nodes[i].remove();
+        if (r === last - 1) nodes[i].remove();
       });
   });
 
