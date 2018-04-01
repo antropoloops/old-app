@@ -100,7 +100,7 @@ export default class Map {
     );
     this.infos[name] = lastSampleInfo;
 
-    createImprint(info.lnglat, info.trackColor);
+    if (this.set.visuals.imprint) createImprint(info.lnglat, info.trackColor);
   }
 
   hide(name) {
