@@ -25,23 +25,15 @@
     "start": "node src/"
   },
   "dependencies": {
-    "@feathersjs/configuration": "^1.0.2",
-    "@feathersjs/errors": "^3.3.0",
-    "@feathersjs/express": "^1.2.0",
-    "@feathersjs/feathers": "^3.1.3",
-    "@feathersjs/socketio": "^3.2.0",
     "compression": "^1.7.2",
     "config": "^1.30.0",
     "cors": "^2.8.4",
     "helmet": "^3.12.0",
     "ip": "^1.1.5",
-    "osc-js": "^1.2.2",
     "serve-favicon": "^2.4.5",
     "winston": "^2.4.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2",
-    "request": "^2.85.0",
-    "request-promise": "^4.2.2"
+    "nodemon": "^1.17.2"
   }
 }

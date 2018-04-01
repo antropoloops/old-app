@@ -2,6 +2,7 @@
   "private": true,
   "workspaces": ["modules/*"],
   "scripts": {
+    "deploy": "(cd modules/webapp && yarn deploy)",
     "format": "prettier --write  \"modules/**/src/**/*.{js,json}\"",
     "precommit": "lint-staged"
   },
