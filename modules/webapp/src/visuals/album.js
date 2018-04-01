@@ -1,32 +1,46 @@
-export const albumsCount = 8;
-export const verticalPadding = 3;
-export const horizontalPadding = 3;
-export const infoHeight = 20;
-export const dotRadius = 2;
+const albumsCount = 8;
+const dotRadius = 2;
 
-export function getDotOffsetX(windowWidth, trackNumber) {
-  return (
-    trackNumber * getCoverSize(windowWidth) + horizontalPadding + dotRadius
-  );
+function getHorizontalPadding(screenWidth) {
+  return screenWidth / 300;
 }
 
-function getCoverSize(windowWidth) {
-  return windowWidth / albumsCount;
+function getVerticalPadding(screenWidth) {
+  return screenWidth / 450;
 }
 
-export function getAlbumHeight(windowWidth) {
-  return getCoverSize(windowWidth) + verticalPadding + infoHeight * 2;
+function getInfoHeight(screenWidth) {
+  return screenWidth / 50;
+}
+
+function getCoverSize(screenWidth) {
+  return screenWidth / albumsCount;
+}
+
+export function getDotOffsetX(screenWidth, trackNumber) {
+  return trackNumber * getCoverSize(screenWidth) + dotRadius;
+}
+
+export function getAlbumHeight(screenWidth) {
+  const verticalPadding = getVerticalPadding(screenWidth);
+  const infoHeight = getInfoHeight(screenWidth);
+  return getCoverSize(screenWidth) + verticalPadding + infoHeight * 2;
 }
 
 export function createAlbum(
   parent,
-  windowWidth,
-  { trackNumber, imageUrl, year, country }
+  screenWidth,
+  { trackNumber, imageUrl, year, country, trackColor }
 ) {
-  const cover = parent.append("g");
-  const coverSize = getCoverSize(windowWidth);
+  const album = parent.append("g");
+  const coverSize = getCoverSize(screenWidth);
+  const horizontalPadding = getHorizontalPadding(screenWidth);
+  const verticalPadding = getVerticalPadding(screenWidth);
+  const dotOffsetX = getDotOffsetX(screenWidth, trackNumber);
+  const infoHeight = getInfoHeight(screenWidth);
+  const fontSize = "1.1vw";
 
-  cover
+  album
     .append("svg:image")
     .attr("width", coverSize)
     .attr("height", coverSize)
@@ -36,41 +50,55 @@ export function createAlbum(
     .attr("xlink:href", imageUrl);
 
   // Draw country rectangle
-  cover
+  album
     .append("rect")
     .attr("width", coverSize)
     .attr("height", infoHeight)
     .attr("x", trackNumber * coverSize)
     .attr("y", coverSize + verticalPadding)
-    .style("fill", "orange");
+    .style("fill", trackColor);
 
   // Draw country text
-  cover
+  const countryText = album
     .append("text")
+    .attr("id", "countryText" + trackNumber)
     .attr("x", trackNumber * coverSize + horizontalPadding)
     .attr("y", coverSize + verticalPadding + infoHeight / 2)
     .attr("dy", "0.35em")
-    .style("font-size", 11 + "px")
+    .style("font-size", fontSize)
     .text(country);
 
+  // Trucate text larger than coverSize
+  const countryTextId = "countryText" + trackNumber;
+  function wrap(textElement, textId) {
+    let textLength = document.getElementById(textId).getBBox().width;
+    let text = textElement.text();
+
+    while (textLength > coverSize - horizontalPadding * 2 && text.length > 0) {
+      text = text.slice(0, -1);
+      textElement.text(text + "...");
+      textLength = document.getElementById(textId).getBBox().width;
+    }
+  }
+  wrap(countryText, countryTextId);
+
   // Draw date point
-  cover
+  album
     .append("circle")
-    .attr("cx", trackNumber * coverSize + horizontalPadding + dotRadius)
+    .attr("cx", dotOffsetX)
     .attr("cy", coverSize + verticalPadding + infoHeight * 2)
     .attr("r", dotRadius)
-    .style("fill", "orange");
+    .style("fill", trackColor);
 
   // Draw date text
-  cover
+  album
     .append("text")
     .attr("x", trackNumber * coverSize + horizontalPadding)
     .attr("y", coverSize + verticalPadding + infoHeight * 1.5)
     .attr("dy", "0.35em")
-    .style("font-size", 11 + "px")
-    .style("font-weight", "bold")
-    .style("fill", "orange")
+    .style("font-size", fontSize)
+    .style("fill", trackColor)
     .text(year);
 
-  return cover;
+  return album;
 }

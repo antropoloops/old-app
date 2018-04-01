@@ -5,12 +5,12 @@ export function getScreenSize(fixedAspectRatio) {
   const wHeight = window.innerHeight;
   const realAspectRatio = wWidth / wHeight;
 
-  const width =
+  const screenWidth =
     realAspectRatio < fixedAspectRatio ? wWidth : wHeight * fixedAspectRatio;
-  const height =
+  const screenHeight =
     realAspectRatio < fixedAspectRatio ? wWidth / fixedAspectRatio : wHeight;
 
-  return { width, height };
+  return { screenWidth, screenHeight };
 }
 
 export const RATIOS = {
@@ -19,8 +19,10 @@ export const RATIOS = {
 };
 
 export function getScale(fixedAspectRatio) {
-  const { width } = getScreenSize(fixedAspectRatio);
-  return fixedAspectRatio === RATIOS.sixteenTenths ? width / 5.9 : width / 6.5;
+  const { screenWidth } = getScreenSize(fixedAspectRatio);
+  return fixedAspectRatio === RATIOS.sixteenTenths
+    ? screenWidth / 5.9
+    : screenWidth / 6.5;
 }
 
 export function createProjection(width, height, scale) {

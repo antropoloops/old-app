@@ -1,8 +1,15 @@
 import * as d3 from "d3";
 import { getDotOffsetX } from "./album";
 
-export function createRefLine(parent, windowWidth, cx, cy, track) {
-  const x1 = getDotOffsetX(windowWidth, track);
+export function createRefLine(
+  parent,
+  windowWidth,
+  cx,
+  cy,
+  trackNumber,
+  trackColor
+) {
+  const x1 = getDotOffsetX(windowWidth, trackNumber);
   const y1 = 0;
   const x2 = cx;
   const y2 = cy;
@@ -31,10 +38,10 @@ export function createRefLine(parent, windowWidth, cx, cy, track) {
     .append("path")
     .datum(curveCoords)
     .attr("d", line)
-    .style("stroke", "orange")
+    .style("stroke", trackColor)
     .style("stroke-dasharray", "2, 3")
     .style("fill", "none")
-    .style("stroke-width", 1);
+    .style("stroke-width", 2);
 
   return refLine;
 }
