@@ -1,3 +1,5 @@
+const GITHUB = "https://antropoloops.github.io/audiosets/";
+
 export default class Loader {
   constructor(ctx, events) {
     this.ctx = ctx;
@@ -16,8 +18,7 @@ export default class Loader {
     const promises = names.map(name => {
       const sample = samples[name];
       const url = baseUrl + sample.filename + config.audioFileExt;
-      // this.events.emit("audio.load-file", name, url);
-      return fetch(url)
+      return fetchLocalOrRemote(url)
         .then(response => response.arrayBuffer())
         .then(audioData => this.ctx.decodeAudioData(audioData))
         .then(buffer => {
@@ -29,5 +30,14 @@ export default class Loader {
       this.events.emit("audio.loaded-all");
       return buffers;
     });
+  }
+}
+
+function fetchLocalOrRemote(url) {
+  if (process.env.NODE_ENV !== "production") {
+    const local = url.replace(GITHUB, "http://localhost:3333/data/audiosets/");
+    return fetch(local).catch(() => fetch(url));
+  } else {
+    return fetch(url);
   }
 }

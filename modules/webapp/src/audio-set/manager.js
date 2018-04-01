@@ -9,9 +9,23 @@ export default class AudioSetManager {
     this.cache = {};
     this.events = Events();
     this.current = null;
+    this.setList = null;
+  }
+
+  loadSetList() {
+    if (this.setList) return Promise.resolve(this.setList);
+    console.log("fetch set list");
+    // http://localhost:3333/data/audisets/index.json
+    return fetch("audioset.index.json")
+      .then(response => response.json())
+      .then(list => {
+        this.setList = list;
+        return list;
+      });
   }
 
   loadSet(url) {
+    console.log("loading set", url);
     if (this.cache[url]) return Promise.resolve(this.cache[url]);
     return fetch(url)
       .then(response => response.json())

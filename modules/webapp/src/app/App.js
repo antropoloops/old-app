@@ -31,7 +31,6 @@ class App extends Component {
   }
 
   child() {
-    console.log("joder", this.state);
     const { current, select } = this.state;
     if (current && select === false) {
       return <Set set={current} onChangeSet={this.onChangeSet} />;
