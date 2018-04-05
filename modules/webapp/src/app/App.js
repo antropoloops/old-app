@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import Set from "./Set";
 import SelectSet from "./SelectSet";
-import { openFullScreen } from "./full-screen";
 import "./App.css";
-
-const Loading = () => (
-  <div>
-    <h2>Loading...</h2>
-  </div>
-);
 
 class App extends Component {
   constructor(props) {

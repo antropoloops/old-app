@@ -2,6 +2,9 @@
   "private": true,
   "workspaces": ["modules/*"],
   "scripts": {
+    "start": "concurrently \"yarn start:server\" \"yarn start:webapp\"",
+    "start:webapp": "(cd modules/webapp && yarn start)",
+    "start:server": "(cd modules/server && yarn start)",
     "deploy": "(cd modules/webapp && yarn deploy)",
     "format": "prettier --write  \"modules/**/src/**/*.{js,json}\"",
     "precommit": "lint-staged"
@@ -10,6 +13,7 @@
     "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1"

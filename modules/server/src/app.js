@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use("/data", express.static(path.join(__dirname, "../../../data")));
-app.use("/public", express.static(path.join(__dirname, "../public")));
 app.use("/app", express.static(path.join(__dirname, "../../webapp/build")));
+app.use("/", express.static(path.join(__dirname, "../public")));
 
 module.exports = app;

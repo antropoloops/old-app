@@ -1,0 +1,7 @@
+{
+  "name": "@antpls/keyboard",
+  "version": "1.0.0",
+  "description": "Antropoloops keyboard module",
+  "main": "src/index.js",
+  "license": "MIT"
+}

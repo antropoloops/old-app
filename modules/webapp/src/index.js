@@ -1,5 +1,5 @@
 import { AudioSetManager } from "./audio-set";
-import keyboard from "./keyboard";
+import keyboard from "@antpls/keyboard";
 import audio from "./audio";
 import visuals from "./visuals";
 import app from "./app";
@@ -12,7 +12,7 @@ function init() {
   const manager = new AudioSetManager();
 
   manager.onSetLoaded(set => {
-    keyboard(set);
+    keyboard(set.data, set);
     audio(set);
     visuals(set, el);
   });

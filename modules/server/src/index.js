@@ -2,17 +2,21 @@
 const logger = require("winston");
 const app = require("./app");
 const config = require("config");
+const sockets = require("./sockets");
 const ip = require("ip");
 
-const port = config.get("port");
-const server = app.listen(port);
+const PORT = config.get("port");
+const address = "http://" + ip.address() + ":" + PORT;
+
+logger.info("Antropoloops server %s", address);
 
 process.on("unhandledRejection", (reason, p) =>
   logger.error("Unhandled Rejection at: Promise ", p, reason)
 );
 
-server.on("listening", () => {
-  const address = "http://" + ip.address() + ":" + port;
-  logger.info("Antropoloops server started on %s", address);
+const server = app.listen(PORT);
+
+sockets(server).on("listening", () => {
+  logger.info("OSC ws server started");
   logger.info("Open app %s/app ", address);
 });

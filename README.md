@@ -4,9 +4,10 @@ See it here: https://antropoloops.github.io/app
 
 This app is composed by modules. Currently:
 
-* webapp: the web application
-* visuals: Espe's visuals
+* app-control: send keyboard events via OSC
+* keyboard: convert keyboard events into OSC messages
 * server: a server that allows offline usage
+* webapp: the web application
 
 ## Setup
 
