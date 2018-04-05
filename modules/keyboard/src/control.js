@@ -7,6 +7,8 @@ function control(state, events) {
     if (state.isKeyPressed(key)) return;
     state.setKeyPressed(true, key);
 
+    console.log("press", type, key);
+
     switch (type) {
       // start every time it presses
       case "one-shot":
@@ -24,7 +26,7 @@ function control(state, events) {
           state.setSample("off", trigger);
           events.emit("stop", trigger.sample);
         } else {
-          state.setSample("off", trigger);
+          state.setSample("on", trigger);
           events.emit("start", trigger.sample);
         }
         break;
