@@ -28,12 +28,8 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 33vw;
   bottom: 0;
-  background-color: gray;
-  border-right: 1px solid white;
   overflow-y: scroll;
-  opacity: 0.8;
 }
 
 body,

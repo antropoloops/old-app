@@ -2,6 +2,7 @@
 
 ## 6/4/2017
 
+* [Dani] Less intrusive app (minified by default)
 * [Dani] Add start, start:webapp and start:server package.json scripts
 * [Dani] refactor keyboard (ES5 compilant)
 

@@ -6,7 +6,7 @@ function init(set, events) {
   const config = set.config.keyboard;
 
   const validKeys = Object.keys(keyMap);
-  const types = validKeys.reduce((types, key) => {
+  const types = validKeys.reduce(function(types, key) {
     types[key] = keyMap[key].type || config.type;
     return types;
   }, {});
