@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import Set from "./Set";
+import Browser from "./Browser";
 import SelectSet from "./SelectSet";
 import "./App.css";
+import { convertColors } from "./color";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.manager = props.manager;
     this.state = { select: true, current: null };
-    this.manager.onCurrent(set =>
-      this.setState({ select: false, current: set })
-    );
+    this.manager.onCurrent(set => {
+      convertColors(set.data);
+      this.setState({ select: false, current: set });
+    });
   }
 
-  onChangeSet = () => {
+  onChangeBrowser = () => {
     if (this.state.current) this.state.current.unmount();
     window.location.hash = "";
     this.setState({ select: true });
@@ -26,7 +28,7 @@ class App extends Component {
   child() {
     const { current, select } = this.state;
     if (current && select === false) {
-      return <Set set={current} onChangeSet={this.onChangeSet} />;
+      return <Browser set={current} onChangeBrowser={this.onChangeBrowser} />;
     } else {
       return <SelectSet manager={this.manager} />;
     }

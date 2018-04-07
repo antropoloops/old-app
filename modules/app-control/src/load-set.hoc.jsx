@@ -1,12 +1,13 @@
 import React from "react";
 import Message from "./components/Message";
-import initKeyboard from "@atpls/keyboard";
-import Events from "tiny-emitter";
+import keyboard from "@atpls/keyboard";
+import Events from "nanobus";
 
 export default function loadSetHoc(WrappedComponent) {
   class LoadSetComponent extends React.Component {
     constructor(props) {
       super(props);
+      this.socket = props.socket;
       this.state = { set: null, events: null };
     }
     componentWillMount() {
@@ -20,10 +21,14 @@ export default function loadSetHoc(WrappedComponent) {
     }
 
     render() {
-      const { set } = this.state;
-      const { socket } = this.props;
+      const { set, events } = this.state;
       return set ? (
-        <WrappedComponent set={set} socket={socket} {...this.props} />
+        <WrappedComponent
+          set={set}
+          events={events}
+          socket={this.socket}
+          {...this.props}
+        />
       ) : (
         <Message label="Loading antropoloops set..." />
       );
@@ -35,14 +40,6 @@ export default function loadSetHoc(WrappedComponent) {
 
 function initSet(set, socket) {
   const events = new Events();
-  initKeyboard(set, events);
-  events.on("start", name => {
-    console.log("start", name);
-    socket.send("/sample/start", name);
-  });
-  events.on("stop", name => {
-    console.log("stop", name);
-    socket.send("/sample/stop", name);
-  });
+  keyboard(set, events);
   return events;
 }

@@ -4,7 +4,7 @@ const express = require("express");
 const CONFIG = {
   "/data": "../../../data",
   "/audio": "../../../data/audiosets",
-  "/sets": "../../webapp/build",
+  "/sets": "../../webapp/public",
   "/app": "../../webapp/build",
   "/control": "../../app-control/build",
   "/": "../public"

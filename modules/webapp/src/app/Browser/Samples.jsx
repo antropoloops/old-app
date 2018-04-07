@@ -29,7 +29,7 @@ class Samples extends Component {
             name={name}
             sample={data.samples[name]}
             keyboard={keyboard}
-            images={images}
+            image={images[name]}
             isRunning={this.state[name]}
           />
         ))}

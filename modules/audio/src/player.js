@@ -31,15 +31,20 @@ function Player(ctx, loader) {
     }
   }
 
+  function names() {
+    return Object.keys(sources);
+  }
+
   function stopAll() {
-    Object.keys(sources).forEach(function(name) {
+    names().forEach(function(name) {
       sources[name].stop();
     });
   }
   return {
     play: play,
     stop: stop,
-    stopAll: stopAll
+    stopAll: stopAll,
+    names: names
   };
 }
 

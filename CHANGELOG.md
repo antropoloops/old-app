@@ -2,10 +2,13 @@
 
 ## 7/4/2017
 
-* [Dani] 4h
+* [Dani] 8h
   * Control app now works on mobile
   * WebApp now respond to websocket OSC messages
   * Improve start project mechanism
+  * Synchronize control apps
+  * Add stop-all audio OSC command
+  * Add colors to sample.metadata
 
 ## 6/4/2017
 

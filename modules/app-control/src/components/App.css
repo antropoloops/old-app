@@ -6,6 +6,7 @@
 }
 
 .pads {
+  max-width: 24em;
   display: flex;
   flex-wrap: wrap;
 }

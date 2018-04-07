@@ -24,14 +24,14 @@ function createMap(set, geodata, el) {
     map.clear();
   });
 
-  set.on("/sample/start", name => {
+  set.on("/audio/start", name => {
     const sample = data.samples[name];
     if (sample) {
       map.show(name);
     }
   });
 
-  set.on("/sample/stop", name => {
+  set.on("/audio/stop", name => {
     map.hide(name);
   });
 }

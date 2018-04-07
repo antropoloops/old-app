@@ -13,8 +13,12 @@ class Set extends Component {
   constructor(props) {
     super(props);
     this.state = { minified: true };
+    this.toggleState = this.toggleState.bind(this);
   }
-  toggleState = () => this.setState({ minified: !this.state.minified });
+
+  toggleState() {
+    this.setState({ minified: !this.state.minified });
+  }
 
   render() {
     const { set, onChangeSet } = this.props;
@@ -24,6 +28,7 @@ class Set extends Component {
           F
         </button>
         <button onClick={this.toggleState}>></button>
+        <button onClick={() => set.emit("/audio/stop-all")}>■</button>
       </div>
     ) : (
       <div className="Set">

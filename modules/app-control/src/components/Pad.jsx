@@ -3,7 +3,6 @@ import React from "react";
 class Pad extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pressed: false };
     this.touched = false;
   }
 
@@ -15,14 +14,12 @@ class Pad extends React.Component {
       this.touched = false;
       return;
     }
-    const pressed = !this.state.pressed;
+    const pressed = !this.props.pressed;
     this.props[pressed ? "onPress" : "onRelease"]();
-    this.setState({ pressed });
   }
 
   render() {
-    const color = this.props.color;
-    const pressed = this.state.pressed;
+    const { color, pressed } = this.props;
     return (
       <button
         className="Pad"

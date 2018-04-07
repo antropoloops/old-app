@@ -11,27 +11,27 @@ function control(state, emit) {
       // start every time it presses
       case "one-shot":
         if (state.isSample("on", trigger)) {
-          emit("/sample/stop", trigger.sample);
+          emit("/audio/stop", trigger.sample);
         } else {
           state.setSample("on", trigger);
         }
-        emit("/sample/start", trigger.sample);
+        emit("/audio/start", trigger.sample);
         break;
 
       // toggle on/off
       case "toggle":
         if (state.isSample("on", trigger)) {
           state.setSample("off", trigger);
-          emit("/sample/stop", trigger.sample);
+          emit("/audio/stop", trigger.sample);
         } else {
           state.setSample("on", trigger);
-          emit("/sample/start", trigger.sample);
+          emit("/audio/start", trigger.sample);
         }
         break;
 
       // play when down, stop when up
       case "gate":
-        emit("/sample/start", trigger.sample);
+        emit("/audio/start", trigger.sample);
         state.setSample("off", trigger);
         break;
       default:
@@ -54,7 +54,7 @@ function control(state, emit) {
 
       case "gate":
         state.setSample("off", trigger);
-        emit("/sample/stop", trigger.sample);
+        emit("/audio/stop", trigger.sample);
         break;
       default:
         break;

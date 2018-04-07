@@ -5,7 +5,7 @@ function sockets(server) {
 
   io.on("connection", function(socket) {
     console.log("WS Connected!");
-    socket.send("/hello", "world");
+    socket.send("/hello", "antropoloops");
     socket.on("message", function(evt, data) {
       socket.broadcast.send(evt, data);
       console.log("IO message", evt, data);
