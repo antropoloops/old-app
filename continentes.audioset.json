@@ -1,7 +1,9 @@
 {
+  "id": "continentes",
   "title": "Continentes",
   "description": "Sessión Antropoloops 01",
-  "url": "https://antropoloops.github.io/audiosets/continentes/",
+  "url": "https://storage.googleapis.com/atpls-sets/continentes/",
+  "url:github": "https://antropoloops.github.io/audiosets/continentes/",
   "bpm": 120,
   "config": {
     "load": {
