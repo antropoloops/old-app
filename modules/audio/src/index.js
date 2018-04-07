@@ -9,7 +9,7 @@ function init(set, events) {
   const config = set.config;
 
   const loader = Loader(ctx, events);
-  const player = Player(ctx, loader.buffers);
+  const player = Player(ctx, loader);
 
   loader.load(set.url, samples, config.load);
 

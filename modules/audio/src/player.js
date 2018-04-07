@@ -3,30 +3,28 @@
  * @param {AudioContext} ctx - Audio Context
  * @param {Map<String,AudioBuffer>} buffers - A map of names to audio buffers
  */
-function Player(ctx, buffers) {
-  this.ctx = ctx;
-  this.sources = {};
-  this.buffers = buffers;
+function Player(ctx, loader) {
+  const sources = {};
 
   function play(name, sample, config) {
-    const buffer = this.buffers[name];
+    const buffer = loader.get(name);
     if (!buffer) return;
 
-    const source = this.ctx.createBufferSource();
+    const source = ctx.createBufferSource();
     source.buffer = buffer;
-    source.connect(this.ctx.destination);
+    source.connect(ctx.destination);
 
     if (sample.loop === true || (sample.loop === undefined && config.loop)) {
       source.loop = true;
     }
 
     source.start();
-    this.sources[name] = source;
+    sources[name] = source;
     return source;
   }
 
   function stop(name) {
-    const source = this.sources[name];
+    const source = sources[name];
     if (source) {
       source.stop();
       source[name] = null;
@@ -34,8 +32,8 @@ function Player(ctx, buffers) {
   }
 
   function stopAll() {
-    Object.keys(this.sources).forEach(function(name) {
-      this.sources[name].stop();
+    Object.keys(sources).forEach(function(name) {
+      sources[name].stop();
     });
   }
   return {
