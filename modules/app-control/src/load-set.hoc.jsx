@@ -1,6 +1,6 @@
 import React from "react";
 import Message from "./components/Message";
-import initKeyboard from "@antpls/keyboard";
+import initKeyboard from "@atpls/keyboard";
 import Events from "tiny-emitter";
 
 export default function loadSetHoc(WrappedComponent) {

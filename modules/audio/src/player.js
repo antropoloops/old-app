@@ -1,11 +1,14 @@
-export default class Player {
-  constructor(ctx, buffers) {
-    this.ctx = ctx;
-    this.sources = {};
-    this.buffers = buffers;
-  }
+/**
+ * Create the Audio Player
+ * @param {AudioContext} ctx - Audio Context
+ * @param {Map<String,AudioBuffer>} buffers - A map of names to audio buffers
+ */
+function Player(ctx, buffers) {
+  this.ctx = ctx;
+  this.sources = {};
+  this.buffers = buffers;
 
-  play(name, sample, config) {
+  function play(name, sample, config) {
     const buffer = this.buffers[name];
     if (!buffer) return;
 
@@ -22,7 +25,7 @@ export default class Player {
     return source;
   }
 
-  stop(name) {
+  function stop(name) {
     const source = this.sources[name];
     if (source) {
       source.stop();
@@ -30,9 +33,16 @@ export default class Player {
     }
   }
 
-  stopAll() {
-    Object.keys(this.sources).forEach(name => {
+  function stopAll() {
+    Object.keys(this.sources).forEach(function(name) {
       this.sources[name].stop();
     });
   }
+  return {
+    play: play,
+    stop: stop,
+    stopAll: stopAll
+  };
 }
+
+module.exports = Player;

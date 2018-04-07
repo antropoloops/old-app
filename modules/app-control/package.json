@@ -5,7 +5,7 @@
   "description": "A web app to control antropoloops app via ws",
   "private": true,
   "dependencies": {
-    "@antpls/keyboard": "^1.0.0",
+    "@atpls/keyboard": "^1.0.0",
     "hsv-rgb": "^1.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",

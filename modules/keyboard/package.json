@@ -1,5 +1,5 @@
 {
-  "name": "@antpls/keyboard",
+  "name": "@atpls/keyboard",
   "version": "1.0.0",
   "description": "Antropoloops keyboard module",
   "main": "src/index.js",

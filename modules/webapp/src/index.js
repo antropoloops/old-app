@@ -1,6 +1,6 @@
 import { AudioSetManager } from "./audio-set";
-import keyboard from "@antpls/keyboard";
-import audio from "./audio";
+import keyboard from "@atpls/keyboard";
+import audio from "@atpls/audio";
 import visuals from "./visuals";
 import app from "./app";
 import registerServiceWorker from "./registerServiceWorker";
@@ -14,7 +14,7 @@ function init() {
 
   manager.onSetLoaded(set => {
     keyboard(set.data, set);
-    audio(set);
+    audio(set.data, set);
     visuals(set, el);
     sockets(set);
   });
