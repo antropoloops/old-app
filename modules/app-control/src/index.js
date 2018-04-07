@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
 import registerServiceWorker from "./registerServiceWorker";
-import io from "socket.io-client";
+import wsConnectHoc from "./ws-connect.hoc";
+import loadSetHoc from "./load-set.hoc";
 
-const socket = io("http://localhost:3333");
+const ConnectedApp = wsConnectHoc(loadSetHoc(App));
 
-ReactDOM.render(<App socket={socket} />, document.getElementById("root"));
+ReactDOM.render(<ConnectedApp />, document.getElementById("root"));
 registerServiceWorker();

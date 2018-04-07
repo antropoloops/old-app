@@ -12,7 +12,8 @@ function init(set, events) {
   }, {});
   console.log("Keyboard:", validKeys.join(" "));
 
-  const keyboard = control(state(), events);
+  const emit = events.emit.bind(events);
+  const keyboard = control(state(), emit);
 
   window.onkeydown = function(e) {
     const key = e.key;

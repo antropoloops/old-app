@@ -2,8 +2,10 @@
   "private": true,
   "workspaces": ["modules/*"],
   "scripts": {
-    "start": "concurrently \"yarn start:server\" \"yarn start:webapp\"",
-    "start:webapp": "(cd modules/webapp && yarn start)",
+    "start":
+      "concurrently \"yarn start:server\" \"yarn start:webapp\" \"yarn start:app-control\" ",
+    "start:webapp": "(cd modules/webapp && yarn start -y)",
+    "start:app-control": "(cd modules/app-control && yarn start -y)",
     "start:server": "(cd modules/server && yarn start)",
     "deploy": "(cd modules/webapp && yarn deploy)",
     "format": "prettier --write  \"modules/**/src/**/*.{js,json}\"",

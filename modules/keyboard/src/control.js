@@ -1,4 +1,4 @@
-function control(state, events) {
+function control(state, emit) {
   return { press: press, release: release };
 
   function press(key, trigger, type) {
@@ -7,33 +7,31 @@ function control(state, events) {
     if (state.isKeyPressed(key)) return;
     state.setKeyPressed(true, key);
 
-    console.log("press", type, key);
-
     switch (type) {
       // start every time it presses
       case "one-shot":
         if (state.isSample("on", trigger)) {
-          events.emit("stop", trigger.sample);
+          emit("/sample/stop", trigger.sample);
         } else {
           state.setSample("on", trigger);
         }
-        events.emit("start", trigger.sample);
+        emit("/sample/start", trigger.sample);
         break;
 
       // toggle on/off
       case "toggle":
         if (state.isSample("on", trigger)) {
           state.setSample("off", trigger);
-          events.emit("stop", trigger.sample);
+          emit("/sample/stop", trigger.sample);
         } else {
           state.setSample("on", trigger);
-          events.emit("start", trigger.sample);
+          emit("/sample/start", trigger.sample);
         }
         break;
 
       // play when down, stop when up
       case "gate":
-        events.emit("start", trigger.sample);
+        emit("/sample/start", trigger.sample);
         state.setSample("off", trigger);
         break;
       default:
@@ -56,7 +54,7 @@ function control(state, events) {
 
       case "gate":
         state.setSample("off", trigger);
-        events.emit("stop", trigger.sample);
+        emit("/sample/stop", trigger.sample);
         break;
       default:
         break;

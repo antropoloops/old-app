@@ -17,11 +17,11 @@ export default function init(set) {
     player.stopAll();
   });
 
-  set.events.on("start", name => {
+  set.events.on("/sample/start", name => {
     player.play(name, samples[name], config.samples);
   });
 
-  set.events.on("stop", name => {
+  set.events.on("/sample/stop", name => {
     player.stop(name);
   });
 }
