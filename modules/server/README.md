@@ -1,4 +1,4 @@
-# @antpls/server
+# @atpls/server
 
 > Antropoloops Local Server
 

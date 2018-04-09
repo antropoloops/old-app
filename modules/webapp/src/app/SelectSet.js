@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-const INDEX_URL = "audioset.index.json";
-
 const AudioSet = ({ title, onLoad }) => (
   <div>
     <button onClick={onLoad}>{title}</button>
@@ -11,18 +9,17 @@ const AudioSet = ({ title, onLoad }) => (
 class SelectSet extends Component {
   constructor(props) {
     super(props);
-    this.state = { index: null };
+    this.state = { list: null };
     this.manager = props.manager;
-    console.log("new select!");
-    fetch(INDEX_URL)
-      .then(response => response.json())
-      .then(index => {
+    this.manager
+      .loadSetList()
+      .then(list => {
         const current = window.location.hash.slice(1).toLowerCase();
-        this.select(current, index[current]);
-        return index;
+        this.select(current, list[current]);
+        return list;
       })
-      .then(index => {
-        this.setState({ index });
+      .then(list => {
+        this.setState({ list });
       });
   }
 
@@ -36,9 +33,9 @@ class SelectSet extends Component {
   }
 
   render() {
-    const { index } = this.state;
-    if (!index) return "Loading...";
-    const names = Object.keys(index);
+    const { list } = this.state;
+    if (!list) return "Loading...";
+    const names = Object.keys(list);
     return (
       <div className="SelectSet">
         <h1>Antropoloops</h1>
@@ -46,8 +43,8 @@ class SelectSet extends Component {
         {names.map(name => (
           <AudioSet
             key={name}
-            title={index[name].title}
-            onLoad={() => this.select(name, index[name])}
+            title={list[name].title}
+            onLoad={() => this.select(name, list[name])}
           />
         ))}
       </div>

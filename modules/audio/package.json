@@ -1,0 +1,10 @@
+{
+  "name": "@atpls/audio",
+  "version": "1.0.0",
+  "description": "Antropoloops audio engine",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "audio-context": "^1.0.3"
+  }
+}

@@ -1,7 +1,9 @@
 {
+  "id": "continentes",
   "title": "Continentes",
   "description": "Sessión Antropoloops 01",
-  "url": "https://antropoloops.github.io/audiosets/continentes/",
+  "url": "https://storage.googleapis.com/atpls-sets/continentes/",
+  "url:github": "https://antropoloops.github.io/audiosets/continentes/",
   "bpm": 120,
   "config": {
     "load": {
@@ -62,6 +64,8 @@
         "country": "Jamaica",
         "title": "Ethiopian Serenade",
         "year": "2009",
+        "tags": [],
+        "color": "hsv(106,89,98)",
         "lnglat": [-77.297508, 18.109581]
       },
       "parameters": {
@@ -80,6 +84,8 @@
         "country": "Colombia",
         "title": "Cumbia en la India",
         "year": "2009",
+        "tags": [],
+        "color": "hsv(151,60,97)",
         "lnglat": [-74.29733299999998, 4.570868]
       },
       "parameters": {
@@ -98,6 +104,8 @@
         "country": "España",
         "title": "De una mocita. Bulerias",
         "year": "1975",
+        "tags": [],
+        "color": "hsv(301,56,94)",
         "lnglat": [-3.7492200000000366, 40.46366700000001]
       },
       "parameters": {
@@ -116,6 +124,8 @@
         "country": "Egipto",
         "title": "Nubian Rhythms",
         "year": "1998",
+        "tags": [],
+        "color": "hsv(337,99,90)",
         "lnglat": [30.802498000000014, 26.820553]
       },
       "parameters": {
@@ -134,6 +144,8 @@
         "country": "Pakistan",
         "title": "Percussion sur Tabla et Ghara",
         "year": "1979",
+        "tags": [],
+        "color": "hsv(195,99,94)",
         "lnglat": [69.34511599999996, 30.375321]
       },
       "parameters": {
@@ -152,6 +164,8 @@
         "country": "Polinesia",
         "title": "Pae",
         "year": "1965",
+        "tags": [],
+        "color": "hsv(222,63,94)",
         "lnglat": [-149.456815, -17.649632]
       },
       "parameters": {
@@ -170,6 +184,8 @@
         "country": "78 rpm",
         "title": "Stack O Lee Blues",
         "year": "1928",
+        "tags": [],
+        "color": "hsv(26,93,92)",
         "lnglat": [-89.39852830000001, 32.3546679]
       },
       "parameters": {
@@ -188,6 +204,8 @@
         "country": "Argentina",
         "title": "Camino en los valles",
         "year": "1942",
+        "tags": [],
+        "color": "hsv(53,65,98)",
         "lnglat": [-63.616671999999994, -38.416097]
       },
       "parameters": {
@@ -206,6 +224,8 @@
         "country": "Grecia",
         "title": "SikoMariola-StaOpMariola",
         "year": "1993",
+        "tags": [],
+        "color": "hsv(106,64,97)",
         "lnglat": [21.824311999999964, 39.074208]
       },
       "parameters": {
@@ -224,6 +244,8 @@
         "country": "Uganda",
         "title": "Solo De Madinda",
         "year": "1992",
+        "tags": [],
+        "color": "hsv(152,92,90)",
         "lnglat": [32.290275000000065, 1.373333]
       },
       "parameters": {
@@ -242,6 +264,8 @@
         "country": "Rajastan",
         "title": "Ballade D'Amar Singh Avec Vièles Sarangi",
         "year": "1994",
+        "tags": [],
+        "color": "hsv(300,61,99)",
         "lnglat": [74.21793260000004, 27.0238036]
       },
       "parameters": {
@@ -261,6 +285,8 @@
         "country": "Indonesia",
         "title": "Ronde funéraire",
         "year": "1991",
+        "tags": [],
+        "color": "hsv(332,99,97)",
         "lnglat": [113.92132700000002, -0.789275]
       },
       "parameters": {
@@ -279,6 +305,8 @@
         "country": "Estados Unidos",
         "title": "John Henry",
         "year": "1947",
+        "tags": [],
+        "color": "hsv(190,50,95)",
         "lnglat": [-95.71289100000001, 37.09024]
       },
       "parameters": {
@@ -297,6 +325,8 @@
         "country": "Mexico",
         "title": "La rueda de San Miguel",
         "year": "1977",
+        "tags": [],
+        "color": "hsv(223,74,91)",
         "lnglat": [-102.55278399999997, 23.634501]
       },
       "parameters": {
@@ -315,6 +345,8 @@
         "country": "Italia",
         "title": "Agnus Dei - 2",
         "year": "2000",
+        "tags": [],
+        "color": "hsv(34,94,96)",
         "lnglat": [12.567379999999957, 41.87194]
       },
       "parameters": {
@@ -333,6 +365,8 @@
         "country": "Sudafrica",
         "title": "Indvumo",
         "year": "2004",
+        "tags": [],
+        "color": "hsv(59,99,92)",
         "lnglat": [22.937505999999985, -30.559482]
       },
       "parameters": {
@@ -352,6 +386,8 @@
         "country": "Tuva",
         "title": "Ögbeler",
         "year": "1993",
+        "tags": [],
+        "color": "hsv(115,88,91)",
         "lnglat": [95.62601719999998, 51.8872669]
       },
       "parameters": {
@@ -370,6 +406,8 @@
         "country": "Islas Salomon",
         "title": "Chants de femmes : chant énumératif",
         "year": "1969",
+        "tags": [],
+        "color": "hsv(158,50,99)",
         "lnglat": [160.15619400000003, -9.64571]
       },
       "parameters": {

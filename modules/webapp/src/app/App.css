@@ -1,9 +1,9 @@
 .App {
-  padding: 5px;
+  min-height: 100%;
 }
 
 .App button {
-  font-size: 1.2em;
+  font-size: 1em;
   width: 100%;
   padding: 0.7em;
   border: 0;
@@ -16,7 +16,9 @@
 }
 
 .Set {
-  margin-top: 1em;
+  border-right: 1px solid white;
+  background-color: gray;
+  opacity: 0.8;
 }
 
 .Set .Samples {
