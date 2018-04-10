@@ -46,7 +46,8 @@ class App extends React.Component {
   setPressed(isPressed, sample) {
     const key = this.keySet.key(sample);
     if (key) {
-      const pressed = { ...this.state.pressed, [key]: isPressed };
+      const pressed = this.state.pressed;
+      pressed[key] = isPressed;
       this.setState({ pressed });
     }
   }
