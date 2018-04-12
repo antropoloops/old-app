@@ -1,0 +1,408 @@
+{
+  "format": "audioset-1",
+  "id": "lik-03",
+  "title": "Lik03",
+  "description": "Antropoloops Lik Session 03",
+  "loader": {
+    "sources": {
+      "audio": { "urls": ["https://storage.googleapis.com/atpls-sets/lik/"] }
+    }
+  },
+  "samples": {
+    "lik03-t01-c01": {
+      "filename": "lik03-t01-c01.wav",
+      "audio": { "track": "t01" },
+      "meta": {
+        "album": "sortilege de la flute equatorienne",
+        "artist": "los corazas, carlos bonilla, gonzalo castro",
+        "year": 1972,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [-77.297508, 18.109581],
+        "cover": "lik03-covers/lik03-t01-c01.jpg",
+        "color": "hsv(106,89,98)"
+      }
+    },
+    "lik03-t01-c02": {
+      "filename": "lik03-t01-c02.wav",
+      "audio": { "track": "t01" },
+      "meta": {
+        "album": "sortilege de la flute equatorienne",
+        "artist": "los corazas, carlos bonilla, gonzalo castro",
+        "year": 1972,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [-74.29733299999998, 4.570868],
+        "cover": "lik03-covers/lik03-t01-c02.jpg",
+        "color": "hsv(151,60,97)"
+      }
+    },
+    "lik03-t01-c03": {
+      "filename": "lik03-t01-c03.wav",
+      "audio": { "track": "t01" },
+      "meta": {
+        "album": "sortilege de la flute equatorienne",
+        "artist": "los corazas, carlos bonilla, gonzalo castro",
+        "year": 1972,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [-3.7492200000000366, 40.46366700000001],
+        "cover": "lik03-covers/lik03-t01-c03.jpg",
+        "color": "hsv(301,56,94)"
+      }
+    },
+    "lik03-t01-c04": {
+      "filename": "lik03-t01-c04.wav",
+      "audio": { "track": "t01" },
+      "meta": {
+        "album": "sortilege de la flute equatorienne",
+        "artist": "los corazas, carlos bonilla, gonzalo castro",
+        "year": 1972,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [30.802498000000014, 26.820553],
+        "cover": "lik03-covers/lik03-t01-c04.jpg",
+        "color": "hsv(337,99,90)"
+      }
+    },
+    "lik03-t02-c01": {
+      "filename": "lik03-t02-c01.wav",
+      "audio": { "track": "t02" },
+      "meta": {
+        "album": "la harpe indienne",
+        "artist": "sergio cuevas",
+        "year": 1969,
+        "country": "Paraguay",
+        "tags": [],
+        "lnglat": [69.34511599999996, 30.375321],
+        "cover": "lik03-covers/lik03-t02-c01.jpg",
+        "color": "hsv(195,99,94)"
+      }
+    },
+    "lik03-t02-c02": {
+      "filename": "lik03-t02-c02.wav",
+      "audio": { "track": "t02" },
+      "meta": {
+        "album": "sortilege de la flute equatorienne",
+        "artist": "los corazas, carlos bonilla, gonzalo castro",
+        "year": 1972,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [-149.456815, -17.649632],
+        "cover": "lik03-covers/lik03-t02-c02.jpg",
+        "color": "hsv(222,63,94)"
+      }
+    },
+    "lik03-t02-c03": {
+      "filename": "lik03-t02-c03.wav",
+      "audio": { "track": "t02" },
+      "meta": {
+        "album": "Venezuela: Songs and Drums Of The Black Brotherhoods",
+        "artist": "Tambores Chimbangueles De San Benito",
+        "year": 1993,
+        "country": "Venezuela",
+        "tags": [],
+        "lnglat": [-89.39852830000001, 32.3546679],
+        "cover": "lik03-covers/lik03-t02-c03.jpg",
+        "color": "hsv(26,93,92)"
+      }
+    },
+    "lik03-t03-c01": {
+      "filename": "lik03-t03-c01.wav",
+      "audio": { "track": "t03" },
+      "meta": {
+        "album": "Batucada Genial",
+        "artist": "Mester Geraldo e Sua Bateria",
+        "year": 1977,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-63.616671999999994, -38.416097],
+        "cover": "lik03-covers/lik03-t03-c01.jpg",
+        "color": "hsv(53,65,98)"
+      }
+    },
+    "lik03-t03-c02": {
+      "filename": "lik03-t03-c02.wav",
+      "audio": { "track": "t03" },
+      "meta": {
+        "album": "A Orillas del Magdalena",
+        "artist": "Los Guacharacos",
+        "year": 2009,
+        "country": "Colombia",
+        "tags": [],
+        "lnglat": [21.824311999999964, 39.074208],
+        "cover": "lik03-covers/lik03-t03-c02.jpg",
+        "color": "hsv(106,64,97)"
+      }
+    },
+    "lik03-t03-c03": {
+      "filename": "lik03-t03-c03.wav",
+      "audio": { "track": "t03" },
+      "meta": {
+        "album": "Traditional Music of Peru, Vol. 8. Piura",
+        "artist": "Banda Hermanos Dedios Zapata",
+        "year": 1994,
+        "country": "Peru",
+        "tags": [],
+        "lnglat": [32.290275000000065, 1.373333],
+        "cover": "lik03-covers/lik03-t03-c03.jpg",
+        "color": "hsv(152,92,90)"
+      }
+    },
+    "lik03-t04-c01": {
+      "filename": "lik03-t04-c01.wav",
+      "audio": { "track": "t04" },
+      "meta": {
+        "album": "partido alto nota 10",
+        "artist": "bezerra & genaro da silva",
+        "year": 1977,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [74.21793260000004, 27.0238036],
+        "cover": "lik03-covers/lik03-t04-c01.jpg",
+        "color": "hsv(300,61,99)"
+      }
+    },
+    "lik03-t04-c02": {
+      "filename": "lik03-t04-c02.wav",
+      "audio": { "track": "t04" },
+      "meta": {
+        "album": "afro-bahian religious songs",
+        "artist": "varios",
+        "year": 1941,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [113.92132700000002, -0.789275],
+        "cover": "lik03-covers/lik03-t04-c02.jpg",
+        "color": "hsv(332,99,97)"
+      }
+    },
+    "lik03-t05-c01": {
+      "filename": "lik03-t05-c01.wav",
+      "audio": { "track": "t05" },
+      "meta": {
+        "album":
+          "academia de capoeira de angola sao jorge dos irmaos unidos de mestre caicara",
+        "artist": "academia de capoeira de angola",
+        "year": 1973,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-95.71289100000001, 37.09024],
+        "cover": "lik03-covers/lik03-t05-c01.jpg",
+        "color": "hsv(190,50,95)"
+      }
+    },
+    "lik03-t05-c02": {
+      "filename": "lik03-t05-c02.wav",
+      "audio": { "track": "t05" },
+      "meta": {
+        "album": "la harpe indienne",
+        "artist": "sergio cuevas",
+        "year": 1969,
+        "country": "Paraguay",
+        "tags": [],
+        "lnglat": [-102.55278399999997, 23.634501],
+        "cover": "lik03-covers/lik03-t05-c02.jpg",
+        "color": "hsv(223,74,91)"
+      }
+    },
+    "lik03-t05-c03": {
+      "filename": "lik03-t05-c03.wav",
+      "audio": { "track": "t05" },
+      "meta": {
+        "album": "la harpe indienne",
+        "artist": "sergio cuevas",
+        "year": 1969,
+        "country": "Paraguay",
+        "tags": [],
+        "lnglat": [12.567379999999957, 41.87194],
+        "cover": "lik03-covers/lik03-t05-c03.jpg",
+        "color": "hsv(34,94,96)"
+      }
+    },
+    "lik03-t06-c01": {
+      "filename": "lik03-t06-c01.wav",
+      "audio": { "track": "t06" },
+      "meta": {
+        "album": "Ameridian Music of Chile. Aymara, Qaqashqar, Mapuche",
+        "artist": "Mapuche",
+        "year": 1969,
+        "country": "Chile",
+        "tags": [],
+        "lnglat": [22.937505999999985, -30.559482],
+        "cover": "lik03-covers/lik03-t06-c01.jpg",
+        "color": "hsv(59,99,92)"
+      }
+    },
+    "lik03-t06-c02": {
+      "filename": "lik03-t06-c02.wav",
+      "audio": { "track": "t06" },
+      "meta": {
+        "album": "Traditional Music of Peru, Vol. 1. Festivals of Cusco",
+        "artist": "Conjunto of Cusco",
+        "year": 1989,
+        "country": "Peru",
+        "tags": [],
+        "lnglat": [95.62601719999998, 51.8872669],
+        "cover": "lik03-covers/lik03-t06-c02.jpg",
+        "color": "hsv(115,88,91)"
+      }
+    },
+    "lik03-t06-c03": {
+      "filename": "lik03-t06-c03.wav",
+      "audio": { "track": "t06" },
+      "meta": {
+        "album": "Lowland Tribes of Ecuador",
+        "artist": "Waorani people (Huarani)",
+        "year": 1986,
+        "country": "Ecuador",
+        "tags": [],
+        "lnglat": [160.15619400000003, -9.64571],
+        "cover": "lik03-covers/lik03-t06-c03.jpg",
+        "color": "hsv(158,50,99)"
+      }
+    },
+    "lik03-t07-c01": {
+      "filename": "lik03-t07-c01.wav",
+      "audio": { "track": "t07" },
+      "meta": {
+        "album": "Amazônia · Cult Music Of Northern Brazil",
+        "artist": "Closing song of a ritual cycle in the batuque houses",
+        "year": 1976,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-77.297508, 18.109581],
+        "cover": "lik03-covers/lik03-t07-c01.jpg",
+        "color": "hsv(106,89,98)"
+      }
+    },
+    "lik03-t07-c02": {
+      "filename": "lik03-t07-c02.wav",
+      "audio": { "track": "t07" },
+      "meta": {
+        "album":
+          "Music of the Coastal Amerindians of Guyana. The Arawak, Carib and Warrau",
+        "artist": "Shaman Joseph Miguel",
+        "year": 1982,
+        "country": "Guyana",
+        "tags": [],
+        "lnglat": [-74.29733299999998, 4.570868],
+        "cover": "lik03-covers/lik03-t07-c02.jpg",
+        "color": "hsv(151,60,97)"
+      }
+    },
+    "lik03-t07-c03": {
+      "filename": "lik03-t07-c03.wav",
+      "audio": { "track": "t07" },
+      "meta": {
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
+        "year": 1950,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-3.7492200000000366, 40.46366700000001],
+        "cover": "lik03-covers/lik03-t07-c03.jpg",
+        "color": "hsv(301,56,94)"
+      }
+    },
+    "lik03-t07-c04": {
+      "filename": "lik03-t07-c04.wav",
+      "audio": { "track": "t07" },
+      "meta": {
+        "album": "flute indienne",
+        "artist": "varios",
+        "year": "",
+        "country": "Bolivia",
+        "tags": [],
+        "lnglat": [30.802498000000014, 26.820553],
+        "cover": "lik03-covers/lik03-t07-c04.jpg",
+        "color": "hsv(337,99,90)"
+      }
+    },
+    "lik03-t07-c05": {
+      "filename": "lik03-t07-c05.wav",
+      "audio": { "track": "t07" },
+      "meta": {
+        "album": "Traditional Music of Peru, Vol. 4",
+        "artist": "People at lambayeque",
+        "year": 1991,
+        "country": "Peru",
+        "tags": [],
+        "lnglat": [69.34511599999996, 30.375321],
+        "cover": "lik03-covers/lik03-t07-c05.jpg",
+        "color": "hsv(195,99,94)"
+      }
+    },
+    "lik03-t08-c01": {
+      "filename": "lik03-t08-c01.wav",
+      "audio": { "track": "t08" },
+      "meta": {
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
+        "year": 1950,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-149.456815, -17.649632],
+        "cover": "lik03-covers/lik03-t08-c01.jpg",
+        "color": "hsv(222,63,94)"
+      }
+    },
+    "lik03-t08-c02": {
+      "filename": "lik03-t08-c02.wav",
+      "audio": { "track": "t08" },
+      "meta": {
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
+        "year": 1950,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-89.39852830000001, 32.3546679],
+        "cover": "lik03-covers/lik03-t08-c02.jpg",
+        "color": "hsv(26,93,92)"
+      }
+    },
+    "lik03-t08-c03": {
+      "filename": "lik03-t08-c03.wav",
+      "audio": { "track": "t08" },
+      "meta": {
+        "album":
+          "Brésil (Salvador de Bahia) et Bénin ; Verger, Pierre (1965-1990 ?)",
+        "artist": "Afro-Brasileños",
+        "year": 1965,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [-63.616671999999994, -38.416097],
+        "cover": "lik03-covers/lik03-t08-c03.jpg",
+        "color": "hsv(53,65,98)"
+      }
+    },
+    "lik03-t08-c04": {
+      "filename": "lik03-t08-c04.wav",
+      "audio": { "track": "t08" },
+      "meta": {
+        "album": "Music from Saramaka. A Dynamic Afro-American Tradition",
+        "artist": "Pikílío Man",
+        "year": 1968,
+        "country": "Surinam",
+        "tags": [],
+        "lnglat": [21.824311999999964, 39.074208],
+        "cover": "lik03-covers/lik03-t08-c04.jpg",
+        "color": "hsv(106,64,97)"
+      }
+    },
+    "lik03-t08-c05": {
+      "filename": "lik03-t08-c05.wav",
+      "audio": { "track": "t08" },
+      "meta": {
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
+        "year": 1950,
+        "country": "Brasil",
+        "tags": [],
+        "lnglat": [32.290275000000065, 1.373333],
+        "cover": "lik03-covers/lik03-t08-c05.jpg",
+        "color": "hsv(152,92,90)"
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ class Samples extends Component {
   render() {
     const { data } = this.props.set;
     const images = buildImageUrls(data);
-    const keyboard = keyBindings(data.keyboard);
+    const keyMap = keyBindings(data.keyboard.keyMap);
     return (
       <div className="Samples">
         {Object.keys(data.samples).map(name => (
@@ -28,7 +28,7 @@ class Samples extends Component {
             key={name}
             name={name}
             sample={data.samples[name]}
-            keyboard={keyboard}
+            keyboard={keyMap}
             image={images[name]}
             isRunning={this.state[name]}
           />

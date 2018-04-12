@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 12/04/2017
+
+* [Dani]
+  * Set migrations
+
 ## 7/4/2017
 
 * [Dani] 8h

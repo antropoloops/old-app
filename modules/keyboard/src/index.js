@@ -2,8 +2,8 @@ const control = require("./control");
 const state = require("./state");
 
 function init(set, events) {
-  const keyMap = set.keyboard;
-  const config = set.config.keyboard;
+  const keyMap = set.keyboard.keyMap;
+  const config = set.keyboard.config;
 
   const validKeys = Object.keys(keyMap);
   const types = validKeys.reduce(function(types, key) {

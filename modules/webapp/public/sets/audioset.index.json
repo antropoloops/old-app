@@ -6,5 +6,9 @@
   "continentes": {
     "title": "Continentes",
     "url": "continentes.audioset.json"
+  },
+  "lik03": {
+    "title": "Lik03",
+    "url": "lik03.audioset.json"
   }
 }

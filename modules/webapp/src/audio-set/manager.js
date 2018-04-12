@@ -16,7 +16,7 @@ export default class AudioSetManager {
     if (this.setList) return Promise.resolve(this.setList);
     console.log("fetch set list");
     // http://localhost:3333/data/audisets/index.json
-    return fetch("audioset.index.json")
+    return fetch("sets/audioset.index.json")
       .then(response => response.json())
       .then(list => {
         this.setList = list;
@@ -27,7 +27,7 @@ export default class AudioSetManager {
   loadSet(url) {
     console.log("loading set", url);
     if (this.cache[url]) return Promise.resolve(this.cache[url]);
-    return fetch(url)
+    return fetch("sets/" + url)
       .then(response => response.json())
       .then(data => new AudioSet(data))
       .then(set => {
