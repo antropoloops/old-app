@@ -38,11 +38,11 @@ function convert(name, set) {
         audio: {
           filename: sample.filename,
           track: _.get(sample, "parameters.track", "samples"),
-          position: _.get(sample, "parameters.position", i),
-          duration: _.get(sample, "parameters.loopend", 1),
+          position: _.get(sample, "parameters.position", undefined),
+          loopend: _.get(sample, "parameters.loopend", 1),
           volume: _.get(sample, "parameters.trackVolume", 0.7)
         },
-        visuals: {
+        display: {
           color: _.get(sample, "meta.color", "hsv(106,89,98)")
         }
       },

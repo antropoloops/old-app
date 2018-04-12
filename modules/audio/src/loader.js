@@ -9,13 +9,13 @@ function Loader(ctx, events) {
       return buffers[name];
     },
 
-    load: function(baseUrl, samples, config) {
-      const names = Object.keys(samples);
+    load: function(baseUrl, clips, urls) {
+      const names = Object.keys(clips);
       events.emit("audio.load-all", names);
 
       const promises = names.map(function(name) {
-        const sample = samples[name];
-        const url = baseUrl + sample.filename + config.audioFileExt;
+        const clip = clips[name];
+        const url = urls[0].replace("{{filename}}", clip.audio.filename);
         return fetchLocalOrRemote(url)
           .then(function(response) {
             return response.arrayBuffer();

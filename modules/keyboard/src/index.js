@@ -4,7 +4,7 @@ const state = require("./state");
 function init(set, events) {
   if (!set.keyboard) return null;
   const keyMap = set.keyboard.keyMap;
-  const config = set.keyboard.config;
+  const config = set.keyboard.defaults;
 
   const validKeys = Object.keys(keyMap);
   const types = validKeys.reduce(function(types, key) {

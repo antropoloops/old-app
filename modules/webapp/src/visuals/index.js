@@ -25,8 +25,8 @@ function createMap(set, geodata, el) {
   });
 
   set.on("/audio/start", name => {
-    const sample = data.samples[name];
-    if (sample) {
+    const clip = data.clips[name];
+    if (clip) {
       map.show(name);
     }
   });

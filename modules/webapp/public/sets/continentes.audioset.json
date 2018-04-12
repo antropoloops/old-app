@@ -4,12 +4,13 @@
   "meta": { "title": "Continentes", "description": "Sessión Antropoloops 01" },
   "loader": {
     "sources": {
-      "audio": {
-        "urls": [
-          "https://storage.googleapis.com/atpls-sets/continentes/",
-          "https://antropoloops.github.io/audiosets/continentes/"
-        ]
-      }
+      "audio": [
+        "https://storage.googleapis.com/atpls-sets/continentes/{{filename}}.wav",
+        "https://antropoloops.github.io/audiosets/continentes/{{filename}}.mp3"
+      ],
+      "covers": [
+        "https://storage.googleapis.com/atpls-sets/continentes/{{filename}}.jpg"
+      ]
     }
   },
   "audio": { "bpm": 120, "defaults": { "loop": true } },
@@ -52,11 +53,10 @@
       "audio": {
         "filename": "ossie",
         "track": 1,
-        "position": "ossie",
         "duration": 6,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "orillas": {
       "meta": {
@@ -69,11 +69,10 @@
       "audio": {
         "filename": "orillas",
         "track": 1,
-        "position": "orillas",
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(151,60,97)" }
+      "display": { "color": "hsv(151,60,97)" }
     },
     "mocita": {
       "meta": {
@@ -86,11 +85,10 @@
       "audio": {
         "filename": "mocita",
         "track": 1,
-        "position": "mocita",
         "duration": 6,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(301,56,94)" }
+      "display": { "color": "hsv(301,56,94)" }
     },
     "nubian": {
       "meta": {
@@ -103,11 +101,10 @@
       "audio": {
         "filename": "nubian",
         "track": 2,
-        "position": "nubian",
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(337,99,90)" }
+      "display": { "color": "hsv(337,99,90)" }
     },
     "tabla": {
       "meta": {
@@ -120,11 +117,10 @@
       "audio": {
         "filename": "tabla",
         "track": 2,
-        "position": "tabla",
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(195,99,94)" }
+      "display": { "color": "hsv(195,99,94)" }
     },
     "pae": {
       "meta": {
@@ -134,14 +130,8 @@
         "country": "Polinesia",
         "lnglat": [-149.456815, -17.649632]
       },
-      "audio": {
-        "filename": "pae",
-        "track": 2,
-        "position": "pae",
-        "duration": 8,
-        "volume": 0.7
-      },
-      "visuals": { "color": "hsv(222,63,94)" }
+      "audio": { "filename": "pae", "track": 2, "duration": 8, "volume": 0.7 },
+      "display": { "color": "hsv(222,63,94)" }
     },
     "mississipi": {
       "meta": {
@@ -154,11 +144,10 @@
       "audio": {
         "filename": "mississipi",
         "track": 3,
-        "position": "mississipi",
         "duration": 20,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(26,93,92)" }
+      "display": { "color": "hsv(26,93,92)" }
     },
     "camino": {
       "meta": {
@@ -171,11 +160,10 @@
       "audio": {
         "filename": "camino",
         "track": 3,
-        "position": "camino",
         "duration": 16,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(53,65,98)" }
+      "display": { "color": "hsv(53,65,98)" }
     },
     "mariola": {
       "meta": {
@@ -188,11 +176,10 @@
       "audio": {
         "filename": "mariola",
         "track": 3,
-        "position": "mariola",
         "duration": 32,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,64,97)" }
+      "display": { "color": "hsv(106,64,97)" }
     },
     "madinda": {
       "meta": {
@@ -205,11 +192,10 @@
       "audio": {
         "filename": "madinda",
         "track": 4,
-        "position": "madinda",
         "duration": 8,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(152,92,90)" }
+      "display": { "color": "hsv(152,92,90)" }
     },
     "ballade": {
       "meta": {
@@ -222,11 +208,10 @@
       "audio": {
         "filename": "ballade",
         "track": 4,
-        "position": "ballade",
         "duration": 8,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(300,61,99)" }
+      "display": { "color": "hsv(300,61,99)" }
     },
     "funeraire": {
       "meta": {
@@ -240,11 +225,10 @@
       "audio": {
         "filename": "funeraire",
         "track": 4,
-        "position": "funeraire",
         "duration": 36,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(332,99,97)" }
+      "display": { "color": "hsv(332,99,97)" }
     },
     "ed-lewis": {
       "meta": {
@@ -257,11 +241,10 @@
       "audio": {
         "filename": "ed-lewis",
         "track": 5,
-        "position": "ed-lewis",
         "duration": 60,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(190,50,95)" }
+      "display": { "color": "hsv(190,50,95)" }
     },
     "rueda": {
       "meta": {
@@ -274,11 +257,10 @@
       "audio": {
         "filename": "rueda",
         "track": 5,
-        "position": "rueda",
         "duration": 44,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(223,74,91)" }
+      "display": { "color": "hsv(223,74,91)" }
     },
     "agnus-dei": {
       "meta": {
@@ -291,11 +273,10 @@
       "audio": {
         "filename": "agnus-dei",
         "track": 5,
-        "position": "agnus-dei",
         "duration": 40,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(34,94,96)" }
+      "display": { "color": "hsv(34,94,96)" }
     },
     "indvumo": {
       "meta": {
@@ -308,11 +289,10 @@
       "audio": {
         "filename": "indvumo",
         "track": 6,
-        "position": "indvumo",
         "duration": 60,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(59,99,92)" }
+      "display": { "color": "hsv(59,99,92)" }
     },
     "ogbeler": {
       "meta": {
@@ -326,11 +306,10 @@
       "audio": {
         "filename": "ogbeler",
         "track": 6,
-        "position": "ogbeler",
         "duration": 56,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(115,88,91)" }
+      "display": { "color": "hsv(115,88,91)" }
     },
     "are-are": {
       "meta": {
@@ -343,11 +322,10 @@
       "audio": {
         "filename": "are-are",
         "track": 6,
-        "position": "are-are",
         "duration": 80,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(158,50,99)" }
+      "display": { "color": "hsv(158,50,99)" }
     }
   }
 }

@@ -17,10 +17,13 @@ import { createLastSampleInfo } from "./lastSampleInfo";
 import { createImprint } from "./imprint";
 
 function getAlbumInfo(set, name) {
-  const filename = set.samples[name].filename;
-  const meta = set.samples[name].meta;
-  const parameters = set.samples[name].parameters;
-  const ext = set.config.load.imageFileExt;
+  const clip = set.clips[name];
+  const filename = clip.audio.filename;
+  const meta = clip.meta;
+  const parameters = clip.audio;
+  const covers = set.loader.sources.covers;
+
+  const imageUrl = covers ? covers[0].replace("{{filename}}", filename) : "";
 
   return {
     lnglat: meta.lnglat,
@@ -32,8 +35,8 @@ function getAlbumInfo(set, name) {
     trackNumber: parameters.track,
     loopend: parameters.loopend,
     trackVolume: parameters.trackVolume,
-    duration: 60 * parameters.loopend / set.bpm, // sample duration in seconds
-    imageUrl: set.url + filename + ext,
+    duration: 60 * parameters.loopend / set.bpm, // clip duration in seconds
+    imageUrl,
     trackColor: getColor(parameters.track)
   };
 }

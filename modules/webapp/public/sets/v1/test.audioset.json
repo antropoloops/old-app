@@ -3,9 +3,9 @@
   "description": "Set de prueba de Antropoloops",
   "loader": {
     "sources": {
-      "audio": {
-        "url": "https://antropoloops.github.io/audiosets/test/"
-      }
+      "audio": [
+        "https://antropoloops.github.io/audiosets/test/{{filename}}.wav"
+      ]
     }
   },
   "bpm": 110,

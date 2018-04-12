@@ -5,13 +5,12 @@ const Player = require("./player");
 const ctx = Context();
 
 function init(set, events) {
-  const samples = set.samples;
-  const config = set.config;
+  const clips = set.clips;
 
   const loader = Loader(ctx, events);
   const player = Player(ctx, loader);
 
-  loader.load(set.url, samples, config.load);
+  loader.load(set.url, clips, set.loader.sources.audio);
 
   events.on("unmount", function() {
     console.log("unmount");
@@ -25,7 +24,7 @@ function init(set, events) {
   });
 
   events.on("/audio/start", function(name) {
-    player.play(name, samples[name], config.samples);
+    player.play(name, clips[name], set.audio.defaults);
     events.emit("/audio/started", name, ctx.currentTime);
   });
 

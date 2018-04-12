@@ -23,11 +23,11 @@ class Samples extends Component {
     const keyMap = keyBindings(data.keyboard.keyMap);
     return (
       <div className="Samples">
-        {Object.keys(data.samples).map(name => (
+        {Object.keys(data.clips).map(name => (
           <Sample
             key={name}
             name={name}
-            sample={data.samples[name]}
+            clip={data.clips[name]}
             keyboard={keyMap}
             image={images[name]}
             isRunning={this.state[name]}
@@ -39,9 +39,9 @@ class Samples extends Component {
 }
 
 function buildImageUrls(set) {
-  const ext = set.config.load.imageFileExt;
-  return Object.keys(set.samples).reduce((images, name) => {
-    images[name] = set.url + name + ext;
+  const urls = set.loader.sources.covers;
+  return Object.keys(set.clips).reduce((images, name) => {
+    images[name] = urls ? urls[0].replace("{{filename}}", name) : "";
     return images;
   }, {});
 }
@@ -49,7 +49,7 @@ function buildImageUrls(set) {
 function keyBindings(keyboard) {
   return Object.keys(keyboard).reduce((bindings, key) => {
     const trigger = keyboard[key];
-    bindings[trigger.sample] = key;
+    bindings[trigger.clip] = key;
     return bindings;
   }, {});
 }

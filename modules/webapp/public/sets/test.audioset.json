@@ -4,7 +4,9 @@
   "meta": { "title": "Test", "description": "Set de prueba de Antropoloops" },
   "loader": {
     "sources": {
-      "audio": { "url": "https://antropoloops.github.io/audiosets/test/" }
+      "audio": [
+        "https://antropoloops.github.io/audiosets/test/{{filename}}.wav"
+      ]
     }
   },
   "audio": { "bpm": 110, "defaults": { "loop": true } },
@@ -32,11 +34,10 @@
       "audio": {
         "filename": "accomp1",
         "track": "samples",
-        "position": "accomp1",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "accomp2": {
       "meta": {
@@ -46,11 +47,10 @@
       "audio": {
         "filename": "accomp2",
         "track": "samples",
-        "position": "accomp2",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "melody1": {
       "meta": {
@@ -60,11 +60,10 @@
       "audio": {
         "filename": "melody1",
         "track": "samples",
-        "position": "melody1",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "melody2": {
       "meta": {
@@ -74,66 +73,60 @@
       "audio": {
         "filename": "melody2",
         "track": "samples",
-        "position": "melody2",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "rhythm1": {
       "meta": { "title": "Rítmo 1", "lnglat": [69.34511599999996, 30.375321] },
       "audio": {
         "filename": "rhythm1",
         "track": "samples",
-        "position": "rhythm1",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "rhythm2": {
       "meta": { "title": "Rítmo 2", "lnglat": [-149.456815, -17.649632] },
       "audio": {
         "filename": "rhythm2",
         "track": "samples",
-        "position": "rhythm2",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "voice1": {
       "meta": { "title": "Voz 2", "lnglat": [-89.39852830000001, 32.3546679] },
       "audio": {
         "filename": "voice1",
         "track": "samples",
-        "position": "voice1",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "voice2": {
       "meta": { "title": "Voz 1", "lnglat": [21.824311999999964, 39.074208] },
       "audio": {
         "filename": "voice2",
         "track": "samples",
-        "position": "voice2",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     },
     "voice3": {
       "meta": { "title": "Voz 3", "lnglat": [-63.616671999999994, -38.416097] },
       "audio": {
         "filename": "voice3",
         "track": "samples",
-        "position": "voice3",
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": { "color": "hsv(106,89,98)" }
+      "display": { "color": "hsv(106,89,98)" }
     }
   }
 }

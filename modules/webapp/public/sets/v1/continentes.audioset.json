@@ -4,12 +4,13 @@
   "description": "Sessión Antropoloops 01",
   "loader": {
     "sources": {
-      "audio": {
-        "urls": [
-          "https://storage.googleapis.com/atpls-sets/continentes/",
-          "https://antropoloops.github.io/audiosets/continentes/"
-        ]
-      }
+      "audio": [
+        "https://storage.googleapis.com/atpls-sets/continentes/{{filename}}.wav",
+        "https://antropoloops.github.io/audiosets/continentes/{{filename}}.mp3"
+      ],
+      "covers": [
+        "https://storage.googleapis.com/atpls-sets/continentes/{{filename}}.jpg"
+      ]
     }
   },
   "bpm": 120,
