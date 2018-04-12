@@ -1,7 +1,13 @@
 {
   "title": "Test",
   "description": "Set de prueba de Antropoloops",
-  "url": "https://antropoloops.github.io/audiosets/test/",
+  "loader": {
+    "sources": {
+      "audio": {
+        "url": "https://antropoloops.github.io/audiosets/test/"
+      }
+    }
+  },
   "bpm": 110,
   "config": {
     "load": {

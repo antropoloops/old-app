@@ -36,7 +36,7 @@ function convert(name, set) {
           "lnglat"
         ]),
         audio: {
-          filename: withExtension(sample.filename, ".wav"),
+          filename: sample.filename,
           track: _.get(sample, "parameters.track", "samples"),
           position: _.get(sample, "parameters.position", i),
           duration: _.get(sample, "parameters.loopend", 1),
@@ -56,7 +56,18 @@ function convert(name, set) {
     id: name,
     format: "audioset-2",
     meta: { title, description },
-    defaults: {},
+    loader: set.loader,
+    audio: {
+      bpm: _.get(set, "bpm", 120),
+      defaults: {
+        loop: true
+      }
+    },
+    visuals: _.get(set, "visuals", {
+      geoMapUrl: "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+      imprint: false
+    }),
+    keyboard: set.keyboard,
     clips
   };
 }

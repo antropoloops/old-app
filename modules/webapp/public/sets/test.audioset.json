@@ -5,7 +5,52 @@
     "title": "Test",
     "description": "Set de prueba de Antropoloops"
   },
-  "defaults": {},
+  "loader": {
+    "sources": {
+      "audio": {
+        "url": "https://antropoloops.github.io/audiosets/test/"
+      }
+    }
+  },
+  "audio": {
+    "bpm": 110,
+    "defaults": {
+      "loop": true
+    }
+  },
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "layout": []
+  },
+  "keyboard": {
+    "q": {
+      "sample": "voice1"
+    },
+    "w": {
+      "sample": "rhythm1"
+    },
+    "e": {
+      "sample": "accomp1"
+    },
+    "r": {
+      "sample": "melody1"
+    },
+    "a": {
+      "sample": "voice2"
+    },
+    "s": {
+      "sample": "rhythm2"
+    },
+    "d": {
+      "sample": "accomp2"
+    },
+    "f": {
+      "sample": "melody2"
+    },
+    "z": {
+      "sample": "voice3"
+    }
+  },
   "clips": {
     "accomp1": {
       "meta": {
@@ -13,7 +58,7 @@
         "lnglat": [-77.297508, 18.109581]
       },
       "audio": {
-        "filename": "accomp1.wav",
+        "filename": "accomp1",
         "track": "samples",
         "position": "accomp1",
         "duration": 1,
@@ -29,7 +74,7 @@
         "lnglat": [-74.29733299999998, 4.570868]
       },
       "audio": {
-        "filename": "accomp2.wav",
+        "filename": "accomp2",
         "track": "samples",
         "position": "accomp2",
         "duration": 1,
@@ -45,7 +90,7 @@
         "lnglat": [-3.7492200000000366, 40.46366700000001]
       },
       "audio": {
-        "filename": "melody1.wav",
+        "filename": "melody1",
         "track": "samples",
         "position": "melody1",
         "duration": 1,
@@ -61,7 +106,7 @@
         "lnglat": [30.802498000000014, 26.820553]
       },
       "audio": {
-        "filename": "melody2.wav",
+        "filename": "melody2",
         "track": "samples",
         "position": "melody2",
         "duration": 1,
@@ -77,7 +122,7 @@
         "lnglat": [69.34511599999996, 30.375321]
       },
       "audio": {
-        "filename": "rhythm1.wav",
+        "filename": "rhythm1",
         "track": "samples",
         "position": "rhythm1",
         "duration": 1,
@@ -93,7 +138,7 @@
         "lnglat": [-149.456815, -17.649632]
       },
       "audio": {
-        "filename": "rhythm2.wav",
+        "filename": "rhythm2",
         "track": "samples",
         "position": "rhythm2",
         "duration": 1,
@@ -109,7 +154,7 @@
         "lnglat": [-89.39852830000001, 32.3546679]
       },
       "audio": {
-        "filename": "voice1.wav",
+        "filename": "voice1",
         "track": "samples",
         "position": "voice1",
         "duration": 1,
@@ -125,7 +170,7 @@
         "lnglat": [21.824311999999964, 39.074208]
       },
       "audio": {
-        "filename": "voice2.wav",
+        "filename": "voice2",
         "track": "samples",
         "position": "voice2",
         "duration": 1,
@@ -141,7 +186,7 @@
         "lnglat": [-63.616671999999994, -38.416097]
       },
       "audio": {
-        "filename": "voice3.wav",
+        "filename": "voice3",
         "track": "samples",
         "position": "voice3",
         "duration": 1,

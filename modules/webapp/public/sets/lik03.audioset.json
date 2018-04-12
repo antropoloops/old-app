@@ -5,7 +5,23 @@
     "title": "Lik03",
     "description": "Antropoloops Lik Session 03"
   },
-  "defaults": {},
+  "loader": {
+    "sources": {
+      "audio": {
+        "url": "https://storage.googleapis.com/atpls-sets/lik/"
+      }
+    }
+  },
+  "audio": {
+    "bpm": 120,
+    "defaults": {
+      "loop": true
+    }
+  },
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "imprint": false
+  },
   "clips": {
     "lik03-t01-c01": {
       "meta": {
@@ -16,7 +32,7 @@
         "lnglat": [-77.297508, 18.109581]
       },
       "audio": {
-        "filename": "lik03-t01-c01.wav",
+        "filename": "lik03-t01-c01",
         "track": "t01",
         "position": 1,
         "duration": 1,
@@ -35,7 +51,7 @@
         "lnglat": [-74.29733299999998, 4.570868]
       },
       "audio": {
-        "filename": "lik03-t01-c02.wav",
+        "filename": "lik03-t01-c02",
         "track": "t01",
         "position": 2,
         "duration": 1,
@@ -54,7 +70,7 @@
         "lnglat": [-3.7492200000000366, 40.46366700000001]
       },
       "audio": {
-        "filename": "lik03-t01-c03.wav",
+        "filename": "lik03-t01-c03",
         "track": "t01",
         "position": 3,
         "duration": 1,
@@ -73,7 +89,7 @@
         "lnglat": [30.802498000000014, 26.820553]
       },
       "audio": {
-        "filename": "lik03-t01-c04.wav",
+        "filename": "lik03-t01-c04",
         "track": "t01",
         "position": 4,
         "duration": 1,
@@ -92,7 +108,7 @@
         "lnglat": [69.34511599999996, 30.375321]
       },
       "audio": {
-        "filename": "lik03-t02-c01.wav",
+        "filename": "lik03-t02-c01",
         "track": "t02",
         "position": 1,
         "duration": 1,
@@ -111,7 +127,7 @@
         "lnglat": [-149.456815, -17.649632]
       },
       "audio": {
-        "filename": "lik03-t02-c02.wav",
+        "filename": "lik03-t02-c02",
         "track": "t02",
         "position": 2,
         "duration": 1,
@@ -130,7 +146,7 @@
         "lnglat": [-89.39852830000001, 32.3546679]
       },
       "audio": {
-        "filename": "lik03-t02-c03.wav",
+        "filename": "lik03-t02-c03",
         "track": "t02",
         "position": 3,
         "duration": 1,
@@ -149,7 +165,7 @@
         "lnglat": [-63.616671999999994, -38.416097]
       },
       "audio": {
-        "filename": "lik03-t03-c01.wav",
+        "filename": "lik03-t03-c01",
         "track": "t03",
         "position": 1,
         "duration": 1,
@@ -168,7 +184,7 @@
         "lnglat": [21.824311999999964, 39.074208]
       },
       "audio": {
-        "filename": "lik03-t03-c02.wav",
+        "filename": "lik03-t03-c02",
         "track": "t03",
         "position": 2,
         "duration": 1,
@@ -187,7 +203,7 @@
         "lnglat": [32.290275000000065, 1.373333]
       },
       "audio": {
-        "filename": "lik03-t03-c03.wav",
+        "filename": "lik03-t03-c03",
         "track": "t03",
         "position": 3,
         "duration": 1,
@@ -206,7 +222,7 @@
         "lnglat": [74.21793260000004, 27.0238036]
       },
       "audio": {
-        "filename": "lik03-t04-c01.wav",
+        "filename": "lik03-t04-c01",
         "track": "t04",
         "position": 1,
         "duration": 1,
@@ -225,7 +241,7 @@
         "lnglat": [113.92132700000002, -0.789275]
       },
       "audio": {
-        "filename": "lik03-t04-c02.wav",
+        "filename": "lik03-t04-c02",
         "track": "t04",
         "position": 2,
         "duration": 1,
@@ -245,7 +261,7 @@
         "lnglat": [-95.71289100000001, 37.09024]
       },
       "audio": {
-        "filename": "lik03-t05-c01.wav",
+        "filename": "lik03-t05-c01",
         "track": "t05",
         "position": 1,
         "duration": 1,
@@ -264,7 +280,7 @@
         "lnglat": [-102.55278399999997, 23.634501]
       },
       "audio": {
-        "filename": "lik03-t05-c02.wav",
+        "filename": "lik03-t05-c02",
         "track": "t05",
         "position": 2,
         "duration": 1,
@@ -283,7 +299,7 @@
         "lnglat": [12.567379999999957, 41.87194]
       },
       "audio": {
-        "filename": "lik03-t05-c03.wav",
+        "filename": "lik03-t05-c03",
         "track": "t05",
         "position": 3,
         "duration": 1,
@@ -303,7 +319,7 @@
         "lnglat": [22.937505999999985, -30.559482]
       },
       "audio": {
-        "filename": "lik03-t06-c01.wav",
+        "filename": "lik03-t06-c01",
         "track": "t06",
         "position": 1,
         "duration": 1,
@@ -322,7 +338,7 @@
         "lnglat": [95.62601719999998, 51.8872669]
       },
       "audio": {
-        "filename": "lik03-t06-c02.wav",
+        "filename": "lik03-t06-c02",
         "track": "t06",
         "position": 2,
         "duration": 1,
@@ -341,7 +357,7 @@
         "lnglat": [160.15619400000003, -9.64571]
       },
       "audio": {
-        "filename": "lik03-t06-c03.wav",
+        "filename": "lik03-t06-c03",
         "track": "t06",
         "position": 3,
         "duration": 1,
@@ -360,7 +376,7 @@
         "lnglat": [-77.297508, 18.109581]
       },
       "audio": {
-        "filename": "lik03-t07-c01.wav",
+        "filename": "lik03-t07-c01",
         "track": "t07",
         "position": 1,
         "duration": 1,
@@ -380,7 +396,7 @@
         "lnglat": [-74.29733299999998, 4.570868]
       },
       "audio": {
-        "filename": "lik03-t07-c02.wav",
+        "filename": "lik03-t07-c02",
         "track": "t07",
         "position": 2,
         "duration": 1,
@@ -399,7 +415,7 @@
         "lnglat": [-3.7492200000000366, 40.46366700000001]
       },
       "audio": {
-        "filename": "lik03-t07-c03.wav",
+        "filename": "lik03-t07-c03",
         "track": "t07",
         "position": 3,
         "duration": 1,
@@ -418,7 +434,7 @@
         "lnglat": [30.802498000000014, 26.820553]
       },
       "audio": {
-        "filename": "lik03-t07-c04.wav",
+        "filename": "lik03-t07-c04",
         "track": "t07",
         "position": 4,
         "duration": 1,
@@ -437,7 +453,7 @@
         "lnglat": [69.34511599999996, 30.375321]
       },
       "audio": {
-        "filename": "lik03-t07-c05.wav",
+        "filename": "lik03-t07-c05",
         "track": "t07",
         "position": 5,
         "duration": 1,
@@ -456,7 +472,7 @@
         "lnglat": [-149.456815, -17.649632]
       },
       "audio": {
-        "filename": "lik03-t08-c01.wav",
+        "filename": "lik03-t08-c01",
         "track": "t08",
         "position": 1,
         "duration": 1,
@@ -475,7 +491,7 @@
         "lnglat": [-89.39852830000001, 32.3546679]
       },
       "audio": {
-        "filename": "lik03-t08-c02.wav",
+        "filename": "lik03-t08-c02",
         "track": "t08",
         "position": 2,
         "duration": 1,
@@ -495,7 +511,7 @@
         "lnglat": [-63.616671999999994, -38.416097]
       },
       "audio": {
-        "filename": "lik03-t08-c03.wav",
+        "filename": "lik03-t08-c03",
         "track": "t08",
         "position": 3,
         "duration": 1,
@@ -514,7 +530,7 @@
         "lnglat": [21.824311999999964, 39.074208]
       },
       "audio": {
-        "filename": "lik03-t08-c04.wav",
+        "filename": "lik03-t08-c04",
         "track": "t08",
         "position": 4,
         "duration": 1,
@@ -533,7 +549,7 @@
         "lnglat": [32.290275000000065, 1.373333]
       },
       "audio": {
-        "filename": "lik03-t08-c05.wav",
+        "filename": "lik03-t08-c05",
         "track": "t08",
         "position": 5,
         "duration": 1,

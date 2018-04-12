@@ -40,7 +40,7 @@ function convert(samples) {
     loader: {
       sources: {
         audio: {
-          urls: ["https://storage.googleapis.com/atpls-sets/lik/"]
+          url: "https://storage.googleapis.com/atpls-sets/lik/"
         }
       }
     },

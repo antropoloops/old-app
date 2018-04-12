@@ -5,7 +5,7 @@
   "description": "Antropoloops Lik Session 03",
   "loader": {
     "sources": {
-      "audio": { "urls": ["https://storage.googleapis.com/atpls-sets/lik/"] }
+      "audio": { "url": "https://storage.googleapis.com/atpls-sets/lik/" }
     }
   },
   "samples": {

@@ -5,7 +5,93 @@
     "title": "Continentes",
     "description": "Sessión Antropoloops 01"
   },
-  "defaults": {},
+  "loader": {
+    "sources": {
+      "audio": {
+        "urls": [
+          "https://storage.googleapis.com/atpls-sets/continentes/",
+          "https://antropoloops.github.io/audiosets/continentes/"
+        ]
+      }
+    }
+  },
+  "audio": {
+    "bpm": 120,
+    "defaults": {
+      "loop": true
+    }
+  },
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "imprint": false
+  },
+  "keyboard": {
+    "defaults": {
+      "type": "gate"
+    },
+    "keyMap": {
+      "q": {
+        "sample": "ossie",
+        "type": "toggle"
+      },
+      "a": {
+        "sample": "orillas"
+      },
+      "z": {
+        "sample": "mocita"
+      },
+      "w": {
+        "sample": "nubian",
+        "type": "toggle"
+      },
+      "s": {
+        "sample": "tabla"
+      },
+      "x": {
+        "sample": "pae"
+      },
+      "e": {
+        "sample": "mississipi",
+        "type": "toggle"
+      },
+      "d": {
+        "sample": "camino"
+      },
+      "c": {
+        "sample": "mariola"
+      },
+      "r": {
+        "sample": "madinda",
+        "type": "toggle"
+      },
+      "f": {
+        "sample": "ballade"
+      },
+      "v": {
+        "sample": "funeraire"
+      },
+      "t": {
+        "sample": "ed-lewis",
+        "type": "toggle"
+      },
+      "g": {
+        "sample": "rueda"
+      },
+      "b": {
+        "sample": "agnus-dei"
+      },
+      "y": {
+        "sample": "indvumo",
+        "type": "toggle"
+      },
+      "h": {
+        "sample": "ogbeler"
+      },
+      "n": {
+        "sample": "are-are"
+      }
+    }
+  },
   "clips": {
     "ossie": {
       "meta": {
@@ -16,7 +102,7 @@
         "lnglat": [-77.297508, 18.109581]
       },
       "audio": {
-        "filename": "ossie.wav",
+        "filename": "ossie",
         "track": 1,
         "position": "ossie",
         "duration": 6,
@@ -35,7 +121,7 @@
         "lnglat": [-74.29733299999998, 4.570868]
       },
       "audio": {
-        "filename": "orillas.wav",
+        "filename": "orillas",
         "track": 1,
         "position": "orillas",
         "duration": 4,
@@ -54,7 +140,7 @@
         "lnglat": [-3.7492200000000366, 40.46366700000001]
       },
       "audio": {
-        "filename": "mocita.wav",
+        "filename": "mocita",
         "track": 1,
         "position": "mocita",
         "duration": 6,
@@ -73,7 +159,7 @@
         "lnglat": [30.802498000000014, 26.820553]
       },
       "audio": {
-        "filename": "nubian.wav",
+        "filename": "nubian",
         "track": 2,
         "position": "nubian",
         "duration": 4,
@@ -92,7 +178,7 @@
         "lnglat": [69.34511599999996, 30.375321]
       },
       "audio": {
-        "filename": "tabla.wav",
+        "filename": "tabla",
         "track": 2,
         "position": "tabla",
         "duration": 4,
@@ -111,7 +197,7 @@
         "lnglat": [-149.456815, -17.649632]
       },
       "audio": {
-        "filename": "pae.wav",
+        "filename": "pae",
         "track": 2,
         "position": "pae",
         "duration": 8,
@@ -130,7 +216,7 @@
         "lnglat": [-89.39852830000001, 32.3546679]
       },
       "audio": {
-        "filename": "mississipi.wav",
+        "filename": "mississipi",
         "track": 3,
         "position": "mississipi",
         "duration": 20,
@@ -149,7 +235,7 @@
         "lnglat": [-63.616671999999994, -38.416097]
       },
       "audio": {
-        "filename": "camino.wav",
+        "filename": "camino",
         "track": 3,
         "position": "camino",
         "duration": 16,
@@ -168,7 +254,7 @@
         "lnglat": [21.824311999999964, 39.074208]
       },
       "audio": {
-        "filename": "mariola.wav",
+        "filename": "mariola",
         "track": 3,
         "position": "mariola",
         "duration": 32,
@@ -187,7 +273,7 @@
         "lnglat": [32.290275000000065, 1.373333]
       },
       "audio": {
-        "filename": "madinda.wav",
+        "filename": "madinda",
         "track": 4,
         "position": "madinda",
         "duration": 8,
@@ -206,7 +292,7 @@
         "lnglat": [74.21793260000004, 27.0238036]
       },
       "audio": {
-        "filename": "ballade.wav",
+        "filename": "ballade",
         "track": 4,
         "position": "ballade",
         "duration": 8,
@@ -226,7 +312,7 @@
         "lnglat": [113.92132700000002, -0.789275]
       },
       "audio": {
-        "filename": "funeraire.wav",
+        "filename": "funeraire",
         "track": 4,
         "position": "funeraire",
         "duration": 36,
@@ -245,7 +331,7 @@
         "lnglat": [-95.71289100000001, 37.09024]
       },
       "audio": {
-        "filename": "ed-lewis.wav",
+        "filename": "ed-lewis",
         "track": 5,
         "position": "ed-lewis",
         "duration": 60,
@@ -264,7 +350,7 @@
         "lnglat": [-102.55278399999997, 23.634501]
       },
       "audio": {
-        "filename": "rueda.wav",
+        "filename": "rueda",
         "track": 5,
         "position": "rueda",
         "duration": 44,
@@ -283,7 +369,7 @@
         "lnglat": [12.567379999999957, 41.87194]
       },
       "audio": {
-        "filename": "agnus-dei.wav",
+        "filename": "agnus-dei",
         "track": 5,
         "position": "agnus-dei",
         "duration": 40,
@@ -302,7 +388,7 @@
         "lnglat": [22.937505999999985, -30.559482]
       },
       "audio": {
-        "filename": "indvumo.wav",
+        "filename": "indvumo",
         "track": 6,
         "position": "indvumo",
         "duration": 60,
@@ -322,7 +408,7 @@
         "lnglat": [95.62601719999998, 51.8872669]
       },
       "audio": {
-        "filename": "ogbeler.wav",
+        "filename": "ogbeler",
         "track": 6,
         "position": "ogbeler",
         "duration": 56,
@@ -341,7 +427,7 @@
         "lnglat": [160.15619400000003, -9.64571]
       },
       "audio": {
-        "filename": "are-are.wav",
+        "filename": "are-are",
         "track": 6,
         "position": "are-are",
         "duration": 80,
