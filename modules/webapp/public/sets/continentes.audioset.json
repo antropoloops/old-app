@@ -1,10 +1,7 @@
 {
   "id": "continentes",
   "format": "audioset-2",
-  "meta": {
-    "title": "Continentes",
-    "description": "Sessión Antropoloops 01"
-  },
+  "meta": { "title": "Continentes", "description": "Sessión Antropoloops 01" },
   "loader": {
     "sources": {
       "audio": {
@@ -15,81 +12,32 @@
       }
     }
   },
-  "audio": {
-    "bpm": 120,
-    "defaults": {
-      "loop": true
-    }
-  },
+  "audio": { "bpm": 120, "defaults": { "loop": true } },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false
   },
   "keyboard": {
-    "defaults": {
-      "type": "gate"
-    },
+    "defaults": { "type": "gate" },
     "keyMap": {
-      "q": {
-        "sample": "ossie",
-        "type": "toggle"
-      },
-      "a": {
-        "sample": "orillas"
-      },
-      "z": {
-        "sample": "mocita"
-      },
-      "w": {
-        "sample": "nubian",
-        "type": "toggle"
-      },
-      "s": {
-        "sample": "tabla"
-      },
-      "x": {
-        "sample": "pae"
-      },
-      "e": {
-        "sample": "mississipi",
-        "type": "toggle"
-      },
-      "d": {
-        "sample": "camino"
-      },
-      "c": {
-        "sample": "mariola"
-      },
-      "r": {
-        "sample": "madinda",
-        "type": "toggle"
-      },
-      "f": {
-        "sample": "ballade"
-      },
-      "v": {
-        "sample": "funeraire"
-      },
-      "t": {
-        "sample": "ed-lewis",
-        "type": "toggle"
-      },
-      "g": {
-        "sample": "rueda"
-      },
-      "b": {
-        "sample": "agnus-dei"
-      },
-      "y": {
-        "sample": "indvumo",
-        "type": "toggle"
-      },
-      "h": {
-        "sample": "ogbeler"
-      },
-      "n": {
-        "sample": "are-are"
-      }
+      "q": { "sample": "ossie", "type": "toggle" },
+      "a": { "sample": "orillas" },
+      "z": { "sample": "mocita" },
+      "w": { "sample": "nubian", "type": "toggle" },
+      "s": { "sample": "tabla" },
+      "x": { "sample": "pae" },
+      "e": { "sample": "mississipi", "type": "toggle" },
+      "d": { "sample": "camino" },
+      "c": { "sample": "mariola" },
+      "r": { "sample": "madinda", "type": "toggle" },
+      "f": { "sample": "ballade" },
+      "v": { "sample": "funeraire" },
+      "t": { "sample": "ed-lewis", "type": "toggle" },
+      "g": { "sample": "rueda" },
+      "b": { "sample": "agnus-dei" },
+      "y": { "sample": "indvumo", "type": "toggle" },
+      "h": { "sample": "ogbeler" },
+      "n": { "sample": "are-are" }
     }
   },
   "clips": {
@@ -108,9 +56,7 @@
         "duration": 6,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,89,98)"
-      }
+      "visuals": { "color": "hsv(106,89,98)" }
     },
     "orillas": {
       "meta": {
@@ -127,9 +73,7 @@
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(151,60,97)"
-      }
+      "visuals": { "color": "hsv(151,60,97)" }
     },
     "mocita": {
       "meta": {
@@ -146,9 +90,7 @@
         "duration": 6,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(301,56,94)"
-      }
+      "visuals": { "color": "hsv(301,56,94)" }
     },
     "nubian": {
       "meta": {
@@ -165,9 +107,7 @@
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(337,99,90)"
-      }
+      "visuals": { "color": "hsv(337,99,90)" }
     },
     "tabla": {
       "meta": {
@@ -184,9 +124,7 @@
         "duration": 4,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(195,99,94)"
-      }
+      "visuals": { "color": "hsv(195,99,94)" }
     },
     "pae": {
       "meta": {
@@ -203,9 +141,7 @@
         "duration": 8,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(222,63,94)"
-      }
+      "visuals": { "color": "hsv(222,63,94)" }
     },
     "mississipi": {
       "meta": {
@@ -222,9 +158,7 @@
         "duration": 20,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(26,93,92)"
-      }
+      "visuals": { "color": "hsv(26,93,92)" }
     },
     "camino": {
       "meta": {
@@ -241,9 +175,7 @@
         "duration": 16,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(53,65,98)"
-      }
+      "visuals": { "color": "hsv(53,65,98)" }
     },
     "mariola": {
       "meta": {
@@ -260,9 +192,7 @@
         "duration": 32,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,64,97)"
-      }
+      "visuals": { "color": "hsv(106,64,97)" }
     },
     "madinda": {
       "meta": {
@@ -279,9 +209,7 @@
         "duration": 8,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(152,92,90)"
-      }
+      "visuals": { "color": "hsv(152,92,90)" }
     },
     "ballade": {
       "meta": {
@@ -298,9 +226,7 @@
         "duration": 8,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(300,61,99)"
-      }
+      "visuals": { "color": "hsv(300,61,99)" }
     },
     "funeraire": {
       "meta": {
@@ -318,9 +244,7 @@
         "duration": 36,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(332,99,97)"
-      }
+      "visuals": { "color": "hsv(332,99,97)" }
     },
     "ed-lewis": {
       "meta": {
@@ -337,9 +261,7 @@
         "duration": 60,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(190,50,95)"
-      }
+      "visuals": { "color": "hsv(190,50,95)" }
     },
     "rueda": {
       "meta": {
@@ -356,9 +278,7 @@
         "duration": 44,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(223,74,91)"
-      }
+      "visuals": { "color": "hsv(223,74,91)" }
     },
     "agnus-dei": {
       "meta": {
@@ -375,9 +295,7 @@
         "duration": 40,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(34,94,96)"
-      }
+      "visuals": { "color": "hsv(34,94,96)" }
     },
     "indvumo": {
       "meta": {
@@ -394,9 +312,7 @@
         "duration": 60,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(59,99,92)"
-      }
+      "visuals": { "color": "hsv(59,99,92)" }
     },
     "ogbeler": {
       "meta": {
@@ -414,9 +330,7 @@
         "duration": 56,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(115,88,91)"
-      }
+      "visuals": { "color": "hsv(115,88,91)" }
     },
     "are-are": {
       "meta": {
@@ -433,9 +347,7 @@
         "duration": 80,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(158,50,99)"
-      }
+      "visuals": { "color": "hsv(158,50,99)" }
     }
   }
 }

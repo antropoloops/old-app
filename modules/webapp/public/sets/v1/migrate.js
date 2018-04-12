@@ -12,7 +12,7 @@ const NAMES = ["test", "continentes", "lik03"];
 function migrate(migration) {
   const promises = NAMES.map(name => [name, require(input(name))])
     .map(([name, set]) => migration(name, set))
-    .map(set => writeFile(output(set.id), JSON.stringify(set, null, 2)));
+    .map(set => writeFile(output(set.id), JSON.stringify(set)));
 
   Promise.all(promises).then(() => console.log("done"));
 }

@@ -1,23 +1,13 @@
 {
   "id": "lik03",
   "format": "audioset-2",
-  "meta": {
-    "title": "Lik03",
-    "description": "Antropoloops Lik Session 03"
-  },
+  "meta": { "title": "Lik03", "description": "Antropoloops Lik Session 03" },
   "loader": {
     "sources": {
-      "audio": {
-        "url": "https://storage.googleapis.com/atpls-sets/lik/"
-      }
+      "audio": { "url": "https://storage.googleapis.com/atpls-sets/lik/" }
     }
   },
-  "audio": {
-    "bpm": 120,
-    "defaults": {
-      "loop": true
-    }
-  },
+  "audio": { "bpm": 120, "defaults": { "loop": true } },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false
@@ -38,9 +28,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,89,98)"
-      }
+      "visuals": { "color": "hsv(106,89,98)" }
     },
     "lik03-t01-c02": {
       "meta": {
@@ -57,9 +45,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(151,60,97)"
-      }
+      "visuals": { "color": "hsv(151,60,97)" }
     },
     "lik03-t01-c03": {
       "meta": {
@@ -76,9 +62,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(301,56,94)"
-      }
+      "visuals": { "color": "hsv(301,56,94)" }
     },
     "lik03-t01-c04": {
       "meta": {
@@ -95,9 +79,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(337,99,90)"
-      }
+      "visuals": { "color": "hsv(337,99,90)" }
     },
     "lik03-t02-c01": {
       "meta": {
@@ -114,9 +96,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(195,99,94)"
-      }
+      "visuals": { "color": "hsv(195,99,94)" }
     },
     "lik03-t02-c02": {
       "meta": {
@@ -133,9 +113,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(222,63,94)"
-      }
+      "visuals": { "color": "hsv(222,63,94)" }
     },
     "lik03-t02-c03": {
       "meta": {
@@ -152,9 +130,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(26,93,92)"
-      }
+      "visuals": { "color": "hsv(26,93,92)" }
     },
     "lik03-t03-c01": {
       "meta": {
@@ -171,9 +147,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(53,65,98)"
-      }
+      "visuals": { "color": "hsv(53,65,98)" }
     },
     "lik03-t03-c02": {
       "meta": {
@@ -190,9 +164,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,64,97)"
-      }
+      "visuals": { "color": "hsv(106,64,97)" }
     },
     "lik03-t03-c03": {
       "meta": {
@@ -209,9 +181,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(152,92,90)"
-      }
+      "visuals": { "color": "hsv(152,92,90)" }
     },
     "lik03-t04-c01": {
       "meta": {
@@ -228,9 +198,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(300,61,99)"
-      }
+      "visuals": { "color": "hsv(300,61,99)" }
     },
     "lik03-t04-c02": {
       "meta": {
@@ -247,9 +215,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(332,99,97)"
-      }
+      "visuals": { "color": "hsv(332,99,97)" }
     },
     "lik03-t05-c01": {
       "meta": {
@@ -267,9 +233,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(190,50,95)"
-      }
+      "visuals": { "color": "hsv(190,50,95)" }
     },
     "lik03-t05-c02": {
       "meta": {
@@ -286,9 +250,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(223,74,91)"
-      }
+      "visuals": { "color": "hsv(223,74,91)" }
     },
     "lik03-t05-c03": {
       "meta": {
@@ -305,9 +267,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(34,94,96)"
-      }
+      "visuals": { "color": "hsv(34,94,96)" }
     },
     "lik03-t06-c01": {
       "meta": {
@@ -325,9 +285,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(59,99,92)"
-      }
+      "visuals": { "color": "hsv(59,99,92)" }
     },
     "lik03-t06-c02": {
       "meta": {
@@ -344,9 +302,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(115,88,91)"
-      }
+      "visuals": { "color": "hsv(115,88,91)" }
     },
     "lik03-t06-c03": {
       "meta": {
@@ -363,9 +319,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(158,50,99)"
-      }
+      "visuals": { "color": "hsv(158,50,99)" }
     },
     "lik03-t07-c01": {
       "meta": {
@@ -382,9 +336,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,89,98)"
-      }
+      "visuals": { "color": "hsv(106,89,98)" }
     },
     "lik03-t07-c02": {
       "meta": {
@@ -402,9 +354,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(151,60,97)"
-      }
+      "visuals": { "color": "hsv(151,60,97)" }
     },
     "lik03-t07-c03": {
       "meta": {
@@ -421,9 +371,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(301,56,94)"
-      }
+      "visuals": { "color": "hsv(301,56,94)" }
     },
     "lik03-t07-c04": {
       "meta": {
@@ -440,9 +388,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(337,99,90)"
-      }
+      "visuals": { "color": "hsv(337,99,90)" }
     },
     "lik03-t07-c05": {
       "meta": {
@@ -459,9 +405,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(195,99,94)"
-      }
+      "visuals": { "color": "hsv(195,99,94)" }
     },
     "lik03-t08-c01": {
       "meta": {
@@ -478,9 +422,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(222,63,94)"
-      }
+      "visuals": { "color": "hsv(222,63,94)" }
     },
     "lik03-t08-c02": {
       "meta": {
@@ -497,9 +439,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(26,93,92)"
-      }
+      "visuals": { "color": "hsv(26,93,92)" }
     },
     "lik03-t08-c03": {
       "meta": {
@@ -517,9 +457,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(53,65,98)"
-      }
+      "visuals": { "color": "hsv(53,65,98)" }
     },
     "lik03-t08-c04": {
       "meta": {
@@ -536,9 +474,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(106,64,97)"
-      }
+      "visuals": { "color": "hsv(106,64,97)" }
     },
     "lik03-t08-c05": {
       "meta": {
@@ -555,9 +491,7 @@
         "duration": 1,
         "volume": 0.7
       },
-      "visuals": {
-        "color": "hsv(152,92,90)"
-      }
+      "visuals": { "color": "hsv(152,92,90)" }
     }
   }
 }
