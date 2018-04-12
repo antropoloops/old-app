@@ -1,0 +1,10 @@
+{
+  "name": "@atpls/audioset",
+  "version": "1.0.0",
+  "description": "Antropoloops audioset tools",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "audio-context": "^1.0.3"
+  }
+}

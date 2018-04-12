@@ -20,7 +20,7 @@ class Samples extends Component {
   render() {
     const { data } = this.props.set;
     const images = buildImageUrls(data);
-    const keyMap = keyBindings(data.keyboard.keyMap);
+    const keyMap = keyBindings(data.keyboard ? data.keyboard.keyMap : {});
     return (
       <div className="Samples">
         {Object.keys(data.clips).map(name => (

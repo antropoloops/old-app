@@ -40,7 +40,7 @@ module.exports = Loader;
 
 function fetchLocalOrRemote(url) {
   if (process.env.NODE_ENV !== "production") {
-    const local = url.replace(STORAGE, "http://localhost:3333/data/audiosets/");
+    const local = url.replace(STORAGE, "http://localhost:3333/data/audiosets");
     return fetch(local).catch(function() {
       return fetch(url);
     });
