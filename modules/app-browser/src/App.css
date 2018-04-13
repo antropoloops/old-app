@@ -1,0 +1,12 @@
+.Clip {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Clip.figure {
+  margin-right: 1em;
+}
+
+.Clip.body {
+  flex: 1;
+}

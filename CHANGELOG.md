@@ -2,8 +2,10 @@
 
 ## 12/04/2017
 
-* [Dani]
+* [Dani] 6h
   * Set migrations
+  * Lik03 audioset
+  * Browser app
 
 ## 7/4/2017
 
