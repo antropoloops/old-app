@@ -2,8 +2,9 @@ const control = require("./control");
 const state = require("./state");
 
 function init(set, events) {
-  const keyMap = set.keyboard;
-  const config = set.config.keyboard;
+  if (!set.keyboard) return false;
+  const keyMap = set.keyboard.keyMap;
+  const config = set.keyboard.defaults;
 
   const validKeys = Object.keys(keyMap);
   const types = validKeys.reduce(function(types, key) {
@@ -28,6 +29,7 @@ function init(set, events) {
     const type = types[key];
     keyboard.release(key, trigger, type);
   };
+  return true;
 }
 
 module.exports = init;

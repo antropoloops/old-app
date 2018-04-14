@@ -1,11 +1,12 @@
 {
-  "name": "@atpls/app-control",
+  "name": "@atpls/app-browser",
   "version": "1.0.0",
   "homepage": "./",
   "description": "A web app to control antropoloops app via ws",
   "private": true,
   "dependencies": {
     "@atpls/keyboard": "^1.0.0",
+    "@atpls/audio": "^1.0.0",
     "@atpls/audioset": "^1.0.0",
     "hsv-rgb": "^1.0.0",
     "react": "^16.3.0",
@@ -17,7 +18,7 @@
     "tiny-emitter": "^2.0.2"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

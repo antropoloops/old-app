@@ -1,0 +1,502 @@
+{
+  "id": "lik03",
+  "format": "audioset-2",
+  "meta": { "title": "Lik03", "description": "Antropoloops Lik Session 03" },
+  "loader": {
+    "sources": {
+      "audio": [
+        "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav"
+      ],
+      "covers": [
+        "https://storage.googleapis.com/atpls-sets/lik/lik3-covers/{{filename}}.jpg"
+      ]
+    }
+  },
+  "audio": { "bpm": 120, "defaults": { "loop": true } },
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "imprint": false
+  },
+  "clips": {
+    "lik03-t01-c01": {
+      "meta": {
+        "title": "carvana indigena",
+        "album": "sortilege de la flute equatorienne",
+        "year": 1972,
+        "country": "Ecuador",
+        "lnglat": [-77.297508, 18.109581]
+      },
+      "audio": {
+        "filename": "lik03-t01-c01",
+        "track": "01",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "lik03-t01-c02": {
+      "meta": {
+        "title": "carvana indigena",
+        "album": "sortilege de la flute equatorienne",
+        "year": 1972,
+        "country": "Ecuador",
+        "lnglat": [-74.29733299999998, 4.570868]
+      },
+      "audio": {
+        "filename": "lik03-t01-c02",
+        "track": "01",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(151,60,97)" }
+    },
+    "lik03-t01-c03": {
+      "meta": {
+        "title": "carvana indigena",
+        "album": "sortilege de la flute equatorienne",
+        "year": 1972,
+        "country": "Ecuador",
+        "lnglat": [-3.7492200000000366, 40.46366700000001]
+      },
+      "audio": {
+        "filename": "lik03-t01-c03",
+        "track": "01",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(301,56,94)" }
+    },
+    "lik03-t01-c04": {
+      "meta": {
+        "title": "carvana indigena",
+        "album": "sortilege de la flute equatorienne",
+        "year": 1972,
+        "country": "Ecuador",
+        "lnglat": [30.802498000000014, 26.820553]
+      },
+      "audio": {
+        "filename": "lik03-t01-c04",
+        "track": "01",
+        "position": 4,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(337,99,90)" }
+    },
+    "lik03-t02-c01": {
+      "meta": {
+        "title": "som coiman",
+        "album": "la harpe indienne",
+        "year": 1969,
+        "country": "Paraguay",
+        "lnglat": [69.34511599999996, 30.375321]
+      },
+      "audio": {
+        "filename": "lik03-t02-c01",
+        "track": "02",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(195,99,94)" }
+    },
+    "lik03-t02-c02": {
+      "meta": {
+        "title": "carvana indigena",
+        "album": "sortilege de la flute equatorienne",
+        "year": 1972,
+        "country": "Ecuador",
+        "lnglat": [-149.456815, -17.649632]
+      },
+      "audio": {
+        "filename": "lik03-t02-c02",
+        "track": "02",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(222,63,94)" }
+    },
+    "lik03-t02-c03": {
+      "meta": {
+        "title": "Ajé!",
+        "album": "Venezuela: Songs and Drums Of The Black Brotherhoods",
+        "year": 1993,
+        "country": "Venezuela",
+        "lnglat": [-89.39852830000001, 32.3546679]
+      },
+      "audio": {
+        "filename": "lik03-t02-c03",
+        "track": "02",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(26,93,92)" }
+    },
+    "lik03-t03-c01": {
+      "meta": {
+        "title": "Mistura No. 4",
+        "album": "Batucada Genial",
+        "year": 1977,
+        "country": "Brasil",
+        "lnglat": [-63.616671999999994, -38.416097]
+      },
+      "audio": {
+        "filename": "lik03-t03-c01",
+        "track": "03",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(53,65,98)" }
+    },
+    "lik03-t03-c02": {
+      "meta": {
+        "title": "Baila Rosita",
+        "album": "A Orillas del Magdalena",
+        "year": 2009,
+        "country": "Colombia",
+        "lnglat": [21.824311999999964, 39.074208]
+      },
+      "audio": {
+        "filename": "lik03-t03-c02",
+        "track": "03",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,64,97)" }
+    },
+    "lik03-t03-c03": {
+      "meta": {
+        "title": "Borregos. Tonada del rabudo",
+        "album": "Traditional Music of Peru, Vol. 8. Piura",
+        "year": 1994,
+        "country": "Peru",
+        "lnglat": [32.290275000000065, 1.373333]
+      },
+      "audio": {
+        "filename": "lik03-t03-c03",
+        "track": "03",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(152,92,90)" }
+    },
+    "lik03-t04-c01": {
+      "meta": {
+        "title": "chico chora",
+        "album": "partido alto nota 10",
+        "year": 1977,
+        "country": "Brasil",
+        "lnglat": [74.21793260000004, 27.0238036]
+      },
+      "audio": {
+        "filename": "lik03-t04-c01",
+        "track": "04",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(300,61,99)" }
+    },
+    "lik03-t04-c02": {
+      "meta": {
+        "title": "congo-angola for dadalunda",
+        "album": "afro-bahian religious songs",
+        "year": 1941,
+        "country": "Brasil",
+        "lnglat": [113.92132700000002, -0.789275]
+      },
+      "audio": {
+        "filename": "lik03-t04-c02",
+        "track": "04",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(332,99,97)" }
+    },
+    "lik03-t05-c01": {
+      "meta": {
+        "title": "toque de capoeira de sao bento grande",
+        "album":
+          "academia de capoeira de angola sao jorge dos irmaos unidos de mestre caicara",
+        "year": 1973,
+        "country": "Brasil",
+        "lnglat": [-95.71289100000001, 37.09024]
+      },
+      "audio": {
+        "filename": "lik03-t05-c01",
+        "track": "05",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(190,50,95)" }
+    },
+    "lik03-t05-c02": {
+      "meta": {
+        "title": "cascada",
+        "album": "la harpe indienne",
+        "year": 1969,
+        "country": "Paraguay",
+        "lnglat": [-102.55278399999997, 23.634501]
+      },
+      "audio": {
+        "filename": "lik03-t05-c02",
+        "track": "05",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(223,74,91)" }
+    },
+    "lik03-t05-c03": {
+      "meta": {
+        "title": "cascada",
+        "album": "la harpe indienne",
+        "year": 1969,
+        "country": "Paraguay",
+        "lnglat": [12.567379999999957, 41.87194]
+      },
+      "audio": {
+        "filename": "lik03-t05-c03",
+        "track": "05",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(34,94,96)" }
+    },
+    "lik03-t06-c01": {
+      "meta": {
+        "title":
+          "Song accompanied with pantomime of the bird called choyke : Love Song",
+        "album": "Ameridian Music of Chile. Aymara, Qaqashqar, Mapuche",
+        "year": 1969,
+        "country": "Chile",
+        "lnglat": [22.937505999999985, -30.559482]
+      },
+      "audio": {
+        "filename": "lik03-t06-c01",
+        "track": "06",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(59,99,92)" }
+    },
+    "lik03-t06-c02": {
+      "meta": {
+        "title": "Qanchi Alcalde",
+        "album": "Traditional Music of Peru, Vol. 1. Festivals of Cusco",
+        "year": 1989,
+        "country": "Peru",
+        "lnglat": [95.62601719999998, 51.8872669]
+      },
+      "audio": {
+        "filename": "lik03-t06-c02",
+        "track": "06",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(115,88,91)" }
+    },
+    "lik03-t06-c03": {
+      "meta": {
+        "title": "Narrative Song",
+        "album": "Lowland Tribes of Ecuador",
+        "year": 1986,
+        "country": "Ecuador",
+        "lnglat": [160.15619400000003, -9.64571]
+      },
+      "audio": {
+        "filename": "lik03-t06-c03",
+        "track": "06",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(158,50,99)" }
+    },
+    "lik03-t07-c01": {
+      "meta": {
+        "title": "Exu (part 2)",
+        "album": "Amazônia · Cult Music Of Northern Brazil",
+        "year": 1976,
+        "country": "Brasil",
+        "lnglat": [-77.297508, 18.109581]
+      },
+      "audio": {
+        "filename": "lik03-t07-c01",
+        "track": "07",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "lik03-t07-c02": {
+      "meta": {
+        "title": "Ae cho ko noye oh",
+        "album":
+          "Music of the Coastal Amerindians of Guyana. The Arawak, Carib and Warrau",
+        "year": 1982,
+        "country": "Guyana",
+        "lnglat": [-74.29733299999998, 4.570868]
+      },
+      "audio": {
+        "filename": "lik03-t07-c02",
+        "track": "07",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(151,60,97)" }
+    },
+    "lik03-t07-c03": {
+      "meta": {
+        "title": "Heitor Villa Lobos habla de la música Brasileña",
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "year": 1950,
+        "country": "Brasil",
+        "lnglat": [-3.7492200000000366, 40.46366700000001]
+      },
+      "audio": {
+        "filename": "lik03-t07-c03",
+        "track": "07",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(301,56,94)" }
+    },
+    "lik03-t07-c04": {
+      "meta": {
+        "title": "diablada",
+        "album": "flute indienne",
+        "year": "",
+        "country": "Bolivia",
+        "lnglat": [30.802498000000014, 26.820553]
+      },
+      "audio": {
+        "filename": "lik03-t07-c04",
+        "track": "07",
+        "position": 4,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(337,99,90)" }
+    },
+    "lik03-t07-c05": {
+      "meta": {
+        "title": "Los Reyes Magos",
+        "album": "Traditional Music of Peru, Vol. 4",
+        "year": 1991,
+        "country": "Peru",
+        "lnglat": [69.34511599999996, 30.375321]
+      },
+      "audio": {
+        "filename": "lik03-t07-c05",
+        "track": "07",
+        "position": 5,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(195,99,94)" }
+    },
+    "lik03-t08-c01": {
+      "meta": {
+        "title": "Heitor Villa Lobos habla de la música Brasileña",
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "year": 1950,
+        "country": "Brasil",
+        "lnglat": [-149.456815, -17.649632]
+      },
+      "audio": {
+        "filename": "lik03-t08-c01",
+        "track": "08",
+        "position": 1,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(222,63,94)" }
+    },
+    "lik03-t08-c02": {
+      "meta": {
+        "title": "Heitor Villa Lobos habla de la música Brasileña",
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "year": 1950,
+        "country": "Brasil",
+        "lnglat": [-89.39852830000001, 32.3546679]
+      },
+      "audio": {
+        "filename": "lik03-t08-c02",
+        "track": "08",
+        "position": 2,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(26,93,92)" }
+    },
+    "lik03-t08-c03": {
+      "meta": {
+        "title": "Chant pour un Orisha, divinité yorouba",
+        "album":
+          "Brésil (Salvador de Bahia) et Bénin ; Verger, Pierre (1965-1990 ?)",
+        "year": 1965,
+        "country": "Brasil",
+        "lnglat": [-63.616671999999994, -38.416097]
+      },
+      "audio": {
+        "filename": "lik03-t08-c03",
+        "track": "08",
+        "position": 3,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(53,65,98)" }
+    },
+    "lik03-t08-c04": {
+      "meta": {
+        "title": "Tree-Felling Songs (Matjáu baai)",
+        "album": "Music from Saramaka. A Dynamic Afro-American Tradition",
+        "year": 1968,
+        "country": "Surinam",
+        "lnglat": [21.824311999999964, 39.074208]
+      },
+      "audio": {
+        "filename": "lik03-t08-c04",
+        "track": "08",
+        "position": 4,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,64,97)" }
+    },
+    "lik03-t08-c05": {
+      "meta": {
+        "title": "Heitor Villa Lobos habla de la música Brasileña",
+        "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "year": 1950,
+        "country": "Brasil",
+        "lnglat": [32.290275000000065, 1.373333]
+      },
+      "audio": {
+        "filename": "lik03-t08-c05",
+        "track": "08",
+        "position": 5,
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(152,92,90)" }
+    }
+  }
+}

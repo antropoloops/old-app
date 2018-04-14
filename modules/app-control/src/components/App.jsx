@@ -3,7 +3,10 @@ import Pad from "./Pad";
 import { rgb } from "../color";
 import "./App.css";
 
-// get sample name from a set
+const mapValues = (object, cb) =>
+  Object.keys(object).map((key, i) => cb(key, object[key], i));
+
+// get clip name from a set
 // given a url with port, change the port to the one from current window
 const withCurrentPort = url => {
   const base = url.slice(0, url.lastIndexOf(":"));
@@ -11,72 +14,55 @@ const withCurrentPort = url => {
   return base + ":" + port;
 };
 
-const keySet = keyboard => {
-  const keys = Object.keys(keyboard);
-  const sample = key => keyboard[key].sample;
-  const revMap = keys.reduce((r, key) => {
-    r[sample(key)] = key;
-    return r;
-  }, {});
-  const key = sample => revMap[sample];
-  return { keys, sample, key };
-};
-
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const { set } = this.props;
-    this.keySet = keySet(set.keyboard);
-    console.log(this.sampleToKey);
     this.state = { pressed: {} };
   }
+
   componentDidMount() {
-    const { socket, events } = this.props;
-    socket.on("message", (name, data) => {
-      events.emit(name, data);
-    });
-    events.on("/audio/start", sample => this.setPressed(true, sample));
-    events.on("/audio/stop", sample => this.setPressed(false, sample));
+    const { events } = this.props;
+    events.on("/clip/start", clip => this.setPressed(true, clip));
+    events.on("/clip/stop", clip => this.setPressed(false, clip));
+    events.on("/audio/stopped", clip => this.setPressed(false, clip));
   }
-  componentWillUnmount() {
-    const { socket, events } = this.props;
+  nocomponentWillUnmount() {
+    const { socket } = this.props;
     socket.off("message");
   }
 
-  setPressed(isPressed, sample) {
-    const key = this.keySet.key(sample);
-    if (key) {
-      const pressed = { ...this.state.pressed, [key]: isPressed };
-      this.setState({ pressed });
-    }
+  setPressed(isPressed, name) {
+    const pressed = this.state.pressed;
+    pressed[name] = isPressed;
+    this.setState({ pressed });
   }
 
-  emit(isPressed, key) {
-    const { socket, events } = this.props;
-    const sample = this.keySet.sample(key);
-    const event = isPressed ? "/audio/start" : "/audio/stop";
-    socket.send(event, sample);
-    events.emit(event, sample);
+  emit(isPressed, name) {
+    const event = isPressed ? "/clip/start" : "/clip/stop";
+    this.props.events.emit(event, name);
+    this.setPressed(isPressed, name);
   }
 
   render() {
-    const { set, url } = this.props;
     const { pressed } = this.state;
-    const color = sample => rgb(set.samples[sample].meta.color);
+    const { set, url } = this.props;
+    const currentLink = withCurrentPort(url) + "/#" + set.id;
     return (
       <div className="App">
         <div className="header">
-          {set.title} ({withCurrentPort(url)})
+          <a href={currentLink} alt="open">
+            {currentLink}
+          </a>
         </div>
         <div className="pads">
-          {this.keySet.keys.map((key, i) => (
+          {mapValues(set.clips, (name, clip) => (
             <Pad
-              key={key}
-              keyboard={key}
-              color={color(this.keySet.sample(key))}
-              pressed={pressed[key] === true}
-              onPress={() => this.emit(true, key)}
-              onRelease={() => this.emit(false, key)}
+              key={name}
+              keyboard={null}
+              color={rgb(clip.display.color)}
+              pressed={pressed[name]}
+              onPress={() => this.emit(true, name)}
+              onRelease={() => this.emit(false, name)}
             />
           ))}
         </div>

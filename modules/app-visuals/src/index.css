@@ -1,0 +1,48 @@
+/* Define the "system" font family */
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+/* Now, let's apply it on an element */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+body {
+  font-family: "system";
+}
+
+.App {
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  background-color: black;
+  padding-top: 0.2em;
+}
+
+.App .body {
+  flex: 1;
+  font-size: 12px;
+  line-height: 2em;
+}
+.App svg {
+  cursor: pointer;
+}
+.App svg:hover {
+  fill: white;
+}
