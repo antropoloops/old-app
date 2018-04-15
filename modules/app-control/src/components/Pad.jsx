@@ -24,7 +24,7 @@ class Pad extends React.Component {
       <button
         className={`Pad ${pressed ? "pressed" : ""}`}
         style={{
-          borderColor: pressed ? color : "#aaa"
+          borderColor: color
         }}
         onTouchStart={touch ? () => this.handlePress(true) : undefined}
         onMouseDown={() => this.handlePress(false)}

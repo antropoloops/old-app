@@ -17,6 +17,11 @@ function init(set, events) {
     player.stopAll();
   });
 
+  events.on("/audio/query/playing", function() {
+    events.emit("/audio/query-results/playing", player.names());
+  });
+  events.emit("/audio/query-results/playing", []);
+
   events.on("/clip/stop-all", function() {
     player.names().forEach(function(name) {
       events.emit("/clip/stop", name);

@@ -8,7 +8,7 @@ function Player(ctx, loader) {
 
   function play(name, sample, config) {
     const buffer = loader.get(name);
-    if (!buffer) return;
+    if (!buffer || sources[name]) return;
 
     const source = ctx.createBufferSource();
     source.buffer = buffer;
@@ -27,7 +27,7 @@ function Player(ctx, loader) {
     const source = sources[name];
     if (source) {
       source.stop();
-      source[name] = null;
+      delete sources[name];
     }
   }
 

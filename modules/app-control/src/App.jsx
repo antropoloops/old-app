@@ -11,6 +11,12 @@ const withCurrentPort = url => {
   return base + ":" + port;
 };
 
+const asPressed = names =>
+  names.reduce((pressed, name) => {
+    pressed[name] = true;
+    return pressed;
+  }, {});
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +33,10 @@ class App extends React.Component {
     events.on("/clip/start", clip => this.setPressed(true, clip));
     events.on("/clip/stop", clip => this.setPressed(false, clip));
     events.on("/audio/stopped", clip => this.setPressed(false, clip));
+    events.on("/audio/query-results/playing", names =>
+      this.setState({ pressed: asPressed(names) })
+    );
+    events.emit("/audio/query/playing");
   }
 
   setPressed(isPressed, name) {
