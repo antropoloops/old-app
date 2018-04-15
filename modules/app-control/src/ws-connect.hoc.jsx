@@ -13,7 +13,7 @@ export default function wsConnectHoc(WrappedComponent) {
       this.state = { error: null, socket: null, url: null };
     }
     componentWillMount() {
-      initConnection(serverUrl(window.origin))
+      initConnection(window.origin)
         .then(this.setState.bind(this))
         .catch(error => {
           this.setState({ error });

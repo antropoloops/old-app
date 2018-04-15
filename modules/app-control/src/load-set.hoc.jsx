@@ -1,5 +1,6 @@
 import React from "react";
 import { loadAudioSet, getEvents } from "@atpls/audioset";
+import initKeyboard from "@atpls/keyboard";
 import Message from "./components/Message";
 
 export default function loadSetHoc(WrappedComponent) {
@@ -13,6 +14,7 @@ export default function loadSetHoc(WrappedComponent) {
       const setName = window.location.hash.slice(1).toLowerCase() || "lik03";
       loadAudioSet(setName, url + "sets/").then(set => {
         const events = getEvents(set, socket);
+        initKeyboard(set, events);
         this.setState({ set, events });
       });
     }

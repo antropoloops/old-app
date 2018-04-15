@@ -15,11 +15,11 @@ class Pad extends React.Component {
       return;
     }
     const pressed = !this.props.pressed;
-    this.props[pressed ? "onPress" : "onRelease"]();
+    this.props[pressed ? "onPress" : "onRelease"](this.props.name);
   }
 
   render() {
-    const { color, pressed } = this.props;
+    const { color, pressed, touch } = this.props;
     return (
       <button
         className="Pad"
@@ -27,7 +27,7 @@ class Pad extends React.Component {
           borderColor: color,
           backgroundColor: pressed ? color : "transparent"
         }}
-        onTouchStart={() => this.handlePress(true)}
+        onTouchStart={touch ? () => this.handlePress(true) : undefined}
         onMouseDown={() => this.handlePress(false)}
       >
         &nbsp;
@@ -35,5 +35,11 @@ class Pad extends React.Component {
     );
   }
 }
+
+export const EmptyPad = ({ name }) => (
+  <button className="Pad" style={{ borderColor: "transparent" }}>
+    {name}
+  </button>
+);
 
 export default Pad;

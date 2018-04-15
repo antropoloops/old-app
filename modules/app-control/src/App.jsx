@@ -1,10 +1,7 @@
 import React from "react";
-import Pad from "./Pad";
-import { rgb } from "../color";
+import ClipList from "./components/ClipList";
+import GroupList from "./components/GroupList";
 import "./App.css";
-
-const mapValues = (object, cb) =>
-  Object.keys(object).map((key, i) => cb(key, object[key], i));
 
 // get clip name from a set
 // given a url with port, change the port to the one from current window
@@ -17,6 +14,11 @@ const withCurrentPort = url => {
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // FIXME
+    const { clips } = this.props.set;
+    Object.keys(clips).forEach(name => {
+      clips[name].id = name;
+    });
     this.state = { pressed: {} };
   }
 
@@ -25,10 +27,6 @@ class App extends React.Component {
     events.on("/clip/start", clip => this.setPressed(true, clip));
     events.on("/clip/stop", clip => this.setPressed(false, clip));
     events.on("/audio/stopped", clip => this.setPressed(false, clip));
-  }
-  nocomponentWillUnmount() {
-    const { socket } = this.props;
-    socket.off("message");
   }
 
   setPressed(isPressed, name) {
@@ -47,6 +45,8 @@ class App extends React.Component {
     const { pressed } = this.state;
     const { set, url } = this.props;
     const currentLink = withCurrentPort(url) + "/#" + set.id;
+    const tracks = set.control && set.control.tracks;
+    const Pads = tracks ? GroupList : ClipList;
     return (
       <div className="App">
         <div className="header">
@@ -54,18 +54,13 @@ class App extends React.Component {
             {currentLink}
           </a>
         </div>
-        <div className="pads">
-          {mapValues(set.clips, (name, clip) => (
-            <Pad
-              key={name}
-              keyboard={null}
-              color={rgb(clip.display.color)}
-              pressed={pressed[name]}
-              onPress={() => this.emit(true, name)}
-              onRelease={() => this.emit(false, name)}
-            />
-          ))}
-        </div>
+        <Pads
+          clips={set.clips}
+          tracks={tracks}
+          pressed={pressed}
+          onPress={name => this.emit(true, name)}
+          onRelease={name => this.emit(false, name)}
+        />
       </div>
     );
   }

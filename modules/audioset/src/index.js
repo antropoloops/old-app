@@ -2,6 +2,12 @@ import EventBus from "nanobus";
 import io from "socket.io-client";
 
 function noop() {}
+const debug = process.env.NODE_ENV === "production" ? noop : console.log;
+
+// an utility function
+export function mapObject(object, cb) {
+  return Object.keys(object).map((key, i) => cb(object[key], key, i));
+}
 
 /**
  * Get a valid server url
@@ -15,8 +21,7 @@ export function serverUrl(origin) {
   return (portIndex === -1 ? origin : origin.slice(0, portIndex)) + ":3333";
 }
 
-export function getEvents(set, socket, debug) {
-  debug = debug || noop;
+export function getEvents(set, socket) {
   const bus = EventBus();
   const hasSocket = !!socket;
 

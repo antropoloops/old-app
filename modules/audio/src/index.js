@@ -19,7 +19,7 @@ function init(set, events) {
 
   events.on("/clip/stop-all", function() {
     player.names().forEach(function(name) {
-      events.emit("/audio/stopped", name);
+      events.emit("/clip/stop", name);
     });
     events.emit("/audio/all-stopped", name);
   });
