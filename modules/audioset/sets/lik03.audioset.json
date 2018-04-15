@@ -81,8 +81,9 @@
   "clips": {
     "lik03-t01-c01": {
       "meta": {
-        "title": "carvana indigena",
-        "album": "sortilege de la flute equatorienne",
+        "title": "Carvana indigena",
+        "album": "Sortilege de la flute equatorienne",
+        "artist": "Los Corazas, Carlos Bonilla, Gonzalo Castro",
         "year": 1972,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -98,8 +99,9 @@
     },
     "lik03-t01-c02": {
       "meta": {
-        "title": "carvana indigena",
-        "album": "sortilege de la flute equatorienne",
+        "title": "Carvana indigena",
+        "album": "Sortilege de la flute equatorienne",
+        "artist": "Los Corazas, Carlos Bonilla, Gonzalo Castro",
         "year": 1972,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -115,8 +117,9 @@
     },
     "lik03-t01-c03": {
       "meta": {
-        "title": "carvana indigena",
-        "album": "sortilege de la flute equatorienne",
+        "title": "Carvana indigena",
+        "album": "Sortilege de la flute equatorienne",
+        "artist": "Los Corazas, Carlos Bonilla, Gonzalo Castro",
         "year": 1972,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -132,8 +135,9 @@
     },
     "lik03-t01-c04": {
       "meta": {
-        "title": "carvana indigena",
-        "album": "sortilege de la flute equatorienne",
+        "title": "Carvana indigena",
+        "album": "Sortilege de la flute equatorienne",
+        "artist": "Los Corazas, Carlos Bonilla, Gonzalo Castro",
         "year": 1972,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -149,8 +153,9 @@
     },
     "lik03-t02-c01": {
       "meta": {
-        "title": "som coiman",
-        "album": "la harpe indienne",
+        "title": "Som coiman",
+        "album": "La harpe indienne",
+        "artist": "Sergio Cuevas",
         "year": 1969,
         "country": "Paraguay",
         "lnglat": [-58.443832, -23.442503]
@@ -166,8 +171,9 @@
     },
     "lik03-t02-c02": {
       "meta": {
-        "title": "carvana indigena",
-        "album": "sortilege de la flute equatorienne",
+        "title": "Carvana indigena",
+        "album": "Sortilege de la flute equatorienne",
+        "artist": "Los Corazas, Carlos Bonilla, Gonzalo Castro",
         "year": 1972,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -185,6 +191,7 @@
       "meta": {
         "title": "Ajé!",
         "album": "Venezuela: Songs and Drums Of The Black Brotherhoods",
+        "artist": "Tambores Chimbangueles De San Benito",
         "year": 1993,
         "country": "Venezuela",
         "lnglat": [-66.58973, 6.42375]
@@ -202,6 +209,7 @@
       "meta": {
         "title": "Mistura No. 4",
         "album": "Batucada Genial",
+        "artist": "Mester Geraldo e Sua Bateria",
         "year": 1977,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -219,6 +227,7 @@
       "meta": {
         "title": "Baila Rosita",
         "album": "A Orillas del Magdalena",
+        "artist": "Los Guacharacos",
         "year": 2009,
         "country": "Colombia",
         "lnglat": [-74.297333, 4.570868]
@@ -236,6 +245,7 @@
       "meta": {
         "title": "Borregos. Tonada del rabudo",
         "album": "Traditional Music of Peru, Vol. 8. Piura",
+        "artist": "Banda Hermanos Dedios Zapata",
         "year": 1994,
         "country": "Peru",
         "lnglat": [-75.015152, -9.189967]
@@ -251,8 +261,9 @@
     },
     "lik03-t04-c01": {
       "meta": {
-        "title": "chico chora",
-        "album": "partido alto nota 10",
+        "title": "Chico chora",
+        "album": "Partido alto nota 10",
+        "artist": "Bezerra & Genaro Da Silva",
         "year": 1977,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -268,8 +279,9 @@
     },
     "lik03-t04-c02": {
       "meta": {
-        "title": "congo-angola for dadalunda",
-        "album": "afro-bahian religious songs",
+        "title": "Congo-Angola for dadalunda",
+        "album": "Afro-bahian religious songs",
+        "artist": "Varios",
         "year": 1941,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -285,9 +297,10 @@
     },
     "lik03-t05-c01": {
       "meta": {
-        "title": "toque de capoeira de sao bento grande",
+        "title": "Toque de capoeira de Sao Bento Grande",
         "album":
-          "academia de capoeira de angola sao jorge dos irmaos unidos de mestre caicara",
+          "Academia de capoeira de Angola. Sao Jorge dos irmaos unidos de mestre Caicara",
+        "artist": "Academia de capoeira de Angola",
         "year": 1973,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -303,8 +316,9 @@
     },
     "lik03-t05-c02": {
       "meta": {
-        "title": "cascada",
-        "album": "la harpe indienne",
+        "title": "Cascada",
+        "album": "La harpe indienne",
+        "artist": "Sergio Cuevas",
         "year": 1969,
         "country": "Paraguay",
         "lnglat": [-58.443832, -23.442503]
@@ -320,8 +334,9 @@
     },
     "lik03-t05-c03": {
       "meta": {
-        "title": "cascada",
-        "album": "la harpe indienne",
+        "title": "Cascada",
+        "album": "La harpe indienne",
+        "artist": "Sergio Cuevas",
         "year": 1969,
         "country": "Paraguay",
         "lnglat": [-58.443832, -23.442503]
@@ -340,6 +355,7 @@
         "title":
           "Song accompanied with pantomime of the bird called choyke : Love Song",
         "album": "Ameridian Music of Chile. Aymara, Qaqashqar, Mapuche",
+        "artist": "Mapuche",
         "year": 1969,
         "country": "Chile",
         "lnglat": [-71.542969, -35.675147]
@@ -357,6 +373,7 @@
       "meta": {
         "title": "Qanchi Alcalde",
         "album": "Traditional Music of Peru, Vol. 1. Festivals of Cusco",
+        "artist": "Conjunto of Cusco",
         "year": 1989,
         "country": "Peru",
         "lnglat": [-75.015152, -9.189967]
@@ -374,6 +391,7 @@
       "meta": {
         "title": "Narrative Song",
         "album": "Lowland Tribes of Ecuador",
+        "artist": "Waorani people (Huarani)",
         "year": 1986,
         "country": "Ecuador",
         "lnglat": [-78.183406, -1.831239]
@@ -391,6 +409,7 @@
       "meta": {
         "title": "Exu (part 2)",
         "album": "Amazônia · Cult Music Of Northern Brazil",
+        "artist": "Closing song of a ritual cycle in the batuque houses",
         "year": 1976,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -409,6 +428,7 @@
         "title": "Ae cho ko noye oh",
         "album":
           "Music of the Coastal Amerindians of Guyana. The Arawak, Carib and Warrau",
+        "artist": "Shaman Joseph Miguel",
         "year": 1982,
         "country": "Guyana",
         "lnglat": [-58.93018, 4.860416]
@@ -426,6 +446,7 @@
       "meta": {
         "title": "Heitor Villa Lobos habla de la música Brasileña",
         "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
         "year": 1950,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -441,8 +462,9 @@
     },
     "lik03-t07-c04": {
       "meta": {
-        "title": "diablada",
-        "album": "flute indienne",
+        "title": "Diablada",
+        "album": "Flute indienne",
+        "artist": "Varios",
         "year": "",
         "country": "Bolivia",
         "lnglat": [-63.588653, -16.290154]
@@ -460,6 +482,7 @@
       "meta": {
         "title": "Los Reyes Magos",
         "album": "Traditional Music of Peru, Vol. 4",
+        "artist": "People at lambayeque",
         "year": 1991,
         "country": "Peru",
         "lnglat": [-75.015152, -9.189967]
@@ -477,6 +500,7 @@
       "meta": {
         "title": "Heitor Villa Lobos habla de la música Brasileña",
         "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
         "year": 1950,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -494,6 +518,7 @@
       "meta": {
         "title": "Heitor Villa Lobos habla de la música Brasileña",
         "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
         "year": 1950,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -512,6 +537,7 @@
         "title": "Chant pour un Orisha, divinité yorouba",
         "album":
           "Brésil (Salvador de Bahia) et Bénin ; Verger, Pierre (1965-1990 ?)",
+        "artist": "Afro-Brasileños",
         "year": 1965,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
@@ -529,6 +555,7 @@
       "meta": {
         "title": "Tree-Felling Songs (Matjáu baai)",
         "album": "Music from Saramaka. A Dynamic Afro-American Tradition",
+        "artist": "Pikílío Man",
         "year": 1968,
         "country": "Surinam",
         "lnglat": [-56.027783, 3.919305]
@@ -546,6 +573,7 @@
       "meta": {
         "title": "Heitor Villa Lobos habla de la música Brasileña",
         "album": "BENIN & BRESIL. CORREA DE AZEVEDO,L.H.",
+        "artist": "Heitor Villa Lobos",
         "year": 1950,
         "country": "Brasil",
         "lnglat": [-51.92528, -14.235004]
