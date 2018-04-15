@@ -19,18 +19,17 @@ class Pad extends React.Component {
   }
 
   render() {
-    const { color, pressed, touch } = this.props;
+    const { color, pressed, touch, image, name } = this.props;
     return (
       <button
-        className="Pad"
+        className={`Pad ${pressed ? "pressed" : ""}`}
         style={{
-          borderColor: color,
-          backgroundColor: pressed ? color : "transparent"
+          borderColor: pressed ? color : "#aaa"
         }}
         onTouchStart={touch ? () => this.handlePress(true) : undefined}
         onMouseDown={() => this.handlePress(false)}
       >
-        &nbsp;
+        {image ? <img src={image} alt={name} /> : ""}
       </button>
     );
   }

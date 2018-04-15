@@ -11,6 +11,7 @@ const ClipList = ({ clips, pressed, onPress, onRelease }) => (
         key={name}
         name={name}
         keyboard={null}
+        image={clip.display.cover}
         color={clip.display.color}
         pressed={pressed[name]}
         onPress={onPress}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import registerServiceWorker from "./registerServiceWorker";
-import initAudio from "@atpls/audio";
+import initAudio from "@atpls/audio-playback";
 import initKeyboard from "@atpls/keyboard";
 import { initConnection, loadAudioSet, getEvents } from "@atpls/audioset";
 import initVisuals from "./visuals";

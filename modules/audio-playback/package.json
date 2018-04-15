@@ -1,5 +1,5 @@
 {
-  "name": "@atpls/audio",
+  "name": "@atpls/audio-playback",
   "version": "1.0.0",
   "description": "Antropoloops audio engine",
   "main": "src/index.js",

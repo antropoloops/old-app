@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 15/04/2017 [Dani 2h]
+
+* Add triggers to app-visuals
+* Add covers to app-controls
+* Rename audio to audio-playback
+
 ## 14/04/2017 [Dani 8h]
 
 * Lik03
