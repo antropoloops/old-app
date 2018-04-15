@@ -1,6 +1,6 @@
 import React from "react";
 import ClipList from "./components/ClipList";
-import GroupList from "./components/GroupList";
+import GroupedList from "./components/GroupedList";
 import "./App.css";
 
 // get clip name from a set
@@ -55,8 +55,8 @@ class App extends React.Component {
     const { pressed } = this.state;
     const { set, url } = this.props;
     const currentLink = withCurrentPort(url) + "/#" + set.id;
-    const tracks = set.control && set.control.tracks;
-    const Pads = tracks ? GroupList : ClipList;
+    const groups = set.control && set.control.groups;
+    const Pads = groups ? GroupedList : ClipList;
     return (
       <div className="App">
         <div className="header">
@@ -66,7 +66,7 @@ class App extends React.Component {
         </div>
         <Pads
           clips={set.clips}
-          tracks={tracks}
+          groups={groups}
           pressed={pressed}
           onPress={name => this.emit(true, name)}
           onRelease={name => this.emit(false, name)}

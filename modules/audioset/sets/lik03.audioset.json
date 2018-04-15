@@ -17,67 +17,7 @@
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false
   },
-  "control": {
-    "notracks": {
-      "track1": {
-        "clips": [
-          "lik03-t01-c01",
-          "lik03-t01-c02",
-          "lik03-t01-c03",
-          "lik03-t01-c04"
-        ],
-        "color": "red",
-        "pos": 0
-      },
-      "track2": {
-        "clips": ["lik03-t02-c01", "lik03-t02-c02", "lik03-t02-c03"],
-        "color": "red",
-        "pos": 1
-      },
-      "track3": {
-        "clips": ["lik03-t03-c01", "lik03-t03-c02", "lik03-t03-c03"],
-        "color": "red",
-        "pos": 2
-      },
-      "track4": {
-        "clips": ["lik03-t04-c01", "lik03-t04-c02"],
-        "color": "red",
-        "pos": 3
-      },
-      "track5": {
-        "clips": ["lik03-t05-c01", "lik03-t05-c02", "lik03-t05-c03"],
-        "color": "red",
-        "pos": 4
-      },
-      "track6": {
-        "clips": ["lik03-t06-c01", "lik03-t06-c02", "lik03-t06-c03"],
-        "color": "red",
-        "pos": 5
-      },
-      "track7": {
-        "clips": [
-          "lik03-t07-c01",
-          "lik03-t07-c02",
-          "lik03-t07-c03",
-          "lik03-t07-c04",
-          "lik03-t07-c05"
-        ],
-        "color": "red",
-        "pos": 6
-      },
-      "track8": {
-        "clips": [
-          "lik03-t08-c01",
-          "lik03-t08-c02",
-          "lik03-t08-c03",
-          "lik03-t08-c04",
-          "lik03-t08-c05"
-        ],
-        "color": "red",
-        "pos": 7
-      }
-    }
-  },
+  "control": { "groups": { "name": "audio.track" } },
   "clips": {
     "lik03-t01-c01": {
       "meta": {
@@ -90,7 +30,7 @@
       },
       "audio": {
         "filename": "lik03-t01-c01",
-        "track": "01",
+        "track": 0,
         "position": 1,
         "beats": 8,
         "volume": 0.7
@@ -108,7 +48,7 @@
       },
       "audio": {
         "filename": "lik03-t01-c02",
-        "track": "01",
+        "track": 0,
         "position": 2,
         "beats": 6,
         "volume": 0.7
@@ -126,7 +66,7 @@
       },
       "audio": {
         "filename": "lik03-t01-c03",
-        "track": "01",
+        "track": 0,
         "position": 3,
         "beats": 32,
         "volume": 0.7
@@ -144,7 +84,7 @@
       },
       "audio": {
         "filename": "lik03-t01-c04",
-        "track": "01",
+        "track": 0,
         "position": 4,
         "beats": 8,
         "volume": 0.7
@@ -162,7 +102,7 @@
       },
       "audio": {
         "filename": "lik03-t02-c01",
-        "track": "02",
+        "track": 1,
         "position": 1,
         "beats": 8,
         "volume": 0.7
@@ -180,7 +120,7 @@
       },
       "audio": {
         "filename": "lik03-t02-c02",
-        "track": "02",
+        "track": 1,
         "position": 2,
         "beats": 8,
         "volume": 0.7
@@ -198,7 +138,7 @@
       },
       "audio": {
         "filename": "lik03-t02-c03",
-        "track": "02",
+        "track": 1,
         "position": 3,
         "beats": 4,
         "volume": 0.7
@@ -216,7 +156,7 @@
       },
       "audio": {
         "filename": "lik03-t03-c01",
-        "track": "03",
+        "track": 2,
         "position": 1,
         "beats": 4,
         "volume": 0.7
@@ -234,7 +174,7 @@
       },
       "audio": {
         "filename": "lik03-t03-c02",
-        "track": "03",
+        "track": 2,
         "position": 2,
         "beats": 8,
         "volume": 0.7
@@ -252,7 +192,7 @@
       },
       "audio": {
         "filename": "lik03-t03-c03",
-        "track": "03",
+        "track": 2,
         "position": 3,
         "beats": 2,
         "volume": 0.7
@@ -270,7 +210,7 @@
       },
       "audio": {
         "filename": "lik03-t04-c01",
-        "track": "04",
+        "track": 3,
         "position": 1,
         "beats": 4,
         "volume": 0.7
@@ -288,7 +228,7 @@
       },
       "audio": {
         "filename": "lik03-t04-c02",
-        "track": "04",
+        "track": 3,
         "position": 2,
         "beats": 4,
         "volume": 0.7
@@ -307,7 +247,7 @@
       },
       "audio": {
         "filename": "lik03-t05-c01",
-        "track": "05",
+        "track": 4,
         "position": 1,
         "beats": 8,
         "volume": 0.7
@@ -325,7 +265,7 @@
       },
       "audio": {
         "filename": "lik03-t05-c02",
-        "track": "05",
+        "track": 4,
         "position": 2,
         "beats": 4,
         "volume": 0.7
@@ -343,7 +283,7 @@
       },
       "audio": {
         "filename": "lik03-t05-c03",
-        "track": "05",
+        "track": 4,
         "position": 3,
         "beats": 8,
         "volume": 0.7
@@ -362,7 +302,7 @@
       },
       "audio": {
         "filename": "lik03-t06-c01",
-        "track": "06",
+        "track": 5,
         "position": 1,
         "beats": 20,
         "volume": 0.7
@@ -380,7 +320,7 @@
       },
       "audio": {
         "filename": "lik03-t06-c02",
-        "track": "06",
+        "track": 5,
         "position": 2,
         "beats": 8,
         "volume": 0.7
@@ -398,7 +338,7 @@
       },
       "audio": {
         "filename": "lik03-t06-c03",
-        "track": "06",
+        "track": 5,
         "position": 3,
         "beats": 16,
         "volume": 0.7
@@ -416,7 +356,7 @@
       },
       "audio": {
         "filename": "lik03-t07-c01",
-        "track": "07",
+        "track": 6,
         "position": 1,
         "beats": 8,
         "volume": 0.7
@@ -435,7 +375,7 @@
       },
       "audio": {
         "filename": "lik03-t07-c02",
-        "track": "07",
+        "track": 6,
         "position": 2,
         "beats": 20,
         "volume": 0.7
@@ -453,7 +393,7 @@
       },
       "audio": {
         "filename": "lik03-t07-c03",
-        "track": "07",
+        "track": 6,
         "position": 3,
         "beats": 24,
         "volume": 0.7
@@ -471,7 +411,7 @@
       },
       "audio": {
         "filename": "lik03-t07-c04",
-        "track": "07",
+        "track": 6,
         "position": 4,
         "beats": 8,
         "volume": 0.7
@@ -489,7 +429,7 @@
       },
       "audio": {
         "filename": "lik03-t07-c05",
-        "track": "07",
+        "track": 6,
         "position": 5,
         "beats": 12,
         "volume": 0.7
@@ -507,7 +447,7 @@
       },
       "audio": {
         "filename": "lik03-t08-c01",
-        "track": "08",
+        "track": 7,
         "position": 1,
         "beats": 18,
         "volume": 0.7
@@ -525,7 +465,7 @@
       },
       "audio": {
         "filename": "lik03-t08-c02",
-        "track": "08",
+        "track": 7,
         "position": 2,
         "beats": 8,
         "volume": 0.7
@@ -544,7 +484,7 @@
       },
       "audio": {
         "filename": "lik03-t08-c03",
-        "track": "08",
+        "track": 7,
         "position": 3,
         "beats": 32,
         "volume": 0.7
@@ -562,7 +502,7 @@
       },
       "audio": {
         "filename": "lik03-t08-c04",
-        "track": "08",
+        "track": 7,
         "position": 4,
         "beats": 16,
         "volume": 0.7
@@ -580,7 +520,7 @@
       },
       "audio": {
         "filename": "lik03-t08-c05",
-        "track": "08",
+        "track": 7,
         "position": 5,
         "beats": 15,
         "volume": 0.7

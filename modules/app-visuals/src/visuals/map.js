@@ -32,7 +32,7 @@ function getAlbumInfo(set, name) {
     title: meta.title,
     artist: meta.artist,
     album: meta.album,
-    trackNumber: audio.track !== undefined ? parseInt(audio.track, 10) : 1,
+    trackNumber: audio.track || 0,
     loopend: audio.loopend || 1,
     trackVolume: audio.trackVolume || 0.7,
     duration: 60 * audio.beats / bpm, // clip duration in seconds

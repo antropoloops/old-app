@@ -6,6 +6,7 @@
 * Add covers to app-control
 * Rename audio to audio-playback
 * app-control query audio-playback for current playing clips
+* app-control track groups display
 
 ## 14/04/2017 [Dani 8h]
 
