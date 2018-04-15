@@ -26,23 +26,3 @@ a {
 body {
   font-family: "system";
 }
-
-.App {
-  display: flex;
-  align-items: flex-start;
-  color: white;
-  background-color: black;
-  padding-top: 0.2em;
-}
-
-.App .body {
-  flex: 1;
-  font-size: 12px;
-  line-height: 2em;
-}
-.App svg {
-  cursor: pointer;
-}
-.App svg:hover {
-  fill: white;
-}

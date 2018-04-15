@@ -1,6 +1,5 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
-import hsvToRgb from "hsv-rgb";
 
 import {
   RATIOS,
@@ -16,15 +15,6 @@ import { createWave } from "./wave";
 import { createLastSampleInfo } from "./lastSampleInfo";
 import { createImprint } from "./imprint";
 
-const HSV = /^hsv\((.*)\)$/;
-export function rgb(color) {
-  const parsed = HSV.exec(color)[1]
-    .split(",")
-    .map(i => parseInt(i, 10));
-  const c = hsvToRgb.apply(null, parsed);
-  return "rgb(" + c[0] + "," + c[1] + "," + c[2] + ")";
-}
-
 function getAlbumInfo(set, name) {
   const clip = set.clips[name];
   const { meta, audio } = clip;
@@ -32,6 +22,7 @@ function getAlbumInfo(set, name) {
   const covers = set.loader.sources.covers;
 
   const imageUrl = covers ? covers[0].replace("{{filename}}", filename) : "";
+  console.log("COVER!", imageUrl);
   const bpm = set.meta.bpm || 120;
 
   return {
@@ -46,7 +37,7 @@ function getAlbumInfo(set, name) {
     trackVolume: audio.trackVolume || 0.7,
     duration: 60 * audio.beats / bpm, // clip duration in seconds
     imageUrl,
-    trackColor: rgb(clip.display.color)
+    trackColor: clip.display.color
   };
 }
 

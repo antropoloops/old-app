@@ -12,6 +12,7 @@
     "d3": "^5.0.0",
     "d3-geo-projection": "^2.4.0",
     "hsv-rgb": "^1.0.0",
+    "lodash": "^4.17.5",
     "react-scripts": "1.1.1",
     "screenfull": "^3.3.2",
     "topojson": "^3.0.2"

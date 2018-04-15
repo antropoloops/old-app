@@ -1,12 +1,15 @@
 import EventBus from "nanobus";
 import io from "socket.io-client";
+import migrate from "./migrate";
 
 function noop() {}
 const debug = process.env.NODE_ENV === "production" ? noop : console.log;
 
 // an utility function
 export function mapObject(object, cb) {
-  return Object.keys(object).map((key, i) => cb(object[key], key, i));
+  return Object.keys(object).map(function(key, i) {
+    return cb(object[key], key, i);
+  });
 }
 
 /**
@@ -21,6 +24,12 @@ export function serverUrl(origin) {
   return (portIndex === -1 ? origin : origin.slice(0, portIndex)) + ":3333";
 }
 
+/**
+ * Create an event bus for a set
+ *
+ * @param {*} set
+ * @param {*} [socket]
+ */
 export function getEvents(set, socket) {
   const bus = EventBus();
   const hasSocket = !!socket;
@@ -44,7 +53,7 @@ export function getEvents(set, socket) {
 }
 
 /**
- * Init connection
+ * Init connection with server if possible
  */
 export function initConnection(origin) {
   const url = serverUrl(origin) + "/status";
@@ -62,6 +71,12 @@ export function initConnection(origin) {
     });
 }
 
+/**
+ * Load an audio set
+ * @param {*} name
+ * @param {*} [baseUrl]
+ * @param {AudioSet} defaultSet - the set to be returned if can't load
+ */
 export function loadAudioSet(name, baseUrl, defSet) {
   console.log("baseUrl", baseUrl);
   const url = (baseUrl || "") + "/" + name + ".audioset.json";
@@ -72,5 +87,12 @@ export function loadAudioSet(name, baseUrl, defSet) {
     })
     .catch(function() {
       return defSet;
-    });
+    })
+    .then(migrate);
+}
+
+export function resourceUrl(name, resource) {
+  return resource && resource.lenght
+    ? resource[0].replace("{{filename}}", name)
+    : "";
 }

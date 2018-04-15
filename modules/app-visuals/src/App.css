@@ -1,0 +1,22 @@
+.App {
+  color: white;
+  background-color: black;
+  padding-top: 0.2em;
+  font-size: 12px;
+  line-height: 2em;
+}
+
+.App header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.App header .body {
+  flex: 1;
+}
+.App header svg {
+  cursor: pointer;
+}
+.App header svg:hover {
+  fill: white;
+}

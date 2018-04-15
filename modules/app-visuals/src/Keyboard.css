@@ -1,0 +1,13 @@
+.Keyboard {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Keyboard .trigger {
+  width: 2em;
+  height: 2em;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 2px;
+  margin: 2px;
+}
