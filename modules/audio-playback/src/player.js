@@ -5,9 +5,9 @@
  */
 function Player(ctx, buffers) {
   const sources = {};
-  let count = 0;
+  var count = 0;
 
-  const player = { ctx };
+  const player = { ctx: ctx };
 
   player.play = function(name, clip, when) {
     const buffer = buffers.get(name);
@@ -25,7 +25,7 @@ function Player(ctx, buffers) {
     source.start(when);
     sources[name] = source;
     count++;
-    return { clip: name, when, voices: count };
+    return { clip: name, when: when, voices: count };
   };
 
   player.stop = function(name, when) {
@@ -35,7 +35,7 @@ function Player(ctx, buffers) {
       source.stop(when);
       delete sources[name];
       count--;
-      return { clip: name, when, voices: count };
+      return { clip: name, when: when, voices: count };
     }
     return { voices: count };
   };

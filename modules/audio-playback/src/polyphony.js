@@ -11,7 +11,7 @@ function Polyphony(set, events) {
 
   const tracks = {};
 
-  events.on("/audio/started", name => {
+  events.on("/audio/started", function(name) {
     const clip = set.clips[name];
     const track = clip && clip.audio && clip.audio.track;
     if (track !== undefined) {

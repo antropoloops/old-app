@@ -17,12 +17,11 @@ function schedule(bpm, startedAt, now) {
  * @param {*} player
  */
 function Scheduler(set, events, player) {
-  const { ctx } = player;
-  const { clips, audio } = set;
-  const isQuantize = audio.quantize !== false;
-  const bpm = audio.bpm || 120;
-  console.log("BPM", bpm);
-  let startedAt = null;
+  const ctx = player.ctx;
+  const clips = set.clips;
+  const isQuantize = set.audio.quantize !== false;
+  const bpm = set.audio.bpm || 120;
+  var startedAt = null;
 
   events.on("/clip/stop-all", function() {
     player.names().forEach(function(name) {
