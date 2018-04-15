@@ -91,7 +91,7 @@
         "filename": "lik03-t01-c01",
         "track": "01",
         "position": 1,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(106,89,98)" }
@@ -108,7 +108,7 @@
         "filename": "lik03-t01-c02",
         "track": "01",
         "position": 2,
-        "beats": 1,
+        "beats": 6,
         "volume": 0.7
       },
       "display": { "color": "hsv(151,60,97)" }
@@ -125,7 +125,7 @@
         "filename": "lik03-t01-c03",
         "track": "01",
         "position": 3,
-        "beats": 1,
+        "beats": 32,
         "volume": 0.7
       },
       "display": { "color": "hsv(301,56,94)" }
@@ -142,7 +142,7 @@
         "filename": "lik03-t01-c04",
         "track": "01",
         "position": 4,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(337,99,90)" }
@@ -159,7 +159,7 @@
         "filename": "lik03-t02-c01",
         "track": "02",
         "position": 1,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(195,99,94)" }
@@ -176,7 +176,7 @@
         "filename": "lik03-t02-c02",
         "track": "02",
         "position": 2,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(222,63,94)" }
@@ -193,7 +193,7 @@
         "filename": "lik03-t02-c03",
         "track": "02",
         "position": 3,
-        "beats": 1,
+        "beats": 4,
         "volume": 0.7
       },
       "display": { "color": "hsv(26,93,92)" }
@@ -210,7 +210,7 @@
         "filename": "lik03-t03-c01",
         "track": "03",
         "position": 1,
-        "beats": 1,
+        "beats": 4,
         "volume": 0.7
       },
       "display": { "color": "hsv(53,65,98)" }
@@ -227,7 +227,7 @@
         "filename": "lik03-t03-c02",
         "track": "03",
         "position": 2,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(106,64,97)" }
@@ -244,7 +244,7 @@
         "filename": "lik03-t03-c03",
         "track": "03",
         "position": 3,
-        "beats": 1,
+        "beats": 2,
         "volume": 0.7
       },
       "display": { "color": "hsv(152,92,90)" }
@@ -261,7 +261,7 @@
         "filename": "lik03-t04-c01",
         "track": "04",
         "position": 1,
-        "beats": 1,
+        "beats": 4,
         "volume": 0.7
       },
       "display": { "color": "hsv(300,61,99)" }
@@ -278,7 +278,7 @@
         "filename": "lik03-t04-c02",
         "track": "04",
         "position": 2,
-        "beats": 1,
+        "beats": 4,
         "volume": 0.7
       },
       "display": { "color": "hsv(332,99,97)" }
@@ -296,7 +296,7 @@
         "filename": "lik03-t05-c01",
         "track": "05",
         "position": 1,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(190,50,95)" }
@@ -313,7 +313,7 @@
         "filename": "lik03-t05-c02",
         "track": "05",
         "position": 2,
-        "beats": 1,
+        "beats": 4,
         "volume": 0.7
       },
       "display": { "color": "hsv(223,74,91)" }
@@ -330,7 +330,7 @@
         "filename": "lik03-t05-c03",
         "track": "05",
         "position": 3,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(34,94,96)" }
@@ -348,7 +348,7 @@
         "filename": "lik03-t06-c01",
         "track": "06",
         "position": 1,
-        "beats": 1,
+        "beats": 20,
         "volume": 0.7
       },
       "display": { "color": "hsv(59,99,92)" }
@@ -365,7 +365,7 @@
         "filename": "lik03-t06-c02",
         "track": "06",
         "position": 2,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(115,88,91)" }
@@ -382,7 +382,7 @@
         "filename": "lik03-t06-c03",
         "track": "06",
         "position": 3,
-        "beats": 1,
+        "beats": 16,
         "volume": 0.7
       },
       "display": { "color": "hsv(158,50,99)" }
@@ -399,7 +399,7 @@
         "filename": "lik03-t07-c01",
         "track": "07",
         "position": 1,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(106,89,98)" }
@@ -417,7 +417,7 @@
         "filename": "lik03-t07-c02",
         "track": "07",
         "position": 2,
-        "beats": 1,
+        "beats": 20,
         "volume": 0.7
       },
       "display": { "color": "hsv(151,60,97)" }
@@ -434,7 +434,7 @@
         "filename": "lik03-t07-c03",
         "track": "07",
         "position": 3,
-        "beats": 1,
+        "beats": 24,
         "volume": 0.7
       },
       "display": { "color": "hsv(301,56,94)" }
@@ -451,7 +451,7 @@
         "filename": "lik03-t07-c04",
         "track": "07",
         "position": 4,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(337,99,90)" }
@@ -468,7 +468,7 @@
         "filename": "lik03-t07-c05",
         "track": "07",
         "position": 5,
-        "beats": 1,
+        "beats": 12,
         "volume": 0.7
       },
       "display": { "color": "hsv(195,99,94)" }
@@ -485,7 +485,7 @@
         "filename": "lik03-t08-c01",
         "track": "08",
         "position": 1,
-        "beats": 1,
+        "beats": 18,
         "volume": 0.7
       },
       "display": { "color": "hsv(222,63,94)" }
@@ -502,7 +502,7 @@
         "filename": "lik03-t08-c02",
         "track": "08",
         "position": 2,
-        "beats": 1,
+        "beats": 8,
         "volume": 0.7
       },
       "display": { "color": "hsv(26,93,92)" }
@@ -520,7 +520,7 @@
         "filename": "lik03-t08-c03",
         "track": "08",
         "position": 3,
-        "beats": 1,
+        "beats": 32,
         "volume": 0.7
       },
       "display": { "color": "hsv(53,65,98)" }
@@ -537,7 +537,7 @@
         "filename": "lik03-t08-c04",
         "track": "08",
         "position": 4,
-        "beats": 1,
+        "beats": 16,
         "volume": 0.7
       },
       "display": { "color": "hsv(106,64,97)" }
@@ -554,7 +554,7 @@
         "filename": "lik03-t08-c05",
         "track": "08",
         "position": 5,
-        "beats": 1,
+        "beats": 15,
         "volume": 0.7
       },
       "display": { "color": "hsv(152,92,90)" }
