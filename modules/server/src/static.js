@@ -4,9 +4,10 @@ const express = require("express");
 const CONFIG = {
   "/data": "../../../data",
   "/audio": "../../../data/audiosets",
-  "/sets": "../../webapp/public",
-  "/app": "../../webapp/build",
+  "/sets": "../../audioset/sets",
+  "/app": "../../app-visuals/build",
   "/control": "../../app-control/build",
+  "/browser": "../../app-browser/build",
   "/": "../public"
 };
 

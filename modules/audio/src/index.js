@@ -5,33 +5,33 @@ const Player = require("./player");
 const ctx = Context();
 
 function init(set, events) {
-  const samples = set.samples;
-  const config = set.config;
+  const clips = set.clips;
 
   const loader = Loader(ctx, events);
   const player = Player(ctx, loader);
 
-  loader.load(set.url, samples, config.load);
+  loader.load(set.url, clips, set.loader.sources.audio);
 
   events.on("unmount", function() {
     console.log("unmount");
     player.stopAll();
   });
 
-  events.on("/audio/stop-all", function() {
+  events.on("/clip/stop-all", function() {
     player.names().forEach(function(name) {
-      events.emit("/audio/stop", name);
+      events.emit("/clip/stop", name);
     });
+    events.emit("/audio/all-stopped", name);
   });
 
-  events.on("/audio/start", function(name) {
-    player.play(name, samples[name], config.samples);
+  events.on("/clip/start", function(name) {
+    player.play(name, clips[name], set.audio.defaults);
     events.emit("/audio/started", name, ctx.currentTime);
   });
 
-  events.on("/audio/stop", function(name) {
+  events.on("/clip/stop", function(name) {
     player.stop(name);
-    events.emit("/audio/stoped", name, ctx.currentTime);
+    events.emit("/audio/stopped", name, ctx.currentTime);
   });
 }
 

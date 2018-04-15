@@ -1,0 +1,135 @@
+{
+  "id": "test",
+  "format": "audioset-2",
+  "meta": { "title": "Test", "description": "Set de prueba de Antropoloops" },
+  "loader": {
+    "sources": {
+      "audio": [
+        "https://antropoloops.github.io/audiosets/test/{{filename}}.wav"
+      ]
+    }
+  },
+  "audio": { "bpm": 110, "defaults": { "loop": true } },
+  "visuals": {
+    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "layout": []
+  },
+  "keyboard": {
+    "defaults": { "type": "gate" },
+    "keyMap": {
+      "q": { "sample": "voice1" },
+      "w": { "sample": "rhythm1" },
+      "e": { "sample": "accomp1" },
+      "r": { "sample": "melody1" },
+      "a": { "sample": "voice2" },
+      "s": { "sample": "rhythm2" },
+      "d": { "sample": "accomp2" },
+      "f": { "sample": "melody2" },
+      "z": { "sample": "voice3" }
+    }
+  },
+  "clips": {
+    "accomp1": {
+      "meta": {
+        "title": "Acompañamiento 1",
+        "lnglat": [-77.297508, 18.109581]
+      },
+      "audio": {
+        "filename": "accomp1",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "accomp2": {
+      "meta": {
+        "title": "Acompañamiento 2",
+        "lnglat": [-74.29733299999998, 4.570868]
+      },
+      "audio": {
+        "filename": "accomp2",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "melody1": {
+      "meta": {
+        "title": "Melodía 1",
+        "lnglat": [-3.7492200000000366, 40.46366700000001]
+      },
+      "audio": {
+        "filename": "melody1",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "melody2": {
+      "meta": {
+        "title": "Melodía 2",
+        "lnglat": [30.802498000000014, 26.820553]
+      },
+      "audio": {
+        "filename": "melody2",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "rhythm1": {
+      "meta": { "title": "Rítmo 1", "lnglat": [69.34511599999996, 30.375321] },
+      "audio": {
+        "filename": "rhythm1",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "rhythm2": {
+      "meta": { "title": "Rítmo 2", "lnglat": [-149.456815, -17.649632] },
+      "audio": {
+        "filename": "rhythm2",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "voice1": {
+      "meta": { "title": "Voz 2", "lnglat": [-89.39852830000001, 32.3546679] },
+      "audio": {
+        "filename": "voice1",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "voice2": {
+      "meta": { "title": "Voz 1", "lnglat": [21.824311999999964, 39.074208] },
+      "audio": {
+        "filename": "voice2",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    },
+    "voice3": {
+      "meta": { "title": "Voz 3", "lnglat": [-63.616671999999994, -38.416097] },
+      "audio": {
+        "filename": "voice3",
+        "track": "samples",
+        "beats": 1,
+        "volume": 0.7
+      },
+      "display": { "color": "hsv(106,89,98)" }
+    }
+  }
+}

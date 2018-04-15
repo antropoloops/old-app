@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 14/04/2017 [Dani 8h]
+
+* Lik03
+* Rename webapp to app-visuals and refactor app
+* Add keyboard to control-app
+* Add group mode to control-app
+
+## 12/04/2017
+
+* [Dani] 6h
+  * Set migrations
+  * Lik03 audioset
+  * Browser app
+
 ## 7/4/2017
 
 * [Dani] 8h
