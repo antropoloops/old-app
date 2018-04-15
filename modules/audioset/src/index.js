@@ -44,8 +44,8 @@ export function getEvents(set, socket) {
 
   events.emit = function(event, name, data) {
     debug("emit", event, name, data);
-    if (hasSocket) socket.send(event, name, data);
     bus.emit(event, name, data);
+    if (hasSocket) socket.send(event, name, data);
   };
   events.on = bus.on.bind(bus);
 

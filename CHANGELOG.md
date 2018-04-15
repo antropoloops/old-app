@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## 15/04/2017 [Dani 2h]
+## 15/04/2017 [Dani 4h]
 
 * Add triggers to app-visuals
 * Add covers to app-control
 * Rename audio to audio-playback
 * app-control query audio-playback for current playing clips
 * app-control track groups display
+* Improve audio engine: polyphony, tracks and basic scheduling
 
 ## 14/04/2017 [Dani 8h]
 

@@ -20,11 +20,6 @@ const asPressed = names =>
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // FIXME
-    const { clips } = this.props.set;
-    Object.keys(clips).forEach(name => {
-      clips[name].id = name;
-    });
     this.state = { pressed: {} };
   }
 

@@ -3,49 +3,53 @@
  * @param {AudioContext} ctx - Audio Context
  * @param {Map<String,AudioBuffer>} buffers - A map of names to audio buffers
  */
-function Player(ctx, loader) {
+function Player(ctx, buffers) {
   const sources = {};
+  let count = 0;
 
-  function play(name, sample, config) {
-    const buffer = loader.get(name);
+  const player = { ctx };
+
+  player.play = function(name, clip, when) {
+    const buffer = buffers.get(name);
     if (!buffer || sources[name]) return;
 
     const source = ctx.createBufferSource();
     source.buffer = buffer;
     source.connect(ctx.destination);
 
-    if (sample.loop === true || (sample.loop === undefined && config.loop)) {
+    if (clip.audio.loop === true) {
       source.loop = true;
     }
 
-    source.start();
+    when = when || ctx.currentTime;
+    source.start(when);
     sources[name] = source;
-    return source;
-  }
+    count++;
+    return { clip: name, when, voices: count };
+  };
 
-  function stop(name) {
+  player.stop = function(name, when) {
+    when = when || ctx.currentTime;
     const source = sources[name];
     if (source) {
-      source.stop();
+      source.stop(when);
       delete sources[name];
+      count--;
+      return { clip: name, when, voices: count };
     }
-  }
+    return { voices: count };
+  };
 
-  function names() {
+  player.names = function() {
     return Object.keys(sources);
-  }
+  };
 
-  function stopAll() {
-    names().forEach(function(name) {
+  player.stopAll = function() {
+    player.names().forEach(function(name) {
       sources[name].stop();
     });
-  }
-  return {
-    play: play,
-    stop: stop,
-    stopAll: stopAll,
-    names: names
   };
+  return player;
 }
 
 module.exports = Player;

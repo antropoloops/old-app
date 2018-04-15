@@ -26,7 +26,7 @@ export default function migrate(set) {
     clip.id = name;
     clip.display.color = rgb(clip.display.color);
     clip.display.cover = resourceUrl(name, set.loader.sources.covers);
-    console.log(clip.display);
+    if (set.audio.defaults) Object.assign(clip.audio, set.audio.defaults);
   });
   return set;
 }

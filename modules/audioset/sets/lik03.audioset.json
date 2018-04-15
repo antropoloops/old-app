@@ -12,7 +12,13 @@
       ]
     }
   },
-  "audio": { "bpm": 120, "defaults": { "loop": true } },
+  "audio": {
+    "bpm": 125,
+    "signature": [4, 4],
+    "trackMaxVoices": 1,
+    "quantize": true,
+    "defaults": { "loop": true }
+  },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false
