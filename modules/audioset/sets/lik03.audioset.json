@@ -8,7 +8,7 @@
         "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav"
       ],
       "covers": [
-        "https://storage.googleapis.com/atpls-sets/lik/lik3-covers/{{filename}}.jpg"
+        "https://storage.googleapis.com/atpls-sets/lik/lik03-covers/{{filename}}.jpg"
       ]
     }
   },
