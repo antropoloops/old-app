@@ -62,7 +62,7 @@ export default class Map {
 
     const info = getAlbumInfo(this.set, name);
     const { screenWidth, screenHeight } = getScreenSize(this.fixedAspectRatio);
-    const [cx, cy] = this.projection(info.lnglat);
+    let [cx, cy] = this.projection(info.lnglat);
 
     const circle = createCircle(
       this.circlesContainer,
@@ -139,18 +139,24 @@ export default class Map {
   render() {
     const { screenWidth, screenHeight } = getScreenSize(this.fixedAspectRatio);
     const scale = getScale(this.fixedAspectRatio);
+    const focusedScale = scale * this.set.visuals.focus.scaleFactor;
+    const lambda = this.set.visuals.focus.lambda;
+    const verticalShift = this.set.visuals.focus.verticalShift;
     const albumsHeight = getAlbumHeight(screenWidth);
     this.clear();
 
     const svg = this.el
       .append("svg")
-      .attr("class", "svgMap")
+      .attr("id", "svgMap")
       .attr("width", screenWidth)
       .attr("height", screenHeight);
+
     this.mapContainer = svg
       .append("g")
-      .attr("id", "map")
-      .attr("transform", `translate(0, ${albumsHeight})`);
+      .attr("transform", `translate(0, ${albumsHeight})`)
+      .append("g")
+      .attr("id", "map");
+
     this.albumsContainer = svg.append("g").attr("id", "albums");
     this.refLinesContainer = svg
       .append("g")
@@ -158,8 +164,9 @@ export default class Map {
       .attr("transform", `translate(0, ${albumsHeight})`);
     this.circlesContainer = svg
       .append("g")
-      .attr("id", "circles")
-      .attr("transform", `translate(0, ${albumsHeight})`);
+      .attr("transform", `translate(0, ${albumsHeight})`)
+      .append("g")
+      .attr("id", "circles");
     this.wavesContainer = svg
       .append("g")
       .attr("id", "waves")
@@ -173,7 +180,9 @@ export default class Map {
     this.projection = createProjection(
       screenWidth,
       screenHeight - albumsHeight,
-      scale
+      focusedScale,
+      verticalShift,
+      lambda
     );
     const path = d3.geoPath().projection(this.projection);
     this.mapContainer

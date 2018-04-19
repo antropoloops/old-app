@@ -25,10 +25,10 @@ export function getScale(fixedAspectRatio) {
     : screenWidth / 6.5;
 }
 
-export function createProjection(width, height, scale) {
+export function createProjection(width, height, scale, verticalShift, lambda) {
   return d3geo
     .geoRobinson()
     .scale(scale)
-    .translate([width / 2, height / 2 + height / 15])
-    .rotate([-10, 0, 0]);
+    .translate([width / 2, height / 2 + height / verticalShift])
+    .rotate([lambda, 0, 0]);
 }

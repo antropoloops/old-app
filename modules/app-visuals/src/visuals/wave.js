@@ -8,9 +8,9 @@ export function createWave(
   trackColor,
   trackVolume
 ) {
-  const first = Math.floor(screenWidth / 30 * trackVolume);
-  const last = 150;
-  const radius = d3.range(first, last);
+  const firstRadius = Math.floor(screenWidth / 30 * trackVolume);
+  const lastRadius = 150;
+  const radius = d3.range(firstRadius, lastRadius);
   const duration = 20;
 
   const wave = parent
@@ -23,7 +23,7 @@ export function createWave(
 
   radius.forEach((r, i) => {
     const initialWidth = 2;
-    const strokeWidth = initialWidth - initialWidth * r / last;
+    const strokeWidth = initialWidth - initialWidth * r / lastRadius;
     wave
       .transition()
       .duration(duration)
@@ -31,7 +31,7 @@ export function createWave(
       .attr("r", r)
       .style("stroke-width", strokeWidth)
       .on("end", (d, i, nodes) => {
-        if (r === last - 1) nodes[i].remove();
+        if (r === lastRadius - 1) nodes[i].remove();
       });
   });
 

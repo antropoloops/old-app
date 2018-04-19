@@ -26,3 +26,8 @@ a {
 body {
   font-family: "system";
 }
+
+#svgMap {
+  display: block;
+  margin: auto;
+}

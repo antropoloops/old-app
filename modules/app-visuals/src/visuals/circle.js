@@ -13,10 +13,11 @@ export function createCircle(parent, screenWidth, cx, cy, params) {
   const { duration, trackVolume, trackColor } = params;
   const circlesGroup = parent
     .append("g")
+    .attr("class", "circleGroup")
     .attr("transform", `translate(${cx}, ${cy})`);
 
   // We need to group again, so that the circle turns in its location
-  const circle = circlesGroup.append("g").attr("class", "circleGroup");
+  const circle = circlesGroup.append("g").attr("class", "circle");
 
   // Arc generator
   const arc = d3.arc();
@@ -71,7 +72,7 @@ export function createCircle(parent, screenWidth, cx, cy, params) {
       .range([1, 0])
       .domain([0, duration]);
     circle.style("transform", `rotate(${-turnScale(elapsedSeconds)}turn)`);
-    if (d3.select(".circleGroup").empty()) {
+    if (d3.select(".circle").empty()) {
       turnTimer.stop();
     }
   }

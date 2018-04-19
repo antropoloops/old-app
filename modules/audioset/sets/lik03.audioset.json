@@ -21,7 +21,12 @@
   },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
-    "imprint": false
+    "imprint": false,
+    "focus": {
+      "lambda": 65,
+      "verticalShift": -3.1,
+      "scaleFactor": 1.9
+    }
   },
   "control": { "groups": { "name": "audio.track" } },
   "clips": {

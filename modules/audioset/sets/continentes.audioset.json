@@ -16,7 +16,12 @@
   "audio": { "bpm": 120, "defaults": { "loop": true } },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
-    "imprint": false
+    "imprint": false,
+    "focus": {
+      "lambda": -10,
+      "verticalShift": 15,
+      "scaleFactor": 1
+    }
   },
   "keyboard": {
     "defaults": { "type": "gate" },
