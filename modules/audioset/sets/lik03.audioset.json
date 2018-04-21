@@ -19,6 +19,7 @@
     "quantize": true,
     "defaults": { "loop": true }
   },
+  "control": { "groups": { "name": "audio.track" } },
   "visuals": {
     "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false,
@@ -28,7 +29,6 @@
       "scaleFactor": 1.9
     }
   },
-  "control": { "groups": { "name": "audio.track" } },
   "clips": {
     "lik03-t01-c01": {
       "meta": {
