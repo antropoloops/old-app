@@ -1,5 +1,5 @@
 import React from "react";
-import { initConnection, serverUrl } from "@atpls/audioset";
+import { initConnection, getServerUrl } from "@atpls/audioset";
 import Message from "./components/Message";
 import Connect from "./components/Connect";
 

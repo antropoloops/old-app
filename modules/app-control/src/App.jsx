@@ -54,11 +54,7 @@ class App extends React.Component {
     const Pads = groups ? GroupedList : ClipList;
     return (
       <div className="App">
-        <div className="header">
-          <a href={currentLink} alt="open">
-            {currentLink}
-          </a>
-        </div>
+        <div className="header" />
         <Pads
           clips={set.clips}
           groups={groups}

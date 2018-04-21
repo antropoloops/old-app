@@ -1,4 +1,5 @@
 import React from "react";
+import { getServerUrl } from "@atpls/audioset";
 import { openFullScreen } from "./fullscreen";
 import Icon, { ICONS } from "./icons";
 import Keyboard from "./Keyboard";
@@ -26,14 +27,18 @@ class App extends React.Component {
   }
   render() {
     const { mute, keyboardVisible } = this.state;
-    const { set, events } = this.props;
+    const { set, events, url } = this.props;
     const { title, description } = set.meta;
+    const controlUrl = getServerUrl(url, "3001") + "/#" + set.id;
     return (
       <div className="App">
         <header>
           <div className="body">
             {title}: {description}
           </div>
+          <a href={controlUrl} target="_blank">
+            {controlUrl}
+          </a>
           <Icon alt="stop" icon={ICONS.stop} onClick={() => this.stopAll()} />
           <Icon
             alt="stop"

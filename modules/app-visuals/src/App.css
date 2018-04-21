@@ -9,6 +9,7 @@
 .App header {
   display: flex;
   align-items: flex-start;
+  padding-left: 1em;
 }
 
 .App header .body {

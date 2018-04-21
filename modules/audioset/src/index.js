@@ -18,10 +18,11 @@ export function mapObject(object, cb) {
  * @param {String} origin  (window.origin)
  * @return {String}
  */
-export function serverUrl(origin) {
-  if (!origin) origin = "http://127.0.0.1:3333";
+export function getServerUrl(origin, port) {
+  if (!origin) origin = "http://127.0.0.1:0000";
+  if (!port) port = "3333";
   const portIndex = origin.lastIndexOf(":");
-  return (portIndex === -1 ? origin : origin.slice(0, portIndex)) + ":3333";
+  return (portIndex === -1 ? origin : origin.slice(0, portIndex)) + ":" + port;
 }
 
 /**
@@ -56,7 +57,7 @@ export function getEvents(set, socket) {
  * Init connection with server if possible
  */
 export function initConnection(origin) {
-  const url = serverUrl(origin) + "/status";
+  const url = getServerUrl(origin) + "/status";
   return fetch(url)
     .then(function(response) {
       return response.json();
