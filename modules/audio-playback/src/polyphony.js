@@ -26,7 +26,7 @@ function Polyphony(set, events) {
   events.on("/audio/stopped", function(name) {
     const clip = set.clips[name];
     const track = clip && clip.audio && clip.audio.track;
-    if (track) tracks[track] = undefined;
+    tracks[track] = undefined;
   });
 }
 
