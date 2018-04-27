@@ -14,15 +14,14 @@ import { createRefLine } from "./ref-line";
 import { createWave } from "./wave";
 import { createLastSampleInfo } from "./lastSampleInfo";
 import { createImprint } from "./imprint";
+import { resourceUrl } from "@atpls/audioset";
 
 function getAlbumInfo(set, name) {
   const clip = set.clips[name];
   const { meta, audio } = clip;
   const filename = clip.audio.filename;
-  const covers = set.loader.sources.covers;
 
-  const imageUrl = covers ? covers[0].replace("{{filename}}", filename) : "";
-  console.log("COVER!", imageUrl);
+  const imageUrl = resourceUrl(filename, set.loader.sources.covers);
   const bpm = set.meta.bpm || 120;
 
   return {

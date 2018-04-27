@@ -12,7 +12,6 @@ class GroupList extends React.Component {
     this.selectGroup = this.selectGroup.bind(this);
   }
   selectGroup(name) {
-    console.log("sel", name);
     this.setState({ selected: name });
   }
   render() {

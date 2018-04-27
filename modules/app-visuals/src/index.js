@@ -9,13 +9,12 @@ import defaultSet from "@atpls/audioset/sets/lik03.audioset.json";
 import App from "./App";
 import "./index.css";
 
-const log = process.env.NODE_ENV === "production" ? undefined : console.log;
-
 initConnection(window.origin).then(({ url, socket }) => {
-  const setName = window.location.hash.slice(1).toLowerCase();
+  const hash = window.location.hash.slice(1).toLowerCase();
+  const setName = hash.length ? hash : "lik03";
   const setsUrl = url + "sets/";
   loadAudioSet(setName, setsUrl, defaultSet).then(set => {
-    const events = getEvents(set, socket, log);
+    const events = getEvents(set, socket);
     const hasKeyboard = initKeyboard(set, events);
     initVisuals(set, events, document.getElementById("visuals"));
     initAudio(set, events);

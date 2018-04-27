@@ -36,7 +36,6 @@ function getColor(number) {
   const h = random(H[number % MAX]);
   const s = random(S);
   const v = random(V);
-  console.log("hsv(" + h + "," + s + "," + v + ")");
   const c = hsvToRgb(h, s, v);
   return "rgb(" + c[0] + "," + c[1] + "," + c[2] + ")";
 }

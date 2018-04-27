@@ -30,15 +30,18 @@ class App extends React.Component {
     const { set, events, url } = this.props;
     const { title, description } = set.meta;
     const controlUrl = getServerUrl(url, "3001") + "/#" + set.id;
+    const isServer = controlUrl.indexOf("127.0.0.1") === -1;
     return (
       <div className="App">
         <header>
           <div className="body">
             {title}: {description}
           </div>
-          <a href={controlUrl} target="_blank">
-            {controlUrl}
-          </a>
+          {isServer && (
+            <a href={controlUrl} target="_blank">
+              {controlUrl}
+            </a>
+          )}
           <Icon alt="stop" icon={ICONS.stop} onClick={() => this.stopAll()} />
           <Icon
             alt="stop"

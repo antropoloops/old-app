@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2017/04/27 [Dani 1h]
+
+* Lik audioset offline
+
 ## 15/04/2017 [Dani 4h]
 
 * Add triggers to app-visuals

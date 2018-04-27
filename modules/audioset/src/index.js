@@ -79,7 +79,6 @@ export function initConnection(origin) {
  * @param {AudioSet} defaultSet - the set to be returned if can't load
  */
 export function loadAudioSet(name, baseUrl, defSet) {
-  console.log("baseUrl", baseUrl);
   const url = (baseUrl || "") + "/" + name + ".audioset.json";
 
   return fetch(url)
@@ -93,7 +92,6 @@ export function loadAudioSet(name, baseUrl, defSet) {
 }
 
 export function resourceUrl(name, resource) {
-  return resource && resource.lenght
-    ? resource[0].replace("{{filename}}", name)
-    : "";
+  if (!resource || !resource.length) return name;
+  return resource[resource.length - 1].replace("{{filename}}", name);
 }

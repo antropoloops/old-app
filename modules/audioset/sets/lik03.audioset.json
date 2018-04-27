@@ -5,10 +5,12 @@
   "loader": {
     "sources": {
       "audio": [
-        "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav"
+        "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav",
+        "http://localhost:3333/audiosets/lik/{{filename}}.wav"
       ],
       "covers": [
-        "https://storage.googleapis.com/atpls-sets/lik/lik03-covers/{{filename}}.jpg"
+        "https://storage.googleapis.com/atpls-sets/lik/lik03-covers/{{filename}}.jpg",
+        "http://localhost:3333/audiosets/lik/lik-03-covers/{{filename}}.jpg"
       ]
     }
   },
