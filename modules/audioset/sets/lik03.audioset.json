@@ -3,15 +3,17 @@
   "format": "audioset-2",
   "meta": { "title": "Lik03", "description": "Antropoloops Lik Session 03" },
   "loader": {
-    "sources": {
+    "production": {
       "audio": [
-        "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav",
-        "http://localhost:3333/audiosets/lik/{{filename}}.wav"
+        "https://storage.googleapis.com/atpls-sets/lik/{{filename}}.wav"
       ],
       "covers": [
-        "https://storage.googleapis.com/atpls-sets/lik/lik03-covers/{{filename}}.jpg",
-        "http://localhost:3333/audiosets/lik/lik-03-covers/{{filename}}.jpg"
+        "https://storage.googleapis.com/atpls-sets/lik/lik03-covers/{{filename}}.jpg"
       ]
+    },
+    "sources": {
+      "audio": ["/audiosets/lik/{{filename}}.wav"],
+      "covers": ["/audiosets/lik/lik-03-covers/{{filename}}.jpg"]
     }
   },
   "audio": {
@@ -23,7 +25,8 @@
   },
   "control": { "groups": { "name": "audio.track" } },
   "visuals": {
-    "geoMapUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
+    "geoMapUrl": "http://localhost:3333/data/geodata/110m.json",
+    "geoMapOriginalUrl": "https://unpkg.com/world-atlas@1.1.4/world/110m.json",
     "imprint": false,
     "focus": {
       "lambda": 65,

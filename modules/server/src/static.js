@@ -15,7 +15,6 @@ const router = express.Router();
 
 Object.keys(CONFIG).forEach(url => {
   const path = join(__dirname, CONFIG[url]);
-  console.log("joder", url, path);
   router.use(url, express.static(path));
 });
 

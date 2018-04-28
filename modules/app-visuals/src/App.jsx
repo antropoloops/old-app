@@ -29,7 +29,7 @@ class App extends React.Component {
     const { mute, keyboardVisible } = this.state;
     const { set, events, url } = this.props;
     const { title, description } = set.meta;
-    const controlUrl = getServerUrl(url, "3001") + "/#" + set.id;
+    const controlUrl = getServerUrl(url, "3333") + "/control";
     const isServer = controlUrl.indexOf("127.0.0.1") === -1;
     return (
       <div className="App">

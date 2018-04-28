@@ -80,6 +80,7 @@ export function initConnection(origin) {
  */
 export function loadAudioSet(name, baseUrl, defSet) {
   const url = (baseUrl || "") + "/" + name + ".audioset.json";
+  console.log("loading audio set", url);
 
   return fetch(url)
     .then(function(response) {
@@ -93,5 +94,6 @@ export function loadAudioSet(name, baseUrl, defSet) {
 
 export function resourceUrl(name, resource) {
   if (!resource || !resource.length) return name;
-  return resource[resource.length - 1].replace("{{filename}}", name);
+  const url = resource[resource.length - 1].replace("{{filename}}", name);
+  return url;
 }

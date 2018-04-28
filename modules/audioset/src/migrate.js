@@ -13,7 +13,6 @@ function rgb(color) {
 }
 
 export default function migrate(set) {
-  console.log("joder", set.loader.sources);
   Object.keys(set.clips).forEach(function(name) {
     const clip = set.clips[name];
     clip.id = name;
