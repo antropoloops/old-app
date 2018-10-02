@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "description": "Antropoloops firebase configuration",
+  "scripts": {
+    "add-editor":
+      "(cd ../app-editor && exec yarn build) && rm -rf public/editor && mv ../app-editor/build public/editor",
+    "build": "yarn add-editor",
+    "predeploy": "yarn build",
+    "deploy": "firebase deploy"
+  }
+}

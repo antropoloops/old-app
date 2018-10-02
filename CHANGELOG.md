@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2018/09/07 [Dani 2h]
+
+* AppEditor
+  * Retrieve audiosets from firebase
+* Firebase deployment
+  * app-editor deployment script
+
 ## 2017/04/27 [Dani 1h]
 
 * Lik audioset offline

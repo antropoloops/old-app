@@ -15,7 +15,9 @@
     "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
     "concurrently": "^3.5.1",
+    "eslint-plugin-react": "^7.11.1",
     "esm": "^3.0.28",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
