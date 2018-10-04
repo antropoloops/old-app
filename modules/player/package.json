@@ -1,0 +1,12 @@
+{
+  "name": "@atpls/player",
+  "version": "1.0.0",
+  "description": "Antropoloops player",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

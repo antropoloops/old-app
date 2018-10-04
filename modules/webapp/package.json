@@ -1,0 +1,29 @@
+{
+  "name": "@atpls/webapp",
+  "version": "1.0.0",
+  "homepage": "./",
+  "description": "Talleres Antropoloops Web Application",
+  "private": true,
+  "dependencies": {
+    "nanobus": "^4.3.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.3",
+    "recompose": "^0.26.0",
+    "socket.io-client": "^2.1.1",
+    "tiny-emitter": "^2.0.2"
+  },
+  "scripts": {
+    "start": "PORT=3003 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.5.2"
+  }
+}
